@@ -19,7 +19,7 @@
         <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></div>
         <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></div>
     </div>
-<div ng-app="" style="margin-top:0%;height: 70%;width: 100%;background-color: silver">
+<div ng-app="" style="margin-top:0%;height: 70%;width: 100%;">
     <div class="swiper-container" style="height: 100%;width: 100%">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background: url('./image/forweb/alexandre-chambon-157648.jpg');background-size: 100% 100%;opacity: 0.9">
@@ -53,6 +53,76 @@
             <p style="color: white;font-family: 'Microsoft YaHei UI';font-size: x-large;position: absolute;margin-top: 3%;margin-left: 5%">随时随地帮助</p>
         </div>
     </div>
+    <div ng-app="" style=";margin-top:0%;height: 100%;width: 100%;position: absolute">
+        <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%;">产品概述</p></center>
+        <center><table class="table" style="height: 100%;width: 25%;border: 1px solid silver">
+                <thead>
+            <tr>
+                    <th>产品名称</th>
+                    <th>虚拟主机</th>
+                          <th>VPS（虚拟服务器）</th>
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td>操作系统</td>
+                    <td>CentOS&nbsp/&nbspUbuntu</td>
+                          <td>CentOS&nbsp/&nbspUbuntu</td>
+                </tr>
+            <tr>
+                    <td>存储空间</td>
+                    <td>500MB</td>
+                            <td>5GB</td>
+                </tr>
+        <tr>
+                    <td>CPU</td>
+                    <td>单核E3CPU</td>
+                            <td>双核E3CPU</td>
+                </tr>
+        <tr>
+                    <td>内存</td>
+                    <td>500MB内存</td>
+                            <td>1GB内存</td>
+                </tr>
+            <tr>
+                    <td>IP地址</td>
+                    <td>共享iP</td>
+                             <td>共享iP</td>
+                </tr>
+         <tr>
+                    <td>带宽</td>
+                    <td>1Mbps</td>
+                         <td>1Mbps</td>
+                </tr>
+             <tr>
+                    <td>支持服务</td>
+                    <td>Apache</td>
+                            <td>用户安装</td>
+                </tr>
+        <tr>
+                    <td>数据库类型</td>
+                    <td>Mysql</td>
+                            <td>Mysql&nbsp/&nbspSQLite&nbsp/&nbspmongoDB</td>
+                </tr>
+        <tr>
+                    <td>支持语言</td>
+                    <td>PHP</td>
+                            <td>PHP&nbsp/&nbspPython&nbsp/&nbspPerl</td>
+
+                </tr>
+        <tr>
+                    <td>SSH</td>
+                    <td>不支持</td>
+                            <td>支持</td>
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+    </div>
+    <div ng-app="" style="border-top: 1px dashed silver;margin-top:40%;height: 70%;width: 100%;position: absolute">
+        <center><p style="margin-top: 4%;font-family: 'Microsoft YaHei UI';font-size: 40px">为了学习和探索</p></center>
+    </div>
 </div>
 </div>
 </body>
@@ -69,7 +139,10 @@
         loop:false,
         slidesPerView : 1,//'auto'
         direction: 'horizontal',
-        // 如果需要分页器
+         autoplay : 5000,
+      speed:1000,
+        autoplayDisableOnInteraction : false,
+      // 如果需要分页器
         pagination: '.swiper-pagination',
     })
 </script>
