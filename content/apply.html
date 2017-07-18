@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请使用</title>
+    <link href="../bootstrap-3.1.1/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../bootstrap-3.1.1/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/angular.js"></script>
+    <script src="../js/swiper-3.4.0.min.js"></script>
+</head>
+<body id="all" style="border: 0px;background-color: #f6f6f6">
+<div style="height: 80%;width: 80%;border: 1px solid #00b38a;position: absolute;margin-left: 10%;margin-top: 5%">
+    <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">申请使用</p></center>
+    <center><div style="width: 30%;height: 70%;margin-top: 2%">
+        <div class="input-group">
+            <span class="input-group-addon">申请人&nbsp&nbsp&nbsp&nbsp</span>
+            <input placeholder="请使用自己的真实姓名" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="input-group" style="margin-top: 5%">
+            <span class="input-group-addon">申请用途</span>
+            <input placeholder="请写详细使用的用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+            <input style="width: 100%;height: 200px;margin-top: 5%" placeholder="请填写申请产品" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+    </div></center>
+</div>
+</body>
+<script>
+    var height;
+    var width;
+    height=document.documentElement.clientHeight;
+    width=document.documentElement.clientWidth;
+    var a=document.getElementById("all");
+    a.setAttribute('height',height);
+    var b=document.getElementById("all");
+    b.setAttribute('width',width);
+</script>
+</html>
