@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新用户注册</title>
+    <link href="../bootstrap-3.1.1/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../bootstrap-3.1.1/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/angular.js"></script>
+    <script src="../js/swiper-3.4.0.min.js"></script>
+</head>
+<body id="all" style="border: 0px;background-color: #f6f6f6;">
+<div ng-app="" style="width: 100%;height: 100%;">
+    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">登录</p></center>
+    <div style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
+         <div class="input-group">
+        <span class="input-group-addon">邮箱</span>
+        <input placeholder="请使用邮箱" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="input-group" style="margin-top: 5%">
+            <span class="input-group-addon">密码</span>
+            <input placeholder="请输入密码" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <button style="margin-left: 85%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+        </button>
+    </div>
+</div>
+</body>
+<script>
+    var height;
+    var width;
+    height=document.documentElement.clientHeight;
+    width=document.documentElement.clientWidth;
+    var a=document.getElementById("all");
+    a.setAttribute('height',height);
+    var b=document.getElementById("all");
+    b.setAttribute('width',width);
+</script>
+</html>
