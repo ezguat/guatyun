@@ -22,12 +22,12 @@
 <div ng-app="myApp" ng-controller="personCtrl" style="height: 90%;width: 100%;background-color: white;position: absolute">
     <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 1%">个人面板</p></center>
     <div style="height: 90%;width: 10%;position: absolute;">
-        <button type="button" id="de"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
-        <button type="button"  id="se"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
-        <button  type="button" id="up"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">文件上传</button>
-        <button type="button"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/cogwheel_1173px_1206681_easyicon.net.png">账号修改</button>
+        <button  id="de"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
+        <button  id="se"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
+        <button   id="up"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">文件上传</button>
+        <button  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/cogwheel_1173px_1206681_easyicon.net.png">账号修改</button>
     </div>
-    <div id="detail"  style="z-index:1;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
+    <div id="detail"  style="width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
         <div class="panel-body">
             个人资料
         </div>
@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <div id="service" style="z-index:1;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
+    <div id="service" style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
         <div class="panel-body">
             产品服务
         </div>
@@ -135,7 +135,7 @@
         </table>
         </center>
     </div>
-    <div id="upload"  style="z-index:999;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
+    <div id="upload"  style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
         <div class="panel-body">
             文件上传
         </div>
@@ -154,8 +154,21 @@
     a.setAttribute('height',height);
     var b=document.getElementById("all");
     b.setAttribute('width',width);
-    document.getElementById('se').onclick(function () {
-        alert('done');
-    })
+    document.getElementById('de').onclick=function () {
+        document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('upload').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+    }
+    document.getElementById('se').onclick=function () {
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('upload').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+    }
+    document.getElementById('up').onclick=function () {
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('upload').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+    }
+
 </script>
 </html>
