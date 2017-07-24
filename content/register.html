@@ -7,8 +7,9 @@
     <link href="../bootstrap-3.1.1/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.1.1/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
-    <script src="../js/angular.js"></script>
     <script src="../js/swiper-3.4.0.min.js"></script>
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
 </head>
 <body id="all" style="border: 0px;background-color: #f6f6f6;">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
@@ -21,26 +22,28 @@
     <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
-<div ng-app="" style="width: 100%;height: 100%;">
+<div  style="width: 100%;height: 100%;">
     <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">用户注册</p></center>
     <div style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
          <div class="input-group">
         <span class="input-group-addon">新用户名</span>
-        <input placeholder="请使用半角的 a-z 或数字 0-9" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <input id="name" placeholder="请使用半角的 a-z 或数字 0-9" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">用户密码</span>
-            <input placeholder="请输入密码" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input id="password" placeholder="请输入密码" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">用户邮箱</span>
-            <input placeholder="推荐使用QQ邮箱" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input id="email" placeholder="推荐使用QQ邮箱" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">手机号码</span>
-            <input placeholder="仅支持大陆" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input id="number" placeholder="仅支持大陆" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-        <button style="margin-left: 85%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+        <button onclick=" $.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val()},function (data) {
+alert(data);
+    })" id="submit" style="margin-left: 85%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
             <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">注册</p>
         </button>
     </div>
