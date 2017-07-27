@@ -8,21 +8,21 @@
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
 </head>
-<body  id="all" style="border: 0px;background-color: white;">
+<body  id="all" style="border: 0px;background-color: white;overflow-x: hidden">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
     <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
     <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
     <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
-<div ng-app="myApp" ng-controller="personCtrl" style="height: 90%;width: 100%;background-color: white;position: absolute">
+<div  style="height: 90%;width: 100%;background-color: white;position: absolute">
     <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 1%">个人面板</p></center>
     <div style="height: 90%;width: 10%;position: absolute;">
-        <button  id="de"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
+        <button  id="de"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
         <button  id="se"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
         <button   id="up"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">文件上传</button>
         <button  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/cogwheel_1173px_1206681_easyicon.net.png">账号修改</button>
@@ -31,23 +31,72 @@
         <div class="panel-body">
             个人资料
         </div>
-        <div style="height: 94%" class="panel-footer">
-            <div style="width: 100%;height: 10%">
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">用户名:</p>
-                <input style="height: 50%;width:10%;border: 0px;display: inline-block" disabled="true">
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">个人邮箱:</p>
-                <input style="height: 50%;width:10%;border: 0px;display: inline-block" disabled="true">
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">电话:</p>
-                <input style="height: 50%;width:10%;border: 0px;display: inline-block">
+        <div style="height: 44%;background-color: white" class="panel-footer">
+            <div style="width: 100%;height: 10%;">
+                <div class="row" style="position: absolute;width: 40%;margin-top: 2%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                个人姓名
+                            </span>
+                            <input id="name" disabled="true" le type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 2%;margin-left: 20%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                个人邮箱
+                            </span>
+                            <input id="email" disabled="true" le type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 2%;margin-left: 40%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                               手机号码
+                            </span>
+                            <input id="number" disabled="true" le type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 2%;margin-left: 60%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    专业名称
+                            </span>
+                            <input id="major" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 82%;margin-top: 6%;margin-left: -1%;">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                注册时间
+                            </span>
+                            <input id="retime" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 6%;margin-left: 40%;">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    个人职业
+                            </span>
+                            <input  type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
             </div>
-            <div style="width: 100%;height: 10%">
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">宿舍号:</p>
-                <input style="height: 50%;width:10%;border: 0px" >
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">南北校区:</p>
-                <input style="height: 50%;width:10%;border: 0px;" >
-                <p style="font-family: 'Microsoft YaHei UI';font-size: 25px;margin-left: 10%;margin-top: 3%;display: inline-block">职业:</p>
-                <input style="height: 50%;width:10%;border: 0px;">
-            </div>
+            <div style="width: 100%;height: 90%;margin-top: 20%">
+                <strong style="font-family: 'Microsoft YaHei UI';font-size: 15px">拥有的服务：</strong>
+        </div>
         </div>
     </div>
     <div id="service" style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
@@ -65,29 +114,29 @@
             </thead>
                 <tbody>
             <tr>
-                    <td></td>
-                    <td></td>
-                          <td></td>
+                    <td id="name1"></td>
+                    <td id="asktime1"></td>
+                          <td id="status1"></td>
                           <td></td>
                 </tr>
             <tr>
-                    <td></td>
-                    <td></td>
-            <td></td>
-            <td></td>
+                    <td id="name2"></td>
+                    <td id="asktime2"></td>
+                          <td id="status2"></td>
+                          <td></td>
                 </tr>
         <tr>
-                    <td></td>
-                    <td></td>
-            <td></td>
-                    <td></td>
+                    <td id="name3"></td>
+                    <td id="asktime3"></td>
+                          <td id="status3"></td>
+                          <td></td>
 
                 </tr>
         <tr>
-                    <td></td>
-                    <td></td>
-            <td></td>
-            <td></td>
+                    <td id="name4"></td>
+                    <td id="asktime4"></td>
+                          <td id="status4"></td>
+                          <td></td>
 
                 </tr>
             <tr>
@@ -158,17 +207,43 @@
         document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
-    }
+        $.get('../php/user.php',{askdetail:1,username:name},function (data) {
+            detail(data);
+        })
+    };
     document.getElementById('se').onclick=function () {
         document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
-    }
+       $.get('../php/user.php',{askservice:1,username:name},function (data) {
+                    service(data);
+    });
+    };
     document.getElementById('up').onclick=function () {
         document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
-    }
+    };
+    var name=localStorage.getItem('name');
+    var passwd=localStorage.getItem('passwd');
+    $.get('../php/user.php',{askdetail:1,username:name},function (data) {
+                    detail(data);
+    })
+function detail(data) {
+        var go=localStorage.getItem('name');
+    $('#name').val(go);
+    $('#number').val(data.split('/')[0]);
+    $('#email').val(data.split('/')[1]);
+    $('#major').val(data.split('/')[2]);
+    $('#retime').val(data.split('/')[3]);
 
+}
+function service(data) {
+        for($one=1,$two=0;data.split('/')[$two];$one++){
+            document.getElementById('name'+$one).innerHTML=data.split('/')[$two++];
+            document.getElementById('asktime'+$one).innerHTML=data.split('/')[$two++];
+            document.getElementById('status'+$one).innerHTML=data.split('/')[$two++];
+        }
+}
 </script>
 </html>

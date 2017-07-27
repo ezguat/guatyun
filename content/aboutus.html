@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>申请使用</title>
+    <title>关于我们</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </head>
 <body id="all" style="border: 0px;background-color: #f6f6f6">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
@@ -20,39 +19,16 @@
     <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
-    <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">申请使用</p></center>
-    <center><div style="width: 30%;height: 70%;margin-top: 0%">
-        <!-- Single button -->
-        <div class="row" style="width: 1200px;margin-top: 5%">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">申请服务<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="$('#choice').val('虚拟主机');" id="vp" href="#">虚拟主机</a></li>
-                            <li><a onclick="$('#choice').val('VPS');"  id="vps" href="#">VPS</a></li>
-                            <li><a  onclick="$('#choice').val('云Mysql');" id="mysql" href="#">云Mysql</a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <input id="choice" disabled="true" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->        <input style="width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+<div id="detail"  style="width: 60%;height: 50%;margin-top: 5%;margin-left: 20%;position: absolute" class="panel panel-default">
+    <div class="panel-body">
+        关于我们
     </div>
-    </center>
-<button id="click" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
-    <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
-</button>
+    <div style="height: 94%;" class="panel-footer"px>
+        <h1 style="font-family: 'Microsoft YaHei UI';font-size: 20px">网站提供服务的目的人群是在校学生，提供给学生一个可以可靠、稳定的云服务。</h1>
+        <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">网站的初衷是希望有更多人能喜欢上CS这门学科，亦或是为对CS感兴趣的人提供一个学习的环境。提供的服务是无偿的，希望大家能够多多分享自己有趣、大胆的想法，在这里找到志同道合的伙伴。</h1>
+        <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">如果有对这方面感兴趣或者是贡献自己一臂之力，可以<a style="text-decoration: none;color: #00b38a"  href="../content/join.html">加入我们</a>。在这里，我们鼓励技术性的讨论，不赞同无意义的提问。</h1>
+    </div>
 </div>
+
 </body>
-<script>
-    var height;
-    var width;
-    height=document.documentElement.clientHeight;
-    width=document.documentElement.clientWidth;
-    var a=document.getElementById("all");
-    a.setAttribute('height',height);
-    var b=document.getElementById("all");
-    b.setAttribute('width',width);
-</script>
 </html>
