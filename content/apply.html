@@ -17,8 +17,8 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+    <div  style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
     <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">申请使用</p></center>
     <center><div style="width: 30%;height: 70%;margin-top: 0%">
@@ -37,10 +37,11 @@
                     <input id="choice" disabled="true" placeholder=""  class="form-control">
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->        <input style="width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div><!-- /.row -->        <input id="advice" style="width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
     </div>
     </center>
-<button id="click" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+<button id="click" onclick="var time=new Date();$.get('../php/user.php',{apply:1,advice:$('#advice').val(),service:$('#choice').val(),asktime:time,username:localStorage.getItem('name')},function(data) {
+})" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
     <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
 </button>
 </div>
@@ -54,5 +55,13 @@
     a.setAttribute('height',height);
     var b=document.getElementById("all");
     b.setAttribute('width',width);
+    if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
+        window.location.href='../content/login.html';
+    }
+    else {
+        $('#gone').css('display','none');
+        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
+        document.getElementById('link').href='../control/user.html';
+    }
 </script>
 </html>

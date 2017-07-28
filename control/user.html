@@ -16,8 +16,8 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
 <div  style="height: 90%;width: 100%;background-color: white;position: absolute">
     <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 1%">个人面板</p></center>
@@ -95,7 +95,7 @@
                 </div><!-- /.row -->
             </div>
             <div style="width: 100%;height: 90%;margin-top: 20%">
-                <strong style="font-family: 'Microsoft YaHei UI';font-size: 15px">拥有的服务：</strong>
+                <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
         </div>
         </div>
     </div>
@@ -132,54 +132,6 @@
                           <td></td>
 
                 </tr>
-        <tr>
-                    <td id="name4"></td>
-                    <td id="asktime4"></td>
-                          <td id="status4"></td>
-                          <td></td>
-
-                </tr>
-            <tr>
-                    <td></td>
-                    <td></td>
-             <td></td>
-                    <td></td>
-                </tr>
-         <tr>
-                    <td></td>
-                    <td></td>
-                         <td></td>                         
-            <td></td>
-
-
-                </tr>
-        <tr>
-                    <td></td>
-                    <td></td>
-                            <td></td>
-                    <td></td>
-
-                </tr>
-        <tr>
-                    <td></td>
-                    <td></td>
-                            <td></td>
-                    <td></td>
-                </tr>
-        <tr>
-                    <td></td>
-                    <td></td>
-                            <td></td>
-                            <td></td>
-
-                </tr>
-        <tr>
-                    <td></td>
-                    <td></td>
-                            <td></td>
-                    <td></td>
-
-                </tr>
             </tbody>
         </table>
         </center>
@@ -203,6 +155,12 @@
     a.setAttribute('height',height);
     var b=document.getElementById("all");
     b.setAttribute('width',width);
+    $('#gone').css('display','none');
+    if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
+        window.location.href='../content/login.html';
+    }
+    document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
+    document.getElementById('link').href='../control/user.html';
     document.getElementById('de').onclick=function () {
         document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
@@ -236,7 +194,10 @@ function detail(data) {
     $('#email').val(data.split('/')[1]);
     $('#major').val(data.split('/')[2]);
     $('#retime').val(data.split('/')[3]);
-
+    var go=4;
+    while(data.split('/')[go]){
+            document.getElementById('doneservice').innerHTML=data.split('/')[go++];
+    }
 }
 function service(data) {
         for($one=1,$two=0;data.split('/')[$two];$one++){
