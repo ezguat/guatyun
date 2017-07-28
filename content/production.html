@@ -21,11 +21,11 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
 </div>
 <div style="height: 40%;width: 100%;background-color: #00b38a;position: absolute">
-    <center><h2 style="font-family: 'Microsoft YaHei UI';font-size: 40px;color: white;margin-top: 2%">虚拟主机（网页托管）</h2></center>
-    <center><a href="../content/apply.html" style="text-decoration: none"><p href="../content/apply.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%">LAMP环境</p></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">支持wordpress一键建站</p></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">校内展示/作品验收/上线测试</p></center>
+    <center><h2 id="change9" style="font-family: 'Microsoft YaHei UI';font-size: 40px;color: white;margin-top: 2%">虚拟主机（网页托管）</h2></center>
+    <center><a href="../content/apply.html" style="text-decoration: none"><p  id="change10"  href="../content/apply.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
+    <center><p  id="change11" style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%">LAMP环境</p></center>
+    <center><p  id="change12" style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">支持wordpress一键建站</p></center>
+    <center><p id="change13" style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">校内展示/作品验收/上线测试</p></center>
 </div>
 <div id="show1" style="height: 40%;width: 100%;position: absolute;margin-top: 22%">
     <center>
@@ -56,7 +56,7 @@
     <div class="panel-body">
         应用支持
     </div>
-    <div style="height: 94%" class="panel-footer">
+    <div id="detail-div" style="height: 94%;margin-top:0%" class="panel-footer">
         <center><table class="table" style="height: 100%;width: 100%;">
                 <thead>
             <tr>
@@ -96,11 +96,11 @@
     </div>
 </div>
 <div id="show2" style="height: 40%;width: 100%;background-color: #9164b3;position: absolute;margin-top: 61%">
-    <center><h2 style="font-family: 'Microsoft YaHei UI';font-size: 40px;color: white;margin-top: 2%">VPS</h2></center>
-    <center><a href="../content/apply.html" style="text-decoration: none"><p href="../content/apply.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%">Ubuntu/CentOS</p></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">适用于Web前端服务器</p></center>
-    <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">提供安全可靠的弹性计算服务</p></center>
+    <center><h2 id="change14" style="font-family: 'Microsoft YaHei UI';font-size: 40px;color: white;margin-top: 2%">VPS</h2></center>
+    <center><a href="../content/apply.html" style="text-decoration: none"><p  id="change15"  href="../content/apply.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
+    <center><p  id="change16"  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%">Ubuntu/CentOS</p></center>
+    <center><p id="change17"  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">适用于Web前端服务器</p></center>
+    <center><p  id="change18"  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 0%">提供安全可靠的弹性计算服务</p></center>
 </div>
 <div  id="show3" style="height: 40%;width: 100%;position: absolute;margin-top: 83%">
     <center>
@@ -234,15 +234,17 @@
     }
     if(1263<width<=1349){
         var a=document.getElementById('show1');
-        a.style="height: 40%;width: 100%;position: absolute;margin-top: 29%"
+        a.style="height: 40%;width: 100%;position: absolute;margin-top: 22%";
         var a=document.getElementById('detail');
-        a.style="width: 46%;height: 40%;margin-top: 47%;margin-left: 27%;position: absolute"
+        a.style="width: 46%;height: 49%;margin-top: 43%;margin-left: 27%;position: absolute";
+        var a=document.getElementById('detail-div');
+        a.style="height: 94%;margin-top:-1%";
         var a=document.getElementById('show2');
-        a.style="height: 40%;width: 100%;background-color: #9164b3;position: absolute;margin-top: 70%"
+        a.style="height: 40%;width: 100%;background-color: #9164b3;position: absolute;margin-top: 70%";
         var a=document.getElementById('show3');
-        a.style="height: 40%;width: 100%;position: absolute;margin-top: 99%"
+        a.style="height: 40%;width: 100%;position: absolute;margin-top: 93%";
         var a=document.getElementById('show4');
-        a.style="width: 46%;height: 40%;margin-top: 119%;margin-left: 27%;position: absolute"
+        a.style="width: 46%;height: 49%;margin-top: 114%;margin-left: 27%;position: absolute";
         document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
         document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
@@ -251,27 +253,48 @@
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change9').style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%"
+        document.getElementById('change10').style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px"
+        document.getElementById('change11').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%"
+        document.getElementById('change12').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change13').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change14').style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%"
+        document.getElementById('change15').style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px"
+        document.getElementById('change16').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%"
+        document.getElementById('change17').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change18').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
     }
     if(width==1263){
-        var a=document.getElementById('go1');
-        a.style="height: 90%;width: 88%;border: 1px solid silver;margin-top:-4%"
-        $("#bigfont1").css('margin-top','40%');
-        $("#bigfont2").css('margin-top','40%');
-        $("#bigfont3").css('margin-top','40%');
-        $("#move1").css('font-size','large');
-        $("#move1").css('margin-left','6%');
-        $("#move2").css('font-size','large');
-        $("#move2").css('margin-left','6%');
-        $("#move3").css('font-size','large');
-        $("#move3").css('margin-left','6%');
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: small;margin-top:2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: msmall"
+        var a=document.getElementById('show1');
+        a.style="height: 40%;width: 100%;position: absolute;margin-top: 22%";
+        var a=document.getElementById('detail');
+        a.style="width: 46%;height: 49%;margin-top: 43%;margin-left: 27%;position: absolute";
+        var a=document.getElementById('detail-div');
+        a.style="height: 94%;margin-top:-1%";
+        var a=document.getElementById('show2');
+        a.style="height: 40%;width: 100%;background-color: #9164b3;position: absolute;margin-top: 70%";
+        var a=document.getElementById('show3');
+        a.style="height: 40%;width: 100%;position: absolute;margin-top: 93%";
+        var a=document.getElementById('show4');
+        a.style="width: 46%;height: 49%;margin-top: 114%;margin-left: 27%;position: absolute";
+        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
+        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change9').style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%"
+        document.getElementById('change10').style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px"
+        document.getElementById('change11').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%"
+        document.getElementById('change12').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change13').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change14').style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 2%"
+        document.getElementById('change15').style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px"
+        document.getElementById('change16').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%"
+        document.getElementById('change17').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
+        document.getElementById('change18').style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%"
     }
 </script>
 </body>
