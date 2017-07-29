@@ -10,7 +10,7 @@
     <script src="./js/swiper-3.4.0.min.js"></script>
     <script src="./js/jquery-3.1.0.min.js"></script>
 </head>
-<body id="all" style="border: 0px;background-color: #f6f6f6;">
+<body id="all" style="border: 0px;background-color: #f6f6f6">
 <div id="desk" style="border: 0px;position: absolute;height: 100%;width: 100%">
     <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
         <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
@@ -61,7 +61,7 @@
     </div>
     <div  style=";margin-top:0%;height: 100%;width: 100%;position: absolute">
         <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%;">推荐服务</p></center>
-        <center><table id="go1" class="table" style="height: 100%;width: 28%;border: 1px solid silver">
+        <center><table id="go1-d" class="table" style="height: 100%;width: 28%;border: 1px solid silver">
                 <thead>
             <tr>
                     <th>产品名称</th>
@@ -178,6 +178,249 @@
         </div>
     </div>
 </div>
+<div id="canvas" onclick="
+//this.style='border: 0px;position: absolute;height: 100%;width: 100%;opacity: 0.5;background-color: silver;z-index: 999;display: none'
+   var a=document.getElementById('tips-m');
+        a.style='width: 100%;height:6%;background-color:  #00c1de;'
+
+
+" style="border: 0px;position: absolute;height: 100%;width: 100%;opacity: 0.5;background-color: silver;z-index: 999;display: none">
+    <div style="margin-top: 20%;height: 50%;width: 50%;background-color: #00b38a">
+
+    </div>
+</div>
+<div id="mobile" style="border: 0px;position: absolute;height: 100%;width: 100%;display: none;">
+    <div id="tips-m" style="width: 100%;height:6%;background-color: #00c1de;">
+        <!--<div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>-->
+        <!--<div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>-->
+        <!--<div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>-->
+        <!--<div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>-->
+        <!--<div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>-->
+        <!--<div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>-->
+        <div style="margin-top: 2%;margin-left: 65%;height: 100%;width: 10%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/login.html" style="text-decoration: none;color: white"><p id="change7-m" style="font-family: 'Microsoft YaHei UI';font-size: medium;">登录</p></a></div>
+        <div style="margin-top: 2%;margin-left: 1%;height: 100%;width:10%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/register.html" style="text-decoration: none;color: white"><p  id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium;">注册</p></a></div>
+        <span onclick="
+        $('#no').css('visibility','hidden');
+        var a=document.getElementById('canvas');
+        a.style='border: 0px;position: absolute;height: 100%;width: 100%;opacity:0.9;background-color: black;z-index: 999;'
+        var a=document.getElementById('mobile');
+        a.style='border: 0px;position: absolute;height: 100%;width: 100%;overflow-y: hidden'
+         var a=document.getElementById('tips-m');
+        a.style='width: 100%;height:6%;background-color: black;'
+" style="color: white;margin-top: 2%" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </div>
+    <div id="no" style="margin-top:0%;height: 70%;width: 100%;">
+        <div class="swiper-container" style="height: 100%;width: 100%">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background: url('./image/forweb/alexandre-chambon-157648.jpg');background-size: 100% 100%;opacity: 0.9">
+                    <center><p style="opacity: 1.0;margin-top: 13%;color: #7dd5c9;font-family: 'Microsoft YaHei UI';font-size: 30px;">虚拟主机（网页托管）</p></center>
+                    <center><p style="margin-top: 10%;color: white;font-family: 'Microsoft YaHei UI';font-size: 20px;">&nbsp免费&nbsp/&nbsp校内宣传&nbsp/&nbsp上线测试&nbsp/&nbsp作品展示&nbsp</p></center>
+                    <br><br><br><br><br><br><br>
+                    <center><a href="./content/apply.html" style="margin-top: 5%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 15px">申请使用</a></center>
+                </div>
+                <div class="swiper-slide" style="background: url('./image/forweb/jonas-verstuyft-183635.jpg');background-size: 100% 100%;opacity: 0.9">
+                    <center><p style="opacity: 1.0;margin-top: 13%;color: #7dd5c9;font-family: 'Microsoft YaHei UI';font-size: 30px;">VPS（虚拟服务器）</p></center>
+                    <center><p style="margin-top: 10%;color: white;font-family: 'Microsoft YaHei UI';font-size: 20px;">&nbspLinux&nbsp/&nbsp运维&nbsp/&nbsp了解开源&nbsp/&nbsp学习使用&nbsp</p></center>
+                    <br><br><br><br><br><br><br>
+                    <center><a href="./content/apply.html" style="margin-top: 15%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 15px">申请使用</a></center>
+                </div>
+                <div class="swiper-slide" style="background: url('./image/forweb/paul-volkmer-143617.jpg');background-size: 100% 100%;opacity: 0.9">
+                    <center><p style="opacity: 1.0;margin-top: 13%;color: #7dd5c9;font-family: 'Microsoft YaHei UI';font-size: 30px;">云数据库（Mysql）</p></center>
+                    <center><p style="margin-top: 10%;color: white;font-family: 'Microsoft YaHei UI';font-size: 20px;">&nbsp软件开发&nbsp/&nbsp收集数据&nbsp/&nbspAPP上线&nbsp/&nbsp熟悉SQL&nbsp</p></center>
+                    <br><br><br><br><br><br><br>
+                    <center><a href="./content/apply.html" style="margin-top: 55%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 15px">申请使用</a></center>
+                </div>               </div>
+        </div>
+    </div>
+    <div  style="background-color: silver;margin-top:0%;height: 20%;width: 100%;">
+        <div style="display: inline-block;width: 25%;height: 100%;margin-left:10%">
+            <img style="margin-left: 1%;margin-top: 2%;position: absolute;width: 64px;height: 64px" src="./image/icon/coin_1540px_1201453_easyicon.net.png">
+            <p  id="move1" style="color: white;font-family: 'Microsoft YaHei UI';font-size: 15px;position: absolute;margin-top: 20%;margin-left: -4%">无需支付费用</p>
+        </div>
+        <div  style="display: inline-block;width: 25%;height: 100%;margin-left:5%;">
+            <img style="margin-left: 1%;margin-top: 2%;position: absolute;width: 64px;height: 64px" src="./image/icon/24_hours_24H_1540px_1201439_easyicon.net.png">
+            <p id="move2" style="color: white;font-family: 'Microsoft YaHei UI';font-size: 15px;position: absolute;margin-top: 20%;margin-left: -4%">24小时提供服务</p>
+        </div>
+        <div style="display: inline-block;width: 25%;height: 100%;margin-left: 5%">
+            <img style="margin-left: 1%;margin-top: 2%;position: absolute;width: 64px;height: 64px" src="./image/icon/telemarketer_1438px_1201483_easyicon.net.png">
+            <p id="move3"  style="color: white;font-family: 'Microsoft YaHei UI';font-size: 15px;position: absolute;margin-top: 20%;margin-left: -4%">随时随地帮助</p>
+        </div>
+    </div>
+    <div  style=";margin-top:0%;height: 100%;width: 100%;position: absolute">
+        <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;margin-top: 3%;">推荐服务</p></center>
+        <center><table id="go1" class="table" style="height: 100%;width: 4%;border: 1px solid silver">
+                <thead>
+            <tr>
+                    <th>产品名称</th>
+                    <th>虚拟主机</th>
+                          <th>VPS（虚拟服务器）</th>
+              
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td>操作系统</td>
+                    <td>CentOS&nbsp/&nbspUbuntu</td>
+                          <td>CentOS&nbsp/&nbspUbuntu</td>
+                </tr>
+            <tr>
+                    <td>存储空间</td>
+                    <td>500MB</td>
+            <td>5GB</td>
+                </tr>
+        <tr>
+                    <td>CPU</td>
+                    <td>单核E3CPU</td>
+            <td>双核E3CPU</td>
+
+                </tr>
+        <tr>
+                    <td>内存</td>
+                    <td>500MB内存</td>
+            <td>1GB内存</td>
+
+                </tr>
+            <tr>
+                    <td>IP地址</td>
+                    <td>共享iP</td>
+             <td>共享iP</td>
+                </tr>
+         <tr>
+                    <td>带宽</td>
+                    <td>1Mbps</td>
+                         <td>1Mbps</td>               
+
+
+                </tr>
+        <tr>
+                    <td>支持服务</td>
+                    <td>Apache</td>
+                            <td>用户安装</td>
+
+                </tr>
+        <tr>
+                    <td>数据库类型</td>
+                    <td>Mysql</td>
+                            <td>Mysql&nbsp/&nbspSQLite&nbsp/&nbspmongoDB</td>
+                </tr>
+        <tr>
+                    <td>支持语言</td>
+                    <td>PHP</td>
+                            <td>PHP&nbsp/&nbspPython&nbsp/&nbspPerl</td>
+
+                </tr>
+        <tr>
+                    <td>SSH</td>
+                    <td>不支持</td>
+                            <td>支持</td>
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <center><table id="go1" class="table" style="margin-top: -25%;height: 100%;width: 356px;border: 1px solid silver">
+                <thead>
+            <tr>
+                    <th>产品名称</th>    
+                          <th>Mysql（云数据库）</th>
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td>操作系统</td>       
+                          <td>基于Linux</td>
+                </tr>
+            <tr>
+                    <td>存储空间</td>
+
+            <td>500MB</td>
+                </tr>
+        <tr>
+                    <td>CPU</td>
+               
+                    <td>单核E3CPU</td>
+
+                </tr>
+        <tr>
+                    <td>内存</td>
+                 
+            <td>无</td>
+
+                </tr>
+            <tr>
+                    <td>IP地址</td>
+                   
+                    <td>独立iP</td>
+                </tr>
+         <tr>
+                    <td>带宽</td>
+                                         <td>无</td>
+
+
+                </tr>
+        <tr>
+                    <td>支持服务</td>
+                   
+                    <td>云数据库</td>
+
+                </tr>
+        <tr>
+                    <td>数据库类型</td>
+                   
+                    <td>Mysql</td>
+                </tr>
+        <tr>
+                    <td>支持语言</td>
+                    
+                            <td>PHP&nbsp/&nbspPython&nbsp/&nbspPerl</td>
+
+                </tr>
+        <tr>
+                    <td>SSH</td>
+                   
+                    <td>不支持</td>
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+    </div>
+    <div  style=";margin-top:320%;height: 70%;width: 100%;position: absolute">
+        <div style="width: 100%;height:20%;background-color: #00c1de;margin-top: 1%">
+            <img src="./image/icon/server_833px_1186382_easyicon.net.png" style="margin-left: 10%;margin-top: 3%;display: inline-block;height: 60px;width: 60px;border-radius: 12%">
+            <p style="font-family: 'Microsoft YaHei UI';color: white;font-size: 13px;margin-top: 10%;display: inline-block;position: absolute">
+                专注于为学生群体提供无偿、可靠的云服务。</br>
+            </p>
+        </div>
+        <center><p style="margin-top: 4%;font-family: 'Microsoft YaHei UI';font-size: 30px">为了学习和探索</p></center>
+        <div style="margin-top: 15%;margin-left: 5%;height: 70%;width: 90%;display: inline-block">
+            <img src="./image/forweb/1903054_1[1].jpg" style="position: absolute;margin-top: -10%;height: 40%;width: 70%;margin-left: 10%">
+            <center> <h1 id="bigfont1" style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 45%">专注学生</h1></center>
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;margin-top: 1%;">
+                害怕建站的前期成本太高，而加重了经济负担？这里有免费的平台提供。
+            </p>
+        </div>
+        <div style="margin-top:1%;margin-left: 5%;height: 70%;width: 90%;display: inline-block">
+            <img src="./image/forweb/wi9yf7kTQxCNeY72cCY6_Images of Jenny Lace Plasticity Publish (4 of 25).jpg" style="position: absolute;margin-top: -10%;height: 40%;width: 70%;margin-left: 10%">
+            <center><h1 id="bigfont2"   style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 45%">探索应用</h1></center>
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;margin-top: 3%">
+                个人申请拥有一台Server，使你时时刻刻追随科技的前沿。
+            </p>
+        </div>
+        <div style="margin-top: 1%;margin-left: 5%;height: 70%;width: 90%;display: inline-block">
+            <img src="./image/forweb/113537598.jpg" style="position: absolute;margin-top: -10%;height: 40%;width: 70%;margin-left: 10%">
+            <center><h1 id="bigfont3"  style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 45%">致力合作</h1></center>
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;margin-top: 3%">
+                与团队合作，共同开发属于团队自己的项目，能平滑过渡到职业岗位。</br>
+            </p>
+        </div>
+        <div style="width: 100%;height:9%;background-color: #7a74f0;margin-top: 2%">
+            <center> <p style="font-family: 'Microsoft YaHei UI';color: white;margin-top: 1%;font-size: 20px;display: inline-block;">
+                © 2017 Power by EZ. </br>
+            </p>
+            </center>
+        </div>
+    </div>
 </div>
 </body>
 <script>
@@ -194,7 +437,7 @@
         slidesPerView : 1,//'auto'
         direction: 'horizontal',
          autoplay : 5000,
-      speed:1000,
+      speed:100,
         autoplayDisableOnInteraction : false,
       // 如果需要分页器
     })
@@ -288,6 +531,20 @@
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: small"
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: small"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: msmall"
+    }
+    if(width==375){
+        $('#desk').css('display','none');
+        $('#mobile').css('display','block');
+        var mySwiper = new Swiper ('.swiper-container', {
+            freeMode : true,
+            loop:true,
+            slidesPerView : 1,//'auto'
+            direction: 'horizontal',
+            autoplay : 3000,
+            speed:1000,
+            autoplayDisableOnInteraction : false,
+            // 如果需要分页器
+        })
     }
 </script>
 </html>
