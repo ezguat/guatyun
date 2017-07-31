@@ -29,7 +29,7 @@
     <strong id="alert-content">请检查一下你的邮箱是否符合标准！</strong>
 </div>
 <div id="success" style="display: none" class="alert alert-success" role="alert">你已经注册成功！现在跳转到登录页面！</div>
-<div  style="width: 100%;height: 100%;">
+<div id="big"  style="width: 100%;height: 100%;">
     <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">用户注册</p></center>
     <div style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
          <div class="input-group">
@@ -38,7 +38,7 @@
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">用户密码</span>
-            <input id="password" placeholder="请输入密码" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input id="password" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">用户邮箱</span>
@@ -103,6 +103,110 @@ else {
         </button>
     </div>
 </div>
+<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
+    <div  style="width: 100%;height:8%;background-color: #00c1de;">
+        <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <span onclick="
+           $('#canvas').css('display','block')
+" style="color: white" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </div>
+    <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height:8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">帮助中心</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">留言反馈</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">加入我们</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
+        <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
+    </div>
+    <div style="display: none;margin: 0px" id="warning2-m" class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content2-m">请检查一下你的邮箱是否符合标准！</strong>
+    </div>
+    <div style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content-m">请检查一下你的邮箱是否符合标准！</strong>
+    </div>
+    <div id="success-m" style="display: none" class="alert alert-success" role="alert">你已经注册成功！现在跳转到登录页面！</div>
+    <div id="big-m"  style="width: 100%;height: 100%;">
+        <center><p style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 3%">用户注册</p></center>
+        <div style="height: 50%;width: 80%;margin-left: 10%;margin-top: 2%">
+            <div class="input-group">
+                <span class="input-group-addon">新用户名</span>
+                <input id="name-m" placeholder="请使用 a-z 或中午长度小于12" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group" style="margin-top: 5%">
+                <span class="input-group-addon">用户密码</span>
+                <input id="password-m" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group" style="margin-top: 5%">
+                <span class="input-group-addon">用户邮箱</span>
+                <input id="email-m" placeholder="推荐使用QQ邮箱" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group" style="margin-top: 5%">
+                <span class="input-group-addon">手机号码</span>
+                <input id="number-m" placeholder="仅支持大陆" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <button   id="myButton-m" data-loading-text="Loading..." autocomplete="off"   onclick="var time=new Date();
+         if($('#name-m').val()&&$('#password-m').val()&&$('#email-m').val()&&$('#number-m').val())
+{
+    var reg=/^[A-Za-z0-9]{6,12}$/;
+    var rule=$('#name-m').val();
+     if(!reg.test(rule)){
+ document.getElementById('alert-content2-m').innerHTML='名字不符合规定！';
+        $('#warning2-m').css('display','block');
+        setTimeout(function() {
+          $('#warning2-m').css('display','none');
+        },3000)
+     }
+     else {
+            var reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    var rule=$('#email-m').val();
+    if(!reg.test(rule)){
+      document.getElementById('alert-content2-m').innerHTML='邮箱格式不符合规定！';
+        $('#warning2-m').css('display','block');
+        setTimeout(function() {
+          $('#warning2-m').css('display','none');
+        },3000)
+        }
+        else {
+                 var reg=/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+                    var rule=$('#number-m').val();
+                    if(!reg.test(rule)){
+                    document.getElementById('alert-content2-m').innerHTML='手机号码不符合规定！';
+        $('#warning2-m').css('display','block');
+        setTimeout(function() {
+          $('#warning2-m').css('display','none');
+        },3000)
+
+              }
+              else {
+$.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time},function (data) {
+})
+                       $('#success-m').css('display','block');
+                       setTimeout(function() {
+                           window.location.href='../content/login.html';
+                       },2000);
+              }
+        }
+     }
+}
+else {
+        document.getElementById('alert-content-m').innerHTML='请注意内容有空！';
+        $('#warning-m').css('display','block');
+        setTimeout(function() {
+          $('#warning-m').css('display','none');
+        },3000)
+}" style="margin-left: 80%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">注册</p>
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
 </body>
 <script>
     var height;
@@ -147,6 +251,15 @@ else {
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+    }
+    if(width==375){
+        $('#tips').css('display','none');
+        $('#warning').css('display','none');
+        $('#warning2').css('display','none');
+        $('#success').css('display','none');
+        $('#big').css('display','none');
+        $('#mobile').css('display','block');
+
     }
 </script>
 </html>
