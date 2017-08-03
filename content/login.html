@@ -171,6 +171,28 @@
     var browser=localStorage.getItem('browser');
     var system=localStorage.getItem('system');
     var time=new Date();
+    var name=localStorage.getItem('name');
+    var passwd=localStorage.getItem('passwd');
+    if(name&&passwd){
+            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time},function(statusTxt) {
+                if(statusTxt==1){
+                    $('#done').css('display','block');
+                    setTimeout(function() {
+                        localStorage.setItem('name',$('#name').val());
+                        localStorage.setItem('passwd',$('#password').val());
+                        window.location.href='../control/user.html';
+                    },3000)
+                }
+                else {
+                    document.getElementById('alert-content').innerHTML='用户名和密码出错！';
+                    $('#warning').css('display','block');
+                    setTimeout(function() {
+                        $('#warning').css('display','none');
+                    },3000)
+                }
+            })
+             window.location.href='../control/user.html'
+    }
     $('#click').click(function () {
         if($('#name').val()&&$('#password').val())
         {
@@ -260,5 +282,6 @@
             localStorage.setItem('ipaddress', JSON.stringify(data, null, 2).split("}")[0].split(":")[1].split(',')[0]);
         });
     }
+
 </script>
 </html>
