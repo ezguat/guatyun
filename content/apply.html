@@ -24,7 +24,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <strong id="alert-content">申请失败！</strong>
 </div>
-<div id="success" style="display: none;"  class="alert alert-success" role="alert">你已经注册成功！现在跳转到登录页面！</div>
+<div id="success" style="display: none;"  class="alert alert-success" role="alert">申请成功！请等待管理员审核！</div>
 <center> <p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">申请使用</p></center>
 <center><div id="big" style="width: 30%;height: 70%;margin-top: 0%">
         <!-- Single button -->
@@ -42,7 +42,7 @@
                     <input id="choice" disabled="true" placeholder=""  class="form-control">
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->        <input id="advice" style="width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div><!-- /.row -->        <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
 </center>
 <button id="click" onclick="var time=new Date();$.get('../php/user.php',{apply:1,advice:$('#advice').val(),service:$('#choice').val(),asktime:time,username:localStorage.getItem('name')},function(data) {
@@ -51,6 +51,12 @@
               $('#success').css('display','block');
         setTimeout(function() {
           $('#success').css('display','none');
+        },3000)
+           }
+             else {
+               $('#warning').css('display','block');
+        setTimeout(function() {
+          $('#warning').css('display','none');
         },3000)
            }
 })" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
@@ -66,9 +72,9 @@
     </div>
     <div style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong id="alert-content">申请失败！</strong>
+        <strong id="alert-content-m">申请失败！</strong>
     </div>
-    <div id="success-m" style="display: none;"  class="alert alert-success" role="alert">你已经注册成功！现在跳转到登录页面！</div>
+    <div id="success-m" style="display: none;"  class="alert alert-success" role="alert">申请成功！请等待管理员审核！</div>
     <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
@@ -96,7 +102,7 @@
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
-        <input id="advice-m" style="margin-left: 0%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <textarea id="advice-m" style="resize: none;margin-left: 0%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
     <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{apply:1,advice:$('#advice-m').val(),service:$('#choice-m').val(),asktime:time,username:localStorage.getItem('name')},function(data) {
         if(!data)
