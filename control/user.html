@@ -106,8 +106,38 @@
                 </div><!-- /.row -->
             </div>
             <div style="width: 100%;height: 90%;margin-top: 20%">
-                <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
-        </div>
+                <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong>
+                <div class="rowhost" style="display: none;margin-top: 2%;position: absolute;width: 40%">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    虚拟主机
+                            </span>
+                            <input id="service-host" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="rowvps" style="display: none;margin-top: 5%;position: absolute;width: 40%">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    云Mysql
+                            </span>
+                            <input id="service-sql" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="rowsql" style="display: none;margin-top: 8%;position: absolute;width: 40%">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    VPS
+                            </span>
+                            <input id="service-vps" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div>
         </div>
     </div>
     <div id="service" style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
@@ -365,8 +395,38 @@
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
                 </div>
-                <div style="width: 100%;height: 90%;margin-top: 80%">
+                <div style="width: 100%;height: 90%;margin-top: 70%">
                     <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice-m" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
+                    <div class="rowhost" style="display: none;margin-top: 5%;position: absolute;width: 90%">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                    虚拟主机
+                            </span>
+                                <input id="service-hostm" disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <div class="rowvps" style="display: none;margin-top: 18%;position: absolute;width: 90%">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                    云Mysql
+                            </span>
+                                <input id="service-sqlm" disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <div class="rowsql" style="display: none;margin-top: 31%;position: absolute;width: 90%">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                    VPS
+                            </span>
+                                <input id="service-vpsm" disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
                 </div>
             </div>
         </div>
@@ -533,7 +593,7 @@
         document.getElementById('detail').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
-        document.getElementById('change').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askdetail:1,username:name},function (data) {
             detail(data);
         })
@@ -542,7 +602,7 @@
         document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
-        document.getElementById('change').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askservice:1,username:name},function (data) {
                     service(data);
     });
@@ -551,7 +611,7 @@
         document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
-        document.getElementById('change').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
     };
     document.getElementById('cg').onclick=function () {
         document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -574,9 +634,19 @@ function detail(data) {
     $('#changemail').val(data.split('/')[2]);
     $('#changemajor').val(data.split('/')[4]);
     $('#job').val(data.split('/')[4]);
-    var go=4;
-    while(data.split('/')[go]){
-            document.getElementById('doneservice').innerHTML=data.split('/')[go++];
+    if(data.split('->')[0].split('/')[5].split(':')[0]=='虚拟主机'){
+                 $('.rowhost').css('display','block');
+        document.getElementById('service-host').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
+        $('#service-host').val('端口号'+data.split('->')[0].split('/')[5].split(':')[1]+':'+data.split('->')[0].split('/')[5].split(':')[2]);
+    }
+    if(data.split('->')[1].split(':')[0]=='vps'){
+        $('.rowvps').css('display','block');
+        $('#service-vps').val('账号：'+data.split('->')[1].split('/')[0].split(':')[1]+'    '+'密码：'+data.split('->')[1].split('/')[0].split(':')[2]);
+    }
+    if(data.split('->')[2].split(':')[0]=='云mysql'){
+        $('.rowsql').css('display','block');
+        $('#service-sql').val('账号：'+data.split('->')[2].split('/')[0].split(':')[1]+'    '+'密码：'+data.split('->')[2].split('/')[0].split(':')[2]);
+
     }
 }
 function service(data) {
@@ -667,9 +737,19 @@ function service(data) {
             $('#retime-m').val(data.split('/')[3]);
             $('#job-m').val(data.split('/')[4]);
             $('#changemajor-m').val(data.split('/')[4]);
-            var go=4;
-            while(data.split('/')[go]){
-                document.getElementById('doneservice-m').innerHTML=data.split('/')[go++];
+            if(data.split('->')[0].split('/')[5].split(':')[0]=='虚拟主机'){
+                $('.rowhost').css('display','block');
+                document.getElementById('service-host').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
+                $('#service-hostm').val('端口号'+data.split('->')[0].split('/')[5].split(':')[1]+':'+data.split('->')[0].split('/')[5].split(':')[2]);
+            }
+            if(data.split('->')[1].split(':')[0]=='vps'){
+                $('.rowvps').css('display','block');
+                $('#service-vpsm').val('账号：'+data.split('->')[1].split('/')[0].split(':')[1]+'    '+'密码：'+data.split('->')[1].split('/')[0].split(':')[2]);
+            }
+            if(data.split('->')[2].split(':')[0]=='云mysql'){
+                $('.rowsql').css('display','block');
+                $('#service-sqlm').val('账号：'+data.split('->')[2].split('/')[0].split(':')[1]+'    '+'密码：'+data.split('->')[2].split('/')[0].split(':')[2]);
+
             }
         }
         function service(data) {
