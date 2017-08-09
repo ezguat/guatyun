@@ -295,16 +295,16 @@
 </div>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%;">
     <div  style="width: 100%;height:8%;background-color: #00c1de;">
-        <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 25%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div style="margin-top:3%;margin-left: 65%;height: 100%;width: 25%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
         <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show-m" style="margin-left: -3%;height: 100%;width: 15%;display: inline-block"><a onclick="
+        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: inline-block"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
         <span onclick="
            $('#canvas').css('display','block')
-" style="color: white;margin-left: -5%" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+" style="color: white;margin-left: 65%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
     <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
@@ -328,7 +328,7 @@
                 <button   id="cf-m"  onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">修改资料</button>
             </center>
         </div>
-        <div id="detail-m"  style="width: 100%;height: 90%;position: absolute;margin-top: 10%" class="panel panel-default">
+        <div id="detail-m"  style="width: 105%;height: 10%;position: absolute;margin-top: 10%" class="panel panel-default">
             <div class="panel-body">
                 个人资料
             </div>
@@ -370,7 +370,7 @@
                             <span class="input-group-addon">
                                     专业名称
                             </span>
-                                <input id="major-m" type="text" class="form-control" aria-label="...">
+                                <input id="major-m" disabled="true" type="text" class="form-control" aria-label="...">
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
@@ -390,14 +390,14 @@
                             <span class="input-group-addon">
                                     个人职业
                             </span>
-                                <input id="job-m"  type="text" class="form-control" aria-label="...">
+                                <input id="job-m"  disabled="true" type="text" class="form-control" aria-label="...">
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
                 </div>
                 <div style="width: 100%;height: 90%;margin-top: 70%">
                     <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice-m" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
-                    <div class="rowhost" style="display: none;margin-top: 5%;position: absolute;width: 100%">
+                    <div class="rowhostm" style="display: none;margin-top: 5%;position: absolute;width: 90%">
                         <div class="col-lg-6">
                             <div class="input-group" >
                             <span class="input-group-addon">
@@ -407,23 +407,25 @@
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
-                    <div class="rowsql" style="display: none;margin-top: 31%;position: absolute;width: 100%">
+                    <p id="sql_ip" style="font-family: 'Microsoft YaHei UI';position: absolute;margin-top: 17%;margin-left: 5%;font-size: large"></p>
+                    <div class="rowsqlm" style="display: none;margin-top: 24%;position: absolute;width: 90%;">
                         <div class="col-lg-6">
-                            <div class="input-group" >
+                            <div class="input-group">
                             <span class="input-group-addon">
                                     云Mysql
                             </span>
-                                <input id="service-vpsm" disabled="true" type="text" class="form-control" aria-label="...">
+                                <input id="service-sqlm" disabled="true" type="text" class="form-control" aria-label="...">
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
-                    <div class="rowvps" style="display: none;margin-top: 18%;position: absolute;width: 100%">
+                    <p id="vps_ip" style="font-family: 'Microsoft YaHei UI';position: absolute;margin-top: 36%;margin-left: 5%;font-size: large"></p>
+                    <div class="rowvpsm" style="display:none;margin-top: 43%;position: absolute;width: 90%;">
                         <div class="col-lg-6">
                             <div class="input-group" >
                             <span class="input-group-addon">
                                     VPS
                             </span>
-                                <input id="service-sqlm" disabled="true" type="text" class="form-control" aria-label="...">
+                                <input id="service-vpsm" disabled="true" type="text" class="form-control" aria-label="...">
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
@@ -777,12 +779,14 @@ function service(data) {
             if(data.split('->')[0].split('/')[5].split(':')[0]=='vps'){
                 $('.rowvpsm').css('display','block');
                 document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-vpsm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[1]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[2]);
+                $('#service-vpsm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
+                document.getElementById('vps_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]
             }
             if(data.split('->')[0].split('/')[5].split(':')[0]=='云mysql'){
                 $('.rowsqlm').css('display','block');
                 document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-sqlm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[1]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[2]);
+                $('#service-sqlm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
+                document.getElementById('sql_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]
             }
             if(data.split('->')[1].split(':')[0]=='虚拟主机'){
                 $('.rowhostm').css('display','block');
@@ -792,13 +796,15 @@ function service(data) {
             if(data.split('->')[1].split(':')[0]=='vps'){
                 $('.rowvpsm').css('display','block');
                 document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-vpsm').val('账号：'+data.split('->')[1].split(':')[1]+'    '+'密码：'+data.split('->')[1].split(':')[2]);
-            }
+                $('#service-vpsm').val('账号：'+data.split('->')[1].split(':')[2]+'    '+'密码：'+data.split('->')[1].split(':')[3]);
+                document.getElementById('vps_ip').innerHTML='iP地址：'+data.split('->')[1].split(':')[1]
 
+            }
             if(data.split('->')[1].split(':')[0]=='云mysql'){
                 $('.rowsqlm').css('display','block');
                 document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-sqlm').val('账号：'+data.split('->')[1].split(':')[1]+'    '+'密码：'+data.split('->')[1].split(':')[2]);
+                $('#service-sqlm').val('账号：'+data.split('->')[1].split(':')[2]+'    '+'密码：'+data.split('->')[1].split(':')[3]);
+                document.getElementById('sql_ip').innerHTML='iP地址：'+data.split('->')[1].split(':')[1]
             }
             if(data.split('->')[2].split(':')[0]=='虚拟主机'){
                 $('.rowhostm').css('display','block');
@@ -808,14 +814,17 @@ function service(data) {
             if(data.split('->')[2].split(':')[0]=='vps'){
                 $('.rowvpsm').css('display','block');
                 document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-vpsm').val('账号：'+data.split('->')[2].split(':')[1]+'    '+'密码：'+data.split('->')[2].split(':')[2]);
+                $('#service-vpsm').val('账号：'+data.split('->')[2].split(':')[2]+'    '+'密码：'+data.split('->')[2].split(':')[3]);
+                document.getElementById('vps_ip').innerHTML='iP地址：'+data.split('->')[2].split(':')[1]
             }
-
             if(data.split('->')[2].split(':')[0]=='云mysql'){
                 $('.rowsqlm').css('display','block');
                 document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-sqlm').val('账号：'+data.split('->')[2].split(':')[1]+'    '+'密码：'+data.split('->')[2].split(':')[2]);
+                $('#service-sqlm').val('账号：'+data.split('->')[2].split(':')[2]+'    '+'密码：'+data.split('->')[2].split(':')[3]);
+                document.getElementById('sql_ip').innerHTML='iP地址：'+data.split('->')[2].split(':')[1]
+
             }
+
         }
         function service(data) {
             for($one=1,$two=0;data.split('/')[$two];$one++){
