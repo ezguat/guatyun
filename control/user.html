@@ -104,6 +104,26 @@
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 10%;margin-left: -1%;">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                上次登录iP
+                            </span>
+                            <input id="loginip" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 80%;margin-top: 10%;margin-left: 20%;">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    登录终端以及浏览器
+                            </span>
+                            <input id="terminal" disabled="true" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
             </div>
             <div style="width: 100%;height: 90%;margin-top: 20%">
                 <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong>
@@ -406,8 +426,38 @@
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
+                    <div class="row" style="position: absolute;width: 80%;margin-top: 62%;">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                    登陆iP
+                            </span>
+                                <input id="loginipm"  disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <div class="row" style="position: absolute;width: 80%;margin-top: 72%;">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                       登录系统
+                            </span>
+                                <input id="terminalm"  disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <div class="row" style="position: absolute;width: 80%;margin-top: 82%;">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                      浏览器
+                            </span>
+                                <input id="browserm"  disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
                 </div>
-                <div style="width: 100%;height: 90%;margin-top: 70%">
+                <div style="width: 100%;height: 90%;margin-top: 100%">
                     <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice-m" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
                     <div class="rowhostm" style="display: none;margin-top: 5%;position: absolute;width: 90%">
                         <div class="col-lg-6">
@@ -431,7 +481,7 @@
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
                     <p id="vps_ip" style="font-family: 'Microsoft YaHei UI';position: absolute;margin-top: 36%;margin-left: 5%;font-size: large"></p>
-                    <div class="rowvpsm" style="display:none;margin-top: 43%;position: absolute;width: 90%;">
+                    <div class="rowvpsm" style="display: none;margin-top: 43%;position: absolute;width: 90%;">
                         <div class="col-lg-6">
                             <div class="input-group" >
                             <span class="input-group-addon">
@@ -624,6 +674,10 @@
         $.get('../php/user.php',{askdetail:1,username:name},function (data) {
             detail(data);
         })
+        $.get('../php/user.php',{asklog:1,username:name},function (data) {
+            $('#loginip').val(data.split('=>')[0]);
+            $('#terminal').val("系统："+data.split('=>')[2]+"   "+"浏览器："+data.split('=>')[3]);
+        })
     };
     document.getElementById('se').onclick=function () {
         document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -649,7 +703,11 @@
     var name=localStorage.getItem('name');
     var passwd=localStorage.getItem('passwd');
     $.get('../php/user.php',{askdetail:1,username:name},function (data) {
-                    detail(data);
+        detail(data);
+    })
+    $.get('../php/user.php',{asklog:1,username:name},function (data) {
+        $('#loginip').val(data.split('=>')[0]);
+        $('#terminal').val("系统："+data.split('=>')[2]+"   "+"浏览器："+data.split('=>')[3]);
     })
 function detail(data) {
         var go=localStorage.getItem('name');
@@ -768,6 +826,11 @@ function service(data) {
             $.get('../php/user.php',{askdetail:1,username:name},function (data) {
                 detail(data);
             })
+            $.get('../php/user.php',{asklog:1,username:name},function (data) {
+                $('#loginipm').val(data.split('=>')[0]);
+                $('#terminalm').val(data.split('=>')[2]);
+                $('#browserm').val(data.split('=>')[3]);
+            })
         };
         document.getElementById('se-m').onclick=function () {
             $('#service-m').css('display','block');
@@ -786,6 +849,11 @@ function service(data) {
         var passwd=localStorage.getItem('passwd');
         $.get('../php/user.php',{askdetail:1,username:name},function (data) {
             detailm(data);
+        })
+        $.get('../php/user.php',{asklog:1,username:name},function (data) {
+            $('#loginipm').val(data.split('=>')[0]);
+            $('#terminalm').val(data.split('=>')[2]);
+            $('#browserm').val(data.split('=>')[3]);
         })
         function detailm(data) {
             var go=localStorage.getItem('name');
