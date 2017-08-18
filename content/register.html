@@ -82,7 +82,7 @@
 
               }
               else {
-$.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val(),retime:time},function (data) {
+$.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val(),retime:time.toLocaleString()},function (data) {
 })
                        $('#success').css('display','block');
                        setTimeout(function() {
@@ -182,7 +182,7 @@ else {
 
               }
               else {
-$.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time},function (data) {
+$.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time.toLocaleString()},function (data) {
 })
                        $('#success-m').css('display','block');
                        setTimeout(function() {

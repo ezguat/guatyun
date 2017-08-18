@@ -137,7 +137,7 @@
         $('#click-m').click(function () {
             if($('#name-m').val()&&$('#password-m').val())
             {
-                $.get('../php/login.php',{name:$('#name-m').val(),password:$('#password-m').val(),ip:ipaddress,browser:browser,sys:system,logtime:time},function(statusTxt) {
+                $.get('../php/login.php',{name:$('#name-m').val(),password:$('#password-m').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
                     if(statusTxt==1){
                         $('#done-m').css('display','block');
                         setTimeout(function() {
@@ -174,7 +174,7 @@
     var name=localStorage.getItem('name');
     var passwd=localStorage.getItem('passwd');
     if(name&&passwd){
-            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time},function(statusTxt) {
+            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
                 if(statusTxt==1){
                     $('#done').css('display','block');
                     setTimeout(function() {
@@ -196,7 +196,7 @@
     $('#click').click(function () {
         if($('#name').val()&&$('#password').val())
         {
-            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time},function(statusTxt) {
+            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
                 if(statusTxt==1){
                     $('#done').css('display','block');
                     setTimeout(function() {

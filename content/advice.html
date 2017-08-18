@@ -33,7 +33,7 @@
     <button onclick="
     if($('#advice').val()){
            var address=localStorage.getItem('ipaddress');
-    $.get('../php/advice.php',{advice:$('#advice').val(),time:time,ip:address},function() {
+    $.get('../php/advice.php',{advice:$('#advice').val(),time:time.toLocaleString(),ip:address},function() {
                     $('#done').css('display','block');
                     setTimeout(function() {
                         $('#done').css('display','none');
@@ -81,7 +81,7 @@
         <button onclick="
     if($('#advice-m').val()){
            var address=localStorage.getItem('ipaddress');
-    $.get('../php/advice.php',{advice:$('#advice').val(),time:time,ip:address},function() {
+    $.get('../php/advice.php',{advice:$('#advice').val(),time:time.toLocaleString(),ip:address},function() {
                     $('#done-m').css('display','block');
                     setTimeout(function() {
                         $('#done-m').css('display','none');

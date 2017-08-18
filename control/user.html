@@ -124,6 +124,16 @@
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 10%;margin-left: 60%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                                    登录时间
+                            </span>
+                            <input disabled="true" id="logintime" type="text" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
             </div>
             <div style="width: 100%;height: 90%;margin-top: 20%">
                 <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong>
@@ -352,7 +362,7 @@
         <strong id="alert-content2-m">请联系管理员！</strong>
     </div>
     <div id="success-m" style="display: none" class="alert alert-success" role="alert">你已经修改成功！</div>
-    <div tyle="height: 90%;width: 100%;background-color: white;position: absolute">
+    <div style="height: 90%;width: 100%;background-color: white;position: absolute">
         <center><p style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 1%">个人面板</p></center>
         <div style="height: 4%;width: 100%;position: absolute;">
             <center><button  id="de-m"   onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
@@ -456,8 +466,18 @@
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
+                    <div class="row" style="position: absolute;width: 80%;margin-top: 92%;">
+                        <div class="col-lg-6">
+                            <div class="input-group" >
+                            <span class="input-group-addon">
+                                      登录时间
+                            </span>
+                                <input id="logintimem"  disabled="true" type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
                 </div>
-                <div style="width: 100%;height: 90%;margin-top: 100%">
+                <div style="width: 100%;height: 90%;margin-top: 110%">
                     <strong style="font-family: 'Microsoft YaHei UI';font-size: 20px">拥有的服务：</strong><p id="doneservice-m" style="display: inline-block;margin-left: 1%;font-family: 'Microsoft YaHei UI';font-size: large"></p>
                     <div class="rowhostm" style="display: none;margin-top: 5%;position: absolute;width: 90%">
                         <div class="col-lg-6">
@@ -667,7 +687,7 @@
     document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
     document.getElementById('link').href='../control/user.html';
     document.getElementById('de').onclick=function () {
-        document.getElementById('detail').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -680,7 +700,7 @@
         })
     };
     document.getElementById('se').onclick=function () {
-        document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -689,13 +709,13 @@
     });
     };
     document.getElementById('up').onclick=function () {
-        document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
     };
     document.getElementById('cg').onclick=function () {
-        document.getElementById('detail').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
@@ -708,6 +728,7 @@
     $.get('../php/user.php',{asklog:1,username:name},function (data) {
         $('#loginip').val(data.split('=>')[0]);
         $('#terminal').val("系统："+data.split('=>')[2]+"   "+"浏览器："+data.split('=>')[3]);
+        $('#logintime').val(data.split('=>')[1]);
     })
 function detail(data) {
         var go=localStorage.getItem('name');
@@ -830,6 +851,7 @@ function service(data) {
                 $('#loginipm').val(data.split('=>')[0]);
                 $('#terminalm').val(data.split('=>')[2]);
                 $('#browserm').val(data.split('=>')[3]);
+                $('#logintimem').val(data.split('=>')[1]);
             })
         };
         document.getElementById('se-m').onclick=function () {
@@ -854,6 +876,7 @@ function service(data) {
             $('#loginipm').val(data.split('=>')[0]);
             $('#terminalm').val(data.split('=>')[2]);
             $('#browserm').val(data.split('=>')[3]);
+            $('#logintimem').val(data.split('=>')[1]);
         })
         function detailm(data) {
             var go=localStorage.getItem('name');
