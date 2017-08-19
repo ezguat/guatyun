@@ -151,7 +151,7 @@
                     <div class="col-lg-6">
                         <div class="input-group" >
                             <span class="input-group-addon">
-                                    云Mysql
+                                    云数据库
                             </span>
                             <input id="service-sql" disabled="true" type="text" class="form-control" aria-label="...">
                         </div><!-- /input-group -->
@@ -212,7 +212,7 @@
                            <ul class="dropdown-menu">
                                <li><a onclick="$('#choice1').val('虚拟主机');" id="vp" href="#">虚拟主机</a></li>
                                <li><a onclick="$('#choice1').val('VPS');"  id="vps" href="#">VPS</a></li>
-                               <li><a  onclick="$('#choice1').val('云Mysql');" id="mysql" href="#">云Mysql</a></li>
+                               <li><a  onclick="$('#choice1').val('云数据库');" id="mysql" href="#">云数据库</a></li>
                            </ul>
                        </div><!-- /btn-group -->
                        <input id="choice1" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
@@ -310,7 +310,8 @@
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                     <button onclick="
-                    var name=localStorage.getItem('name');
+                    if($('#changemail').val()&&$('#changemajor').val()){
+                         var name=localStorage.getItem('name');
                     $.get('../php/user.php',{changefile:1,major:$('#changemail').val(),job:$('#changemajor').val(),username:name},function(data) {
                         if(data){
                          $('#success').css('display','block');
@@ -325,6 +326,14 @@
         },3000)
                                             }
                     })
+                    }
+                    else {
+                        document.getElementById('warning2').innerHTML='内存不能为空！';
+$('#warning2').css('display','block');
+        setTimeout(function() {
+          $('#warning2').css('display','none');
+        },3000)
+                    }
                     " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
                         <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
                     </button>
@@ -370,7 +379,7 @@
                 <button   id="cf-m"  onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">修改资料</button>
             </center>
         </div>
-        <div id="detail-m"  style="width: 105%;height: 10%;position: absolute;margin-top: 10%" class="panel panel-default">
+        <div id="detail-m"  style="width: 100%;height: 150%;position: absolute;margin-top: 10%;" class="panel panel-default">
             <div class="panel-body">
                 个人资料
             </div>
@@ -416,7 +425,7 @@
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
-                    <div class="row" style="position: absolute;width: 100%;margin-top: 42%;">
+                    <div class="row" style="position: absolute;width: 80%;margin-top: 42%;">
                         <div class="col-lg-6">
                             <div class="input-group" >
                             <span class="input-group-addon">
@@ -494,7 +503,7 @@
                         <div class="col-lg-6">
                             <div class="input-group">
                             <span class="input-group-addon">
-                                    云Mysql
+                                    云数据库
                             </span>
                                 <input id="service-sqlm" disabled="true" type="text" class="form-control" aria-label="...">
                             </div><!-- /input-group -->
@@ -514,7 +523,7 @@
                 </div>
             </div>
         </div>
-        <div id="service-m" style="display: none;width: 100%;height: 140%;position: absolute;margin-top: 10%" class="panel panel-default">
+        <div id="service-m" style="display: none;width: 100%;height: 155%;position: absolute;margin-top: 10%" class="panel panel-default">
             <div class="panel-body">
                 产品服务
             </div>
@@ -558,7 +567,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a onclick="$('#choice1-m').val('虚拟主机');" id="vp-m" href="#">虚拟主机</a></li>
                                     <li><a onclick="$('#choice1-m').val('VPS');"  id="vps-m" href="#">VPS</a></li>
-                                    <li><a  onclick="$('#choice1-m').val('云Mysql');" id="mysql-m" href="#">云Mysql</a></li>
+                                    <li><a  onclick="$('#choice1-m').val('云数据库');" id="mysql-m" href="#">云数据库</a></li>
                                 </ul>
                             </div><!-- /btn-group -->
                             <input id="choice1-m" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
@@ -644,7 +653,8 @@
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
                         <button onclick="
-                    var name=localStorage.getItem('name');
+                       if($('#changemail-m').val()&&$('#changemajor-m').val()){
+                             var name=localStorage.getItem('name');
                     $.get('../php/user.php',{changefile:1,major:$('#changemail-m').val(),job:$('#changemajor-m').val(),username:name},function(data) {
                                             if(data){
                          $('#success-m').css('display','block');
@@ -659,6 +669,16 @@
         },3000)
                                             }
                     })
+                       }
+                         else {
+                        document.getElementById('warning2-m').innerHTML='内存不能为空！';
+$('#warning2-m').css('display','block');
+        setTimeout(function() {
+          $('#warning2-m').css('display','none');
+        },3000)
+                    }
+
+
                     " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 30px;width: 20%;;margin-left: 78%;margin-top: 5%" type="text"  >
                             <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
                         </button>
@@ -687,7 +707,7 @@
     document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
     document.getElementById('link').href='../control/user.html';
     document.getElementById('de').onclick=function () {
-        document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('detail').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default';
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -736,24 +756,24 @@ function detail(data) {
     $('#number').val(data.split('/')[0]);
     $('#email').val(data.split('/')[1]);
     $('#major').val(data.split('/')[2]);
-    $('#retime').val(data.split('/')[3]);
+    $('#retime').val(data.split('/')[3]+'/'+data.split('/')[4]+'/'+data.split('/')[5]);
     $('#changemail').val(data.split('/')[2]);
-    $('#changemajor').val(data.split('/')[4]);
-    $('#job').val(data.split('/')[4]);
-        if(data.split('->')[0].split('/')[5].split(':')[0]=='虚拟主机'){
+    $('#changemajor').val(data.split('/')[6]);
+    $('#job').val(data.split('/')[6]);
+        if(data.split('->')[0].split('/')[7].split(':')[0]=='虚拟主机'){
             $('.rowhost').css('display','block');
             document.getElementById('service-host').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-            $('#service-host').val('端口号'+data.split('->')[0].split('/')[5].split(':')[1]+':'+data.split('->')[0].split('/')[5].split(':')[2]);
+            $('#service-host').val('端口号'+data.split('->')[0].split('/')[7].split(':')[1]+':'+data.split('->')[0].split('/')[7].split(':')[2]);
         }
-        if(data.split('->')[0].split('/')[5].split(':')[0]=='vps'){
+        if(data.split('->')[0].split('/')[7].split(':')[0]=='vps'){
             $('.rowvps').css('display','block');
             document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-            $('#service-vps').val('iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]+'    账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
+            $('#service-vps').val('iP地址：'+data.split('->')[0].split('/')[7].split(':')[1]+'    账号：'+data.split('->')[0].split('/')[7].split(':')[2]+'    密码：'+data.split('->')[0].split('/')[7].split(':')[3]);
         }
-        if(data.split('->')[0].split('/')[5].split(':')[0]=='云mysql'){
+        if(data.split('->')[0].split('/')[7].split(':')[0]=='云mysql'){
             $('.rowsql').css('display','block');
             document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-            $('#service-sql').val('iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]+'    账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
+            $('#service-sql').val('iP地址：'+data.split('->')[0].split('/')[7].split(':')[1]+'    账号：'+data.split('->')[0].split('/')[7].split(':')[2]+'    密码：'+data.split('->')[0].split('/')[7].split(':')[3]);
         }
     if(data.split('->')[1].split(':')[0]=='虚拟主机'){
         $('.rowhost').css('display','block');
@@ -885,25 +905,25 @@ function service(data) {
             $('#email-m').val(data.split('/')[1]);
             $('#major-m').val(data.split('/')[2]);
             $('#changemail-m').val(data.split('/')[2]);
-            $('#retime-m').val(data.split('/')[3]);
-            $('#job-m').val(data.split('/')[4]);
-            $('#changemajor-m').val(data.split('/')[4]);
-            if(data.split('->')[0].split('/')[5].split(':')[0]=='虚拟主机'){
+            $('#retime-m').val(data.split('/')[3]+'/'+data.split('/')[4]+'/'+data.split('/')[5]);
+            $('#job-m').val(data.split('/')[6]);
+            $('#changemajor-m').val(data.split('/')[6]);
+            if(data.split('->')[0].split('/')[7].split(':')[0]=='虚拟主机'){
                 $('.rowhostm').css('display','block');
-                document.getElementById('service-host').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-hostm').val('端口号'+data.split('->')[0].split('/')[5].split(':')[1]+':'+data.split('->')[0].split('/')[5].split(':')[2]);
+                document.getElementById('service-host').innerHTML=data.split('->')[0].split('/')[7].split(':')[0]
+                $('#service-hostm').val('端口号'+data.split('->')[0].split('/')[7].split(':')[1]+':'+data.split('->')[0].split('/')[7].split(':')[2]);
             }
-            if(data.split('->')[0].split('/')[5].split(':')[0]=='vps'){
+            if(data.split('->')[0].split('/')[7].split(':')[0]=='vps'){
                 $('.rowvpsm').css('display','block');
-                document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-vpsm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
-                document.getElementById('vps_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]
+                document.getElementById('service-vps').innerHTML=data.split('->')[0].split('/')[7].split(':')[0]
+                $('#service-vpsm').val('账号：'+data.split('->')[0].split('/')[7].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[7].split(':')[3]);
+                document.getElementById('vps_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[7].split(':')[1]
             }
-            if(data.split('->')[0].split('/')[5].split(':')[0]=='云mysql'){
+            if(data.split('->')[0].split('/')[7].split(':')[0]=='云mysql'){
                 $('.rowsqlm').css('display','block');
-                document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[5].split(':')[0]
-                $('#service-sqlm').val('账号：'+data.split('->')[0].split('/')[5].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[5].split(':')[3]);
-                document.getElementById('sql_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[5].split(':')[1]
+                document.getElementById('service-sql').innerHTML=data.split('->')[0].split('/')[7].split(':')[0]
+                $('#service-sqlm').val('账号：'+data.split('->')[0].split('/')[7].split(':')[2]+'    '+'密码：'+data.split('->')[0].split('/')[7].split(':')[3]);
+                document.getElementById('sql_ip').innerHTML='iP地址：'+data.split('->')[0].split('/')[7].split(':')[1]
             }
             if(data.split('->')[1].split(':')[0]=='虚拟主机'){
                 $('.rowhostm').css('display','block');
