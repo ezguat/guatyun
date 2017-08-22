@@ -85,7 +85,7 @@
     <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
 </center>
-<button id="click" onclick="var time=new Date();$.get('../php/user.php',{apply2:1,advice:$('#advice').val(),service:$('#choice2').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:null,standard:$('#choice3').val(),user_os:$('#user-os').val(),passwd_os:$('#passwd-os').val()},function(data) {
+<button id="click" onclick="var time=new Date();$.get('../php/user.php',{apply2:1,advice:$('#advice').val(),service:$('#choice2').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:null,standard:$('#choice3').val(),user_os:$('#user-os').val(),passwd_os:$('#passwd-os').val(),standard:$('#choice3').val()},function(data) {
  if(!data)
             {
               $('#success').css('display','block');

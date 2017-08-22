@@ -7,12 +7,10 @@
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
-    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/jquery.min.js"></script>
 </head>
-<style>
-</style>
 <body id="all" style="border: 0px;background-color: #f6f6f6;">
-<div id="tips" style="width: 100%;height:49px;background-color: #00c1de;">
+<div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
     <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
     <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p id="change2"  style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
@@ -109,12 +107,12 @@
         <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
     </div>
     <center>
-    <ul class="nav nav-tabs">
-        <li role="presentation" ><a onclick="$('#guid').css('display','block'),$('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','none')" href="#">用户引导</a></li>
-        <li role="presentation" ><a onclick="$('#guid').css('display','none'),$('#vps').css('display','block'),$('#host').css('display','none'),$('#mysql').css('display','none')" href="#">虚拟主机</a></li>
-        <li role="presentation"><a onclick="$('#guid').css('display','none'),$('#vps').css('display','none'),$('#host').css('display','block'),$('#mysql').css('display','none')" href="#">VPS</a></li>
-        <li role="presentation"><a onclick="$('#guid').css('display','none'),$('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','block')" href="#">云数据库</a></li>
-    </ul>
+        <ul class="nav nav-tabs">
+            <li role="presentation" ><a onclick="$('#guid').css('display','block'),$('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','none')" href="#">用户引导</a></li>
+            <li role="presentation" ><a onclick="$('#guid').css('display','none'),$('#vps').css('display','block'),$('#host').css('display','none'),$('#mysql').css('display','none')" href="#">虚拟主机</a></li>
+            <li role="presentation"><a onclick="$('#guid').css('display','none'),$('#vps').css('display','none'),$('#host').css('display','block'),$('#mysql').css('display','none')" href="#">VPS</a></li>
+            <li role="presentation"><a onclick="$('#guid').css('display','none'),$('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','block')" href="#">云数据库</a></li>
+        </ul>
     </center>
     <div id="guid" style=";height: 80%;width: 100%">
         <div   style="width: 100%;height: 25%;margin-top: 0%;position: absolute;background-color: #00b38a" class="panel panel-default">
@@ -238,12 +236,12 @@
             </div>
         </div>
         <!--<div   style="width: 100%;height:25%;margin-top: 90%;position: absolute;background-color: #00b38a" class="panel panel-default">-->
-            <!--<div class="panel-body" style="background-color: #cff0f0">-->
-                <!--<p style="font-family: 'Microsoft YaHei UI';font-size: large">什么是云Mysql？</p>-->
-            <!--</div>-->
-            <!--<div style="height: 94%" class="panel-footer">-->
-                <!--<p style="text-indent:2em;font-family: 'Microsoft YaHei UI';font-size: 16px;margin-top: 1%">云数据库是指被优化或部署到一个虚拟计算环境中的数据库。可以实现按需付费、按需扩展、高可用性以及存储整合等优势。</p>-->
-            <!--</div>-->
+        <!--<div class="panel-body" style="background-color: #cff0f0">-->
+        <!--<p style="font-family: 'Microsoft YaHei UI';font-size: large">什么是云Mysql？</p>-->
+        <!--</div>-->
+        <!--<div style="height: 94%" class="panel-footer">-->
+        <!--<p style="text-indent:2em;font-family: 'Microsoft YaHei UI';font-size: 16px;margin-top: 1%">云数据库是指被优化或部署到一个虚拟计算环境中的数据库。可以实现按需付费、按需扩展、高可用性以及存储整合等优势。</p>-->
+        <!--</div>-->
         <!--</div>-->
     </div>
 </div>
@@ -257,41 +255,14 @@
     a.setAttribute('height',height);
     var b=document.getElementById("all");
     b.setAttribute('width',width);
-    var see=0;
-    if(width==1600){
-
+    var time=new Date();
+    iptracket();
+    function iptracket() {
+        $.getJSON('//ipapi.co/json/', function(data) {
+            localStorage.setItem('ipaddress', JSON.stringify(data, null, 2).split("}")[0].split(":")[1].split(',')[0]);
+        });
     }
-    if(width==1423){
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-    }
-    if(width==1383){
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-    }
-    if(width==1349){
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-    }
-    if(width==1343){
+    if(1263<width<=1349){
         document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
         document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
@@ -302,12 +273,10 @@
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
     }
     if(width==375){
-        $('#cpanel').css('display','none');
-        $('#div2').css('display','none');
-        $('#tips').css('display','none');
-        $('#p1').css('display','none');
-        $('#mobile').css('display','block');
-        $('#all').css('overflow-y','visible');
+            $("#tips").css('display','none');
+        $("#cpanel").css('display','none');
+        $("#2").css('display','none');
+        $("#mobile").css('display','block');
     }
 </script>
 </html>
