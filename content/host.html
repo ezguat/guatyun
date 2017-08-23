@@ -60,7 +60,7 @@
     <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
 </center>
-<button id="click" onclick="var time=new Date();$.get('../php/user.php',{apply:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),service:'虚拟主机',osask:$('#choice2').val(),standard:$('#choice3').val()},function(data) {
+<button id="click" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val(),standard:$('#choice3').val()},function(data) {
  if(!data)
             {
               $('#success').css('display','block');
@@ -133,7 +133,7 @@
         </div><!-- /.row -->
         <textarea id="advice-m" style="resize: none;margin-left: 3%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
-    <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{apply:1,advice:$('#advice-m').val(),asktime:time,username:localStorage.getItem('name'),service:'虚拟主机',askos:$('#choice2-m').val()},function(data) {
+    <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time,username:localStorage.getItem('name'),askos:$('#choice2-m').val()},function(data) {
         if(!data)
             {
               $('#success-m').css('display','block');
