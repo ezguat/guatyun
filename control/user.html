@@ -265,8 +265,9 @@
            </div><!-- /.row -->
            <textarea id="advice" style="resize: none;margin-left: 10%;width: 80%;height: 200px;margin-top: 50px;" placeholder="请详细写出反馈" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
            <button id="click" onclick="
+           var time=new Date();
               var name=localStorage.getItem('name');
-           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val()},function(data) {
+           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val(),asktime:time.toString()},function(data) {
                                 if(!data){
                                      document.getElementById('success').innerHTML='工单提交成功！请等待管理人员处理！';
         $('#success').css('display','block');
