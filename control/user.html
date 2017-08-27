@@ -827,6 +827,8 @@ function service(data) {
             document.getElementById('name'+$one).innerHTML=data.split('/')[$two++];
             document.getElementById('asktime'+$one).innerHTML=data.split('/')[$two++]+'/'+data.split('/')[$two++]+'/'+data.split('/')[$two++];
             document.getElementById('status'+$one).innerHTML=data.split('/')[$two++];
+            document.getElementById('os'+$one).innerHTML=data.split('/')[$two++];
+            document.getElementById('config'+$one).innerHTML=data.split('/')[$two++];
         }
 }
     if(width==1440){
@@ -893,7 +895,7 @@ function service(data) {
             $('#service-m').css('display','block');
             $('#detail-m').css('display','none');
             $('#changefile-m').css('display','none');
-            $.get('../php/user.php',{askservice:1,username:name},function (data) {
+            $.get('../php/user.php',{askservice_m:1,username:name},function (data) {
                 service(data);
             });
         };
