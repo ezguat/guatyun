@@ -267,7 +267,7 @@
            <button id="click" onclick="
            var time=new Date();
               var name=localStorage.getItem('name');
-           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val(),asktime:time.toString()},function(data) {
+           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val(),asktime:time.toLocaleString()},function(data) {
                                 if(!data){
                                      document.getElementById('success').innerHTML='工单提交成功！请等待管理人员处理！';
         $('#success').css('display','block');
@@ -286,6 +286,11 @@
                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">提交</p>
            </button>
        </div>
+        <div style="height: 60%;width: 88%;margin-left: 15%;">
+            <ul class="nav nav-pills" role="tablist">
+                <li role="presentation" class="active"><a href="#">你申请的<span id="num" class="badge">X</span>个工单正在处理中！等待管理员处理！</a></li>
+            </ul>
+        </div>
     </div>
     <div id="upload"  style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
         <div class="panel-body">
@@ -621,8 +626,9 @@ $('#warning2').css('display','block');
                 </div><!-- /.row -->
                 <textarea id="advice-m" style="resize: none;margin-left: 10%;width: 80%;height: 200px;margin-top: 50px;" placeholder="请详细写出反馈" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
                 <button id="click-m" onclick="
+                var time=new Date();
               var name=localStorage.getItem('name');
-           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1-m').val(),priority:$('#choice2-m').val(),about:$('#choice3-m').val(),advice:$('#advice-m').val()},function(data) {
+           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1-m').val(),priority:$('#choice2-m').val(),about:$('#choice3-m').val(),advice:$('#advice-m').val(),asktime:time.toLocaleString()},function(data) {
                                             if(!data){
                                      document.getElementById('success-m').innerHTML='工单提交成功！请等待管理人员处理！';
         $('#success-m').css('display','block');
@@ -640,6 +646,11 @@ $('#warning2').css('display','block');
            })" style="margin-left: 75%;margin-top: 2%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
                     <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">提交</p>
                 </button>
+            </div>
+            <div style="height: 5%;width: 88%;margin-left: 5%;">
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#">你的<span id="num-m" class="badge">X</span>个工单正在处理中！等待管理员处理！</a></li>
+                </ul>
             </div>
         </div>
         <div id="changefile-m"  style="display: none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default">
@@ -742,6 +753,9 @@ $('#warning2-m').css('display','block');
         $.get('../php/user.php',{askservice:1,username:name},function (data) {
                     service(data);
     });
+        $.get('../php/user.php',{asknumber:1,username:name},function (data) {
+            document.getElementById('num').innerHTML=data;
+        })
     };
     document.getElementById('up').onclick=function () {
         document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -898,6 +912,9 @@ function service(data) {
             $.get('../php/user.php',{askservice_m:1,username:name},function (data) {
                 service(data);
             });
+            $.get('../php/user.php',{asknumber:1,username:name},function (data) {
+                document.getElementById('num-m').innerHTML=data;
+            })
         };
         document.getElementById('cf-m').onclick=function () {
             $('#changefile-m').css('display','block');
