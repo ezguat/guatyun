@@ -33,11 +33,11 @@
 <center> <p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">虚拟主机申请</p></center>
 <center><div id="big" style="width: 30%;height: 70%;margin-top: 0%">
         <!-- Single button -->
-    <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
+    <div class="row" style="width: 600px;margin-left: 20%;margin-top: 5%;display: inline-table;">
         <div class="col-lg-6">
             <div class="input-group">
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">系统选择<span class="caret"></span></button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">系统选择</button>
                     <ul class="dropdown-menu">
                         <li><a onclick="$('#choice2').val('Linux'),$('#choice3').val('PHP5.2-5.4、HTML5')" href="#">Linux</a></li>
                         <li><a onclick="$('#choice2').val('Windows'),$('#choice3').val('ASP1.1-3.5、HTML5')" href="#">Window</a></li>
@@ -47,7 +47,7 @@
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
-    <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;position: absolute">
+    <div class="row" style="width: 600px;margin-left: 20%;margin-top: 1.5%;display: inline-table;">
         <div class="col-lg-6">
             <div class="input-group">
                 <div class="input-group-btn">
@@ -61,7 +61,7 @@
     </div>
 </center>
 <button id="click" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val(),standard:$('#choice3').val()},function(data) {
- if(!data)
+ if(data)
             {
               $('#success').css('display','block');
         setTimeout(function() {
@@ -133,8 +133,9 @@
         </div><!-- /.row -->
         <textarea id="advice-m" style="resize: none;margin-left: 3%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
-    <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time,username:localStorage.getItem('name'),askos:$('#choice2-m').val()},function(data) {
-        if(!data)
+    <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),askos:$('#choice2-m').val(),standard:$('#choice3-m').val()},function(data) {
+        alert(time.toLocaleString());
+        if(data)
             {
               $('#success-m').css('display','block');
         setTimeout(function() {

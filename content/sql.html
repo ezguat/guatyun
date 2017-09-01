@@ -33,60 +33,64 @@
 <center> <p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">云数据库申请</p></center>
 <center><div id="big" style="width: 30%;height: 70%;margin-top: 0%">
         <!-- Single button -->
-    <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a onclick="$('#choice2').val('Mysql'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'" href="#">Mysql</a></li>
-                        <li><a onclick="$('#choice2').val('Window Sql Server'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
-                    </ul>
-                </div><!-- /btn-group -->
-                <input id="choice2" disabled="true" placeholder=""  class="form-control">
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-    <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;position: absolute">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
-                        <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
-                        <li><a id="a3" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
-                    </ul>
-                </div><!-- /btn-group -->
-                <input id="choice3" disabled="true" placeholder=""  class="form-control">
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-    <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
-                </div><!-- /btn-group -->
-                <input id="user-os"  placeholder=""  class="form-control">
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
-    <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;position: absolute">
-        <div class="col-lg-6">
-            <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
-                </div><!-- /btn-group -->
-                <input id="passwd-os" type="password" placeholder=""  class="form-control">
-            </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
+    <div style="width: 1000px;height:  10%;margin-left: -10%;">
+        <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择</button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="$('#choice2').val('Mysql'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'" href="#">Mysql</a></li>
+                            <li><a onclick="$('#choice2').val('Window Sql Server'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input id="choice2" disabled="true" placeholder=""  class="form-control">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择</button>
+                        <ul class="dropdown-menu">
+                            <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
+                            <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
+                            <li><a id="a3" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input id="choice3" disabled="true" placeholder=""  class="form-control">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div>
+    <div style="width: 1000px;height:  10%;margin-left: -10%;">
+        <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
+                    </div><!-- /btn-group -->
+                    <input id="user-os"  placeholder=""  class="form-control">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
+                    </div><!-- /btn-group -->
+                    <input id="passwd-os" type="password" placeholder=""  class="form-control">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div>
     <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
 </center>
 <button id="click" onclick="var time=new Date();$.get('../php/user.php',{applysql:1,advice:$('#advice').val(),service:$('#choice2').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),user_os:$('#user-os').val(),passwd_os:$('#passwd-os').val(),standard:$('#choice3').val()},function(data) {
- if(!data)
+ if(data)
             {
               $('#success').css('display','block');
         setTimeout(function() {
@@ -184,7 +188,7 @@
         <textarea id="advice-m" style="resize: none;margin-left: 0%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
     <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applysql:1,advice:$('#advice-m').val(),service:$('#choice2-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:null,standard:$('#choice3-m').val(),user_os:$('#user-os-m').val(),passwd_os:$('#passwd-os-m').val()},function(data) {
-        if(!data)
+        if(data)
             {
               $('#success-m').css('display','block');
         setTimeout(function() {
