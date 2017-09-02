@@ -9,7 +9,7 @@
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </head>
-<body  id="all" style="border: 0px;background-color: white;overflow-x: hidden;overflow-y: hidden">
+<body  id="all" style="border: 0px;background-color: white;overflow-x: hidden">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de">
     <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
     <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
@@ -17,7 +17,7 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div style="margin-left: 25%;height: 100%;width: 9%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
     <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
     <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onclick="
     localStorage.removeItem('name');
@@ -104,7 +104,7 @@
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
-                <div class="row" style="position: absolute;width: 40%;margin-top: 10%;margin-left: -1%;">
+                <div class="row" style="position: absolute;width: 44%;margin-top: 10%;margin-left: -1%;">
                     <div class="col-lg-6">
                         <div class="input-group" >
                             <span class="input-group-addon">
@@ -124,7 +124,7 @@
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
-                <div class="row" style="position: absolute;width: 40%;margin-top: 10%;margin-left: 60%;display: inline-block">
+                <div id="logintim" class="row" style="position: absolute;width: 40%;margin-top: 10%;margin-left: 60%;display: inline-block">
                     <div class="col-lg-6">
                         <div class="input-group" >
                             <span class="input-group-addon">
@@ -218,51 +218,53 @@
        <div style="height: 60%;width: 88%;margin-left: 6%;">
            <div style="height: 3%;width: 100%"></div>
            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 20px">工单反馈</p></center>
-           <div class="row" style="margin-left: 8%;width: 25%;margin-top: 5%;display: inline-block">
-               <div class="col-lg-6">
-                   <div class="input-group">
-                       <div class="input-group-btn">
-                           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">申请服务<span class="caret"></span></button>
-                           <ul class="dropdown-menu">
-                               <li><a onclick="$('#choice1').val('虚拟主机');" id="vp" href="#">虚拟主机</a></li>
-                               <li><a onclick="$('#choice1').val('VPS');"  id="vps" href="#">VPS</a></li>
-                               <li><a  onclick="$('#choice1').val('云数据库');" id="mysql" href="#">云数据库</a></li>
-                           </ul>
-                       </div><!-- /btn-group -->
-                       <input id="choice1" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
-                   </div><!-- /input-group -->
-               </div><!-- /.col-lg-6 -->
-           </div><!-- /.row -->
-           <div class="row" style="margin-left: 8%;width: 25%;margin-top: 5%;display: inline-block">
-               <div class="col-lg-6">
-                   <div class="input-group">
-                       <div class="input-group-btn">
-                           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">请求优先级<span class="caret"></span></button>
-                           <ul class="dropdown-menu">
-                               <li><a onclick="$('#choice2').val('优先');" id="high" href="#">优先</a></li>
-                               <li><a onclick="$('#choice2').val('一般');"  id="medium" href="#">一般</a></li>
-                               <li><a  onclick="$('#choice2').val('正常');" id="low" href="#">正常</a></li>
-                           </ul>
-                       </div><!-- /btn-group -->
-                       <input id="choice2" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
-                   </div><!-- /input-group -->
-               </div><!-- /.col-lg-6 -->
-           </div><!-- /.row -->
-           <div class="row" style="margin-left: 8%;width: 25%;margin-top: 5%;display: inline-block">
-               <div class="col-lg-6">
-                   <div class="input-group">
-                       <div class="input-group-btn">
-                           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">问题相关<span class="caret"></span></button>
-                           <ul class="dropdown-menu">
-                               <li><a onclick="$('#choice3').val('账户相关');" id="account" href="#">账户相关</a></li>
-                               <li><a onclick="$('#choice3').val('实例相关');"  id="reality" href="#">实例相关</a></li>
-                               <li><a  onclick="$('#choice3').val('使用相关');" id="use" href="#">使用相关</a></li>
-                           </ul>
-                       </div><!-- /btn-group -->
-                       <input id="choice3" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
-                   </div><!-- /input-group -->
-               </div><!-- /.col-lg-6 -->
-           </div><!-- /.row -->
+           <div style="width: 50%;height: 40%;margin-left: 35%">
+               <div class="row" style="margin-left: 1%;width: 20%;margin-top: 5%;display: inline">
+                   <div class="col-lg-6">
+                       <div class="input-group">
+                           <div class="input-group-btn">
+                               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">申请服务<span class="caret"></span></button>
+                               <ul class="dropdown-menu">
+                                   <li><a onclick="$('#choice1').val('虚拟主机');" id="vp" href="#">虚拟主机</a></li>
+                                   <li><a onclick="$('#choice1').val('VPS');"  id="vps" href="#">VPS</a></li>
+                                   <li><a  onclick="$('#choice1').val('云数据库');" id="mysql" href="#">云数据库</a></li>
+                               </ul>
+                           </div><!-- /btn-group -->
+                           <input id="choice1" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
+                       </div><!-- /input-group -->
+                   </div><!-- /.col-lg-6 -->
+               </div><!-- /.row -->
+               <div class="row" style="margin-left: 1%;width: 20%;margin-top: 5%;display: inline">
+                   <div class="col-lg-6">
+                       <div class="input-group">
+                           <div class="input-group-btn">
+                               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">请求优先级<span class="caret"></span></button>
+                               <ul class="dropdown-menu">
+                                   <li><a onclick="$('#choice2').val('优先');" id="high" href="#">优先</a></li>
+                                   <li><a onclick="$('#choice2').val('一般');"  id="medium" href="#">一般</a></li>
+                                   <li><a  onclick="$('#choice2').val('正常');" id="low" href="#">正常</a></li>
+                               </ul>
+                           </div><!-- /btn-group -->
+                           <input id="choice2" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
+                       </div><!-- /input-group -->
+                   </div><!-- /.col-lg-6 -->
+               </div><!-- /.row -->
+               <div class="row" style="margin-left: 1%;width: 20%;margin-top: 5%;display: inline">
+                   <div class="col-lg-6">
+                       <div class="input-group">
+                           <div class="input-group-btn">
+                               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">问题相关<span class="caret"></span></button>
+                               <ul class="dropdown-menu">
+                                   <li><a onclick="$('#choice3').val('账户相关');" id="account" href="#">账户相关</a></li>
+                                   <li><a onclick="$('#choice3').val('实例相关');"  id="reality" href="#">实例相关</a></li>
+                                   <li><a  onclick="$('#choice3').val('使用相关');" id="use" href="#">使用相关</a></li>
+                               </ul>
+                           </div><!-- /btn-group -->
+                           <input id="choice3" style="width: 120%"  disabled="true" placeholder=""  class="form-control">
+                       </div><!-- /input-group -->
+                   </div><!-- /.col-lg-6 -->
+               </div><!-- /.row -->
+           </div>
            <textarea id="advice" style="resize: none;margin-left: 10%;width: 80%;height: 200px;margin-top: 50px;" placeholder="请详细写出反馈" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
            <button id="click" onclick="
            var time=new Date();
@@ -286,7 +288,7 @@
                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">提交</p>
            </button>
        </div>
-        <div style="height: 60%;width: 88%;margin-left: 15%;">
+        <div style="height: 60%;width: 88%;margin-left: 15%;margin-top: 5%">
             <ul class="nav nav-pills" role="tablist">
                 <li role="presentation" class="active"><a href="#">你申请的<span id="num" class="badge">X</span>个工单正在处理中！等待管理员处理！</a></li>
             </ul>
@@ -375,7 +377,7 @@ $('#warning2').css('display','block');
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
         <span onclick="
            $('#canvas').css('display','block')
-" style="color: white;margin-left: 65%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+" style="color: white;margin-left: 70%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
     <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
@@ -647,7 +649,7 @@ $('#warning2').css('display','block');
                     <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">提交</p>
                 </button>
             </div>
-            <div style="height: 5%;width: 88%;margin-left: 5%;">
+            <div style="height: 5%;width: 88%;margin-left: 5%;margin-top: 15%">
                 <ul class="nav nav-pills" role="tablist">
                     <li role="presentation" class="active"><a href="#">你的<span id="num-m" class="badge">X</span>个工单正在处理中！等待管理员处理！</a></li>
                 </ul>
@@ -747,7 +749,7 @@ $('#warning2-m').css('display','block');
     };
     document.getElementById('se').onclick=function () {
         document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
-        document.getElementById('service').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='width: 90%;height: 140%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askservice:1,username:name},function (data) {
@@ -863,6 +865,7 @@ function service(data) {
         $('.p6').css('margin-top','42%');
     }
     if(1263<width<=1366){
+        $('#logintim').css('width','50%');
         $('#image').css('margin-top','30%');
         $('.tip1').css('margin-top','11%');
         $('.p1').css('margin-top','17%');
@@ -910,7 +913,7 @@ function service(data) {
             $('#detail-m').css('display','none');
             $('#changefile-m').css('display','none');
             $.get('../php/user.php',{askservice_m:1,username:name},function (data) {
-                service(data);
+               servicem(data)
             });
             $.get('../php/user.php',{asknumber:1,username:name},function (data) {
                 document.getElementById('num-m').innerHTML=data;
@@ -997,7 +1000,7 @@ function service(data) {
             }
 
         }
-        function service(data) {
+        function servicem(data) {
             for($one=1,$two=0;data.split('/')[$two];$one++){
                 document.getElementById('name'+$one+'-m').innerHTML=data.split('/')[$two++];
                 document.getElementById('asktime'+$one+'-m').innerHTML=data.split('/')[$two++]+'/'+data.split('/')[$two++]+'/'+data.split('/')[$two++];

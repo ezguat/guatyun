@@ -17,7 +17,7 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div  style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div  style="margin-left: 25%;height: 100%;width: 9%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
     <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
     <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onclick="
     localStorage.removeItem('name');
@@ -61,7 +61,8 @@
     </div>
 </center>
 <button id="click" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val(),standard:$('#choice3').val()},function(data) {
- if(data)
+  if($('#advice').val()&&$('#choice3').val()&&$('#choice2').val()){
+         if(data)
             {
               $('#success').css('display','block');
         setTimeout(function() {
@@ -74,6 +75,14 @@
           $('#warning').css('display','none');
         },3000)
            }
+  }
+    else {
+          document.getElementById('warning').innerHTML='输入框不能为空！';
+$('#warning').css('display','block');
+        setTimeout(function() {
+          $('#warning').css('display','none');
+        },3000)
+    }
 })" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
     <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
 </button>
@@ -88,7 +97,7 @@
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
         <span onclick="
            $('#canvas').css('display','block')
-" style="color: white;margin-left: 65%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+" style="color: white;margin-left: 70%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
     <div style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -134,8 +143,8 @@
         <textarea id="advice-m" style="resize: none;margin-left: 3%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
     <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),askos:$('#choice2-m').val(),standard:$('#choice3-m').val()},function(data) {
-        alert(time.toLocaleString());
-        if(data)
+       if($('#advice-m').val()&&$('#choice3-m').val()&&$('#choice2-m').val()){
+            if(data)
             {
               $('#success-m').css('display','block');
         setTimeout(function() {
@@ -148,6 +157,15 @@
           $('#warning-m').css('display','none');
         },3000)
            }
+       }
+         else {
+          document.getElementById('warning-m').innerHTML='输入框不能为空！';
+$('#warning-m').css('display','block');
+        setTimeout(function() {
+          $('#warning-m').css('display','none');
+        },3000)
+    }
+
 })" style="margin-left: 68%;margin-top: 6%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
         <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
     </button>
