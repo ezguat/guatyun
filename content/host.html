@@ -57,12 +57,27 @@
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
+    <div class="row" style="width: 600px;margin-left: 20%;margin-top: 1%;display: inline-table;">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">极速建站</button>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="$('#choice4').val(this.innerHTML)" href="#">WordPress</a></li>
+                        <li><a onclick="$('#choice4').val(this.innerHTML)" href="#">Joomla</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+                <input id="choice4" disabled="true" placeholder=""  class="form-control">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
     <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
 </center>
-<button id="click" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val(),standard:$('#choice3').val()},function(data) {
+<button id="click" onclick="var time=new Date();
   if($('#advice').val()&&$('#choice3').val()&&$('#choice2').val()){
-         if(data)
+         $.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val()+'：'+$('#choice4').val(),standard:$('#choice3').val()},function(data) {
+    if(data)
             {
               $('#success').css('display','block');
         setTimeout(function() {
@@ -75,6 +90,7 @@
           $('#warning').css('display','none');
         },3000)
            }
+    })
   }
     else {
           document.getElementById('warning').innerHTML='输入框不能为空！';
@@ -83,7 +99,7 @@ $('#warning').css('display','block');
           $('#warning').css('display','none');
         },3000)
     }
-})" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
     <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
 </button>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
@@ -130,7 +146,7 @@ $('#warning').css('display','block');
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
-        <div class="row" style="width: 300px;margin-top: 3%;display: inline-table;position: absolute;">
+        <div class="row" style="width: 300px;margin-top: 3%;display: inline-table;">
             <div class="col-lg-6">
                 <div class="input-group">
                     <div class="input-group-btn">
@@ -140,11 +156,26 @@ $('#warning').css('display','block');
                 </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
-        <textarea id="advice-m" style="resize: none;margin-left: 3%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
+        <div class="row" style="width: 300px;margin-top: 3%;display: inline-table;">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">极速建站</button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="$('#choice4-m').val(this.innerHTML)" href="#">WordPress</a></li>
+                            <li><a onclick="$('#choice4-m').val(this.innerHTML)" href="#">Joomla</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input id="choice4-m" disabled="true" placeholder=""  class="form-control">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <textarea id="advice-m" style="resize: none;margin-left: 3%;width: 100%;height: 150px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
-    <button id="click-m" onclick="var time=new Date();$.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),askos:$('#choice2-m').val(),standard:$('#choice3-m').val()},function(data) {
+    <button id="click-m" onclick="var time=new Date();
        if($('#advice-m').val()&&$('#choice3-m').val()&&$('#choice2-m').val()){
-            if(data)
+           $.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2-m').val()+'：'+$('#choice4-m').val(),standard:$('#choice3-m').val()},function(data) {
+               if(data)
             {
               $('#success-m').css('display','block');
         setTimeout(function() {
@@ -157,6 +188,7 @@ $('#warning').css('display','block');
           $('#warning-m').css('display','none');
         },3000)
            }
+           })
        }
          else {
           document.getElementById('warning-m').innerHTML='输入框不能为空！';
@@ -166,7 +198,7 @@ $('#warning-m').css('display','block');
         },3000)
     }
 
-})" style="margin-left: 68%;margin-top: 6%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+" style="margin-left: 68%;margin-top: 6%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
         <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
     </button>
 </div>
@@ -235,7 +267,7 @@ $('#warning-m').css('display','block');
         document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: small"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
     }
-    if(375<=width&&width<=414){
+    if(350<=width&&width<=414){
         $('#tips').css('display','none');
         $('#p').css('display','none');
         $('#big').css('display','none');

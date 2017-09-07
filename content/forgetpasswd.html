@@ -38,10 +38,6 @@
         <input id="useremail" placeholder="请输入密码" class="form-control" aria-label="Amount (to the nearest dollar)">
     </div>
     <div class="input-group" style="margin-top: 5%">
-        <span class="input-group-addon">原密码</span>
-        <input id="passwordold" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
-    </div>
-    <div class="input-group" style="margin-top: 5%">
         <span class="input-group-addon">新密码</span>
         <input id="passwordnew" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
     </div>
@@ -86,10 +82,6 @@
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">&nbsp&nbsp邮箱&nbsp&nbsp</span>
             <input id="useremail-m" placeholder="请输入密码" class="form-control" aria-label="Amount (to the nearest dollar)">
-        </div>
-        <div class="input-group" style="margin-top: 5%">
-            <span class="input-group-addon">原密码</span>
-            <input id="passwordold-m" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">新密码</span>
@@ -149,7 +141,7 @@
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
     }
-    if(375<=width&&width<=414){
+    if(350<=width&&width<=414){
         $('#tips').css('display','none');
         $('#done').css('display','none');
         $('#warning').css('display','none');
@@ -157,10 +149,10 @@
         $('#p').css('display','none');
         $('#mobile').css('display','block');
         $('#click-m').click(function () {
-            if($('#name-m').val()&&$('#passwordold-m').val()&&$('#passwordnew-m').val()&&$('#check-m').val()&&$('#useremail-m').val())
+            if($('#name-m').val()&&$('#passwordnew-m').val()&&$('#check-m').val()&&$('#useremail-m').val())
             {
                 if($('#check-m').val()==$("#passwordnew-m").val()){
-                    $.get('../php/changepass.php',{name:$('#name-m').val(),password:$('#passwordold-m').val(),newpassword:$('#passwordnew-m').val(),useremail:$('#useremail-m').val()},function(data) {
+                    $.get('../php/changepass.php',{name:$('#name-m').val(),newpassword:$('#passwordnew-m').val(),useremail:$('#useremail-m').val()},function(data) {
                         if(data==1){
                             $('#done-m').css('display','block');
                             setTimeout(function() {
@@ -200,10 +192,10 @@
     var system=localStorage.getItem('system');
     var time=new Date();
     $('#click').click(function () {
-        if($('#name').val()&&$('#passwordold').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val())
+        if($('#name').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val())
         {
             if($('#check').val()==$("#passwordnew").val()){
-                $.get('../php/changepass.php',{name:$('#name').val(),password:$('#passwordold').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
+                $.get('../php/changepass.php',{name:$('#name').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
                     if(data==1){
                         $('#done').css('display','block');
                         setTimeout(function() {
@@ -211,7 +203,7 @@
                         },3000)
                     }
                     else {
-                        document.getElementById('alert-content').innerHTML=data;
+                        document.getElementById('alert-content').innerHTML="用户或者邮箱错误！";
                         $('#warning').css('display','block');
                         setTimeout(function() {
                             $('#warning').css('display','none');
