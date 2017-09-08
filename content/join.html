@@ -17,8 +17,13 @@
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5"  style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
     <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p  id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  id="change7"  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+    <div style="margin-left: 25%;height: 100%;width: 10%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  id="change"  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+    <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: none"><a onclick="
+    localStorage.removeItem('name');
+      localStorage.removeItem('passwd');
+      window.location.reload();
+" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
 </div>
 <div id="big"  style="margin-left: 10%;margin-top:2%;width: 80%;height: 90%;border: 1px solid #00b38a;position: absolute">
     <div>
@@ -73,10 +78,15 @@
 </div>
 <center><img id="image" style="margin-top: 38%;height: 150px;width: 150px" src="../image/forweb/QQsadasdasdas.png"></center>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
-    <div  style="width: 100%;height:8%;background-color: #00c1de;">
-        <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <span onclick="
+    <div style="width: 100%;height:8%;background-color: #00c1de;">
+        <div id="name-m" style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: none"><a onclick="
+    localStorage.removeItem('name');
+      localStorage.removeItem('passwd');
+      window.location.reload();
+" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+        <span id="go-m" onclick="
            $('#canvas').css('display','block')
 " style="color: white" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
@@ -172,6 +182,11 @@
 
         // 如果需要分页器
     })
+    if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
+        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
+        $('#gone').css('display','none');
+        $('#show').css('display','inline-block');
+    }
     if(width>375){
         $('#swiper').css('display','none');
 
@@ -208,10 +223,10 @@
         document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
     }
-    if(375<=width&&width<=414){
+    if(350<=width&&width<=414){
         $('#tips').css('display','none');
         $('#big').css('display','none');
         $('#image').css('display','none');
@@ -222,6 +237,15 @@
         $('.p4').css('margin-top','56%');
         $('.p5').css('margin-top','67%');
         $('.p6').css('margin-top','77%');
+        if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
+            document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
+            document.getElementById('link-m').href='../control/user.html';
+            $('#show-m').css('display','inline-block');
+            $('#gone-m').css('display','none');
+            $('#name-m').css('width','25%');
+            $('#go-m').css('margin-left','65%');
+            $('#show-m').css('margin-left','-75%');
+        }
     }
 </script>
 </html>
