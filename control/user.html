@@ -323,15 +323,15 @@
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
                 <div class="row" style="position: absolute;width: 40%;margin-top: 2%;margin-left: 20%;display: inline-block">
-                    <div class="col-lg-6">
-                        <div class="input-group" >
+                <div class="col-lg-6">
+                    <div class="input-group" >
                             <span class="input-group-addon">
                               个人职业
                             </span>
-                            <input id="changemajor" type="text" class="form-control" aria-label="...">
-                        </div><!-- /input-group -->
-                    </div><!-- /.col-lg-6 -->
-                    <button onclick="
+                        <input id="changemajor" type="text" class="form-control" aria-label="...">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                <button onclick="
                     if($('#changemail').val()&&$('#changemajor').val()){
                          var name=localStorage.getItem('name');
                     $.get('../php/user.php',{changefile:1,major:$('#changemail').val(),job:$('#changemajor').val(),username:name},function(data) {
@@ -357,11 +357,59 @@ $('#warning2').css('display','block');
         },3000)
                     }
                     " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
+                    <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
+                </button>
+            </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 5%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                              旧密码
+                            </span>
+                            <input id="oldpasswd" type="password" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+                <div class="row" style="position: absolute;width: 40%;margin-top: 5%;margin-left: 20%;display: inline-block">
+                    <div class="col-lg-6">
+                        <div class="input-group" >
+                            <span class="input-group-addon">
+                             新密码
+                            </span>
+                            <input id="newpasswd" type="password" class="form-control" aria-label="...">
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                    <button onclick="
+                    if($('#oldpasswd').val()&&$('#newpasswd').val()){
+                         var name=localStorage.getItem('name');
+                    $.get('../php/user.php',{changepasswd:1,op:$('#oldpasswd').val(),np:$('#newpasswd').val(),username:name},function(data) {
+                        if(data==1){
+                         $('#success').css('display','block');
+        setTimeout(function() {
+          $('#success').css('display','none');
+        },3000)
+                                            }
+                                            else {
+                              document.getElementById('warning2').innerHTML='旧密码错误！';
+                            $('#warning2').css('display','block');
+        setTimeout(function() {
+          $('#warning2').css('display','none');
+        },3000)
+                                            }
+                    })
+                    }
+                    else {
+                        document.getElementById('warning2').innerHTML='内容不能为空！';
+$('#warning2').css('display','block');
+        setTimeout(function() {
+          $('#warning2').css('display','none');
+        },3000)
+                    }
+                    " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
                         <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
                     </button>
                 </div><!-- /.row -->
-                <div class="row" style="height: 10%;position: absolute;width: 40%;margin-top: 12%;display: inline-block">
-                </div><!-- /.row -->
+                <div class="row" style="height: 10%;position: absolute;width: 40%;margin-top: 12%;display: inline-block"></div><!-- /.row -->
             </div>
         </div>
     </div>
