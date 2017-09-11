@@ -499,6 +499,58 @@
     </tbody>
 </table>
 </center>
+<h2 id="5" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户列表</h2>
+<center><table id="table5"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+        <thead>
+    <tr>
+            <th>用户名</th>
+            <th>注册时间</th>
+                  <th>手机号码</th>
+                  <th>账号邮件</th>
+      
+    <th>保存</th>
+        </tr>
+    </thead>
+        <tbody>
+    <tr>
+            <td id="username0-list"></td>
+            <td id="usertime0-list"></td>
+                  <td id="userphone0-list"></td>
+                  <td id="usermail0-list"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name0-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+    <tr>
+               <td id="username1-list"></td>
+            <td id="usertime1-list"></td>
+                  <td id="userphone1-list"></td>
+                  <td id="usermail1-list"></td>  
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name1-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+        </tr>
+<tr>
+                   <td id="username2-list"></td>
+            <td id="usertime2-list"></td>
+                  <td id="userphone2-list"></td>
+                  <td id="usermail2-ist"></td>  
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name2-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+    </tbody>
+</table>
+</center>
 </body>
 <script>
     var height;
@@ -616,6 +668,17 @@
                 $('#os'+$number+'-list'+'-m').text(data.split('|')[3+5*$number]);
                 $('#ip'+$number+'-list'+'-m').text(data.split('|')[4+5*$number]);
                 $('#advice'+$number+'-list'+'-m').text(data.split('|')[5+5*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{askuser:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<3;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[0+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[1+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[2+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[3+4*$number]);
             }
         }
     })
