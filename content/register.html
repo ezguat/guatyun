@@ -9,6 +9,17 @@
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </head>
+<style type="text/css">
+    #code
+    {
+        font-family:Arial;
+        font-style:italic;
+        font-weight:bold;
+        border:0;
+        letter-spacing:2px;
+        color:blue;
+    }
+</style>
 <body id="all" style="border: 0px;background-color: #f6f6f6;">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
     <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
@@ -34,7 +45,7 @@
     <div style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
          <div class="input-group">
         <span class="input-group-addon">新用户名</span>
-        <input id="name" placeholder="请使用 a-z 或中午长度小于12" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <input id="name" placeholder="请使用 a-z 或中文长度大于6，小于12" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
         <div class="input-group" style="margin-top: 5%">
             <span class="input-group-addon">用户密码</span>
@@ -48,7 +59,14 @@
             <span class="input-group-addon">手机号码</span>
             <input id="number" placeholder="仅支持大陆" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-        <button   id="myButton" data-loading-text="Loading..." autocomplete="off"   onclick="var time=new Date();
+        <div style="margin-top: 5%">
+            <p style="font-family: 'Microsoft YaHei UI';display: inline-block">验证码:</p>
+            <input id="input" style="width: 70%;display: inline-block" placeholder="请输入验证码" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input style="border-radius: 5%;background-color: #f6f6f6" type = "button" id="code" onclick="createCode()"/>
+        </div>
+        <button   id="myButton" data-loading-text="Loading..." autocomplete="off"   onclick="
+         var inputCode = document.getElementById('input').value.toUpperCase(); //取得输入的验证码并转化为大写
+        var time=new Date();
          if($('#name').val()&&$('#password').val()&&$('#email').val()&&$('#number').val())
 {
     var reg=/^[A-Za-z0-9]{6,12}$/;
@@ -82,12 +100,24 @@
 
               }
               else {
+
+                 if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
+                        document.getElementById('alert-content').innerHTML='验证码输入错误！';
+                        $('#warning').css('display','block');
+                        setTimeout(function() {
+                            $('#warning').css('display','none');
+                        },3000)
+                        createCode();//刷新验证码
+                        document.getElementById('input').value ='';//清空文本框
+        }
+        else {
 $.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val(),retime:time.toLocaleString()},function (data) {
 })
                        $('#success').css('display','block');
                        setTimeout(function() {
                            window.location.href='../content/login.html';
                        },2000);
+        }
               }
         }
      }
@@ -148,7 +178,14 @@ else {
                 <span class="input-group-addon">手机号码</span>
                 <input id="number-m" placeholder="仅支持大陆" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
-            <button   id="myButton-m" data-loading-text="Loading..." autocomplete="off"   onclick="var time=new Date();
+            <div style="margin-top: 5%">
+                <p style="font-family: 'Microsoft YaHei UI';display: inline-block">验证码:</p>
+                <input id="input-m" style="width: 60%;display: inline-block" placeholder="请输入验证码"  class="form-control" aria-label="Amount (to the nearest dollar)">
+                <input style="border-radius: 5%;background-color: #f6f6f6;border: 0px" type = "button" id="code-m" onclick="createCode()"/>
+            </div>
+            <button   id="myButton-m" data-loading-text="Loading..." autocomplete="off"   onclick="
+               var inputCode = document.getElementById('input-m').value.toUpperCase(); //取得输入的验证码并转化为大写
+                var time=new Date();
          if($('#name-m').val()&&$('#password-m').val()&&$('#email-m').val()&&$('#number-m').val())
 {
     var reg=/^[A-Za-z0-9]{6,12}$/;
@@ -182,12 +219,23 @@ else {
 
               }
               else {
+                        if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
+                        document.getElementById('alert-content2-m').innerHTML='验证码输入错误！';
+                        $('#warning2-m').css('display','block');
+                        setTimeout(function() {
+                            $('#warning2-m').css('display','none');
+                        },3000)
+                        createCode();//刷新验证码
+                        document.getElementById('input-m').value ='';//清空文本框
+        }
+        else {
 $.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time.toLocaleString()},function (data) {
 })
                        $('#success-m').css('display','block');
                        setTimeout(function() {
                            window.location.href='../content/login.html';
                        },2000);
+        }
               }
         }
      }
@@ -261,5 +309,38 @@ else {
         $('#mobile').css('display','block');
 
     }
+    var code ; //在全局定义验证码
+    //产生验证码
+    function createCode(){
+        code = "";
+        var codeLength = 4;//验证码的长度
+        var checkCode = document.getElementById("code");
+        if(350<=width&&width<=414){
+            var checkCode = document.getElementById("code-m");
+        }
+        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
+            'S','T','U','V','W','X','Y','Z');//随机数
+        for(var i = 0; i < codeLength; i++) {//循环操作
+            var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
+            code += random[index];//根据索引取得随机数加到code上
+        }
+        checkCode.value = code;//把code值赋给验证码
+    }
+    window.onload = function createCode(){
+        code = "";
+        var codeLength = 4;//验证码的长度
+        var checkCode = document.getElementById("code");
+        if(350<=width&&width<=414){
+            var checkCode = document.getElementById("code-m");
+        }
+        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
+            'S','T','U','V','W','X','Y','Z');//随机数
+        for(var i = 0; i < codeLength; i++) {//循环操作
+            var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
+            code += random[index];//根据索引取得随机数加到code上
+        }
+        checkCode.value = code;//把code值赋给验证码
+    }
+    //校验验证码
 </script>
 </html>
