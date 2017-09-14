@@ -8,6 +8,8 @@
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
+
 </head>
 <style type="text/css">
     #code
@@ -111,7 +113,7 @@
                         document.getElementById('input').value ='';//清空文本框
         }
         else {
-$.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val(),retime:time.toLocaleString()},function (data) {
+$.get('../php/register.php',{name:$('#name').val(),password:$('#password').val(),email:$('#email').val(),number:$('#number').val(),retime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear()},function (data) {
 })
                        $('#success').css('display','block');
                        setTimeout(function() {
@@ -229,7 +231,7 @@ else {
                         document.getElementById('input-m').value ='';//清空文本框
         }
         else {
-$.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time.toLocaleString()},function (data) {
+$.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear()},function (data) {
 })
                        $('#success-m').css('display','block');
                        setTimeout(function() {
@@ -265,6 +267,9 @@ else {
     a.setAttribute('height',height);
     var b=document.getElementById("all");
     b.setAttribute('width',width);
+    if(1440<width&&width<=1680){
+        $('#input').css('width','64%')
+    }
     if(width==1440){
         $('.p1').css('margin-top','15%');
         $('.p2').css('margin-top','20%');
@@ -272,6 +277,7 @@ else {
         $('.p4').css('margin-top','30%');
         $('.p5').css('margin-top','35%');
         $('.p6').css('margin-top','40%');
+        $('#input').css('width','59%')
     }
     if(width==1400){
         $('.tip1').css('margin-top','11%');
@@ -281,6 +287,7 @@ else {
         $('.p4').css('margin-top','32%');
         $('.p5').css('margin-top','37%');
         $('.p6').css('margin-top','42%');
+        $('#input').css('width','58%')
     }
     if(1263<width<=1366){
         $('#image').css('margin-top','30%');
@@ -299,6 +306,7 @@ else {
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        $('#input').css('width','50%')
     }
     if(350<=width&&width<=414){
         $('#tips').css('display','none');

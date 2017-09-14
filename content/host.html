@@ -8,6 +8,8 @@
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
+
 </head>
 <body id="all" style="border: 0px;background-color: #f6f6f6;overflow-x: hidden">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
@@ -76,7 +78,7 @@
 </center>
 <button id="click" onclick="var time=new Date();
   if($('#advice').val()&&$('#choice3').val()&&$('#choice2').val()){
-         $.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2').val()+'：'+$('#choice4').val(),standard:$('#choice3').val()},function(data) {
+         $.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear(),username:localStorage.getItem('name'),osask:$('#choice2').val()+'：'+$('#choice4').val(),standard:$('#choice3').val()},function(data) {
     if(data)
             {
               $('#success').css('display','block');
@@ -174,7 +176,7 @@ $('#warning').css('display','block');
     </div>
     <button id="click-m" onclick="var time=new Date();
        if($('#advice-m').val()&&$('#choice3-m').val()&&$('#choice2-m').val()){
-           $.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toLocaleString(),username:localStorage.getItem('name'),osask:$('#choice2-m').val()+'：'+$('#choice4-m').val(),standard:$('#choice3-m').val()},function(data) {
+           $.get('../php/user.php',{applyhost:1,advice:$('#advice-m').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear(),username:localStorage.getItem('name'),osask:$('#choice2-m').val()+'：'+$('#choice4-m').val(),standard:$('#choice3-m').val()},function(data) {
                if(data)
             {
               $('#success-m').css('display','block');

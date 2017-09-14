@@ -8,6 +8,8 @@
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
+
 </head>
 <body  id="all" style="border: 0px;background-color: white;overflow-x: hidden;overflow-y: hidden">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de">
@@ -60,7 +62,7 @@
                             <span class="input-group-addon">
                                 个人邮箱
                             </span>
-                            <input id="email" disabled="true" le type="text" class="form-control" aria-label="...">
+                            <input id="email" disabled="true"  type="text" class="form-control" aria-label="...">
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
@@ -70,7 +72,7 @@
                             <span class="input-group-addon">
                                手机号码
                             </span>
-                            <input id="number" disabled="true" le type="text" class="form-control" aria-label="...">
+                            <input id="number" disabled="true"  type="text" class="form-control" aria-label="...">
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
@@ -269,7 +271,7 @@
            <button id="click" onclick="
            var time=new Date();
               var name=localStorage.getItem('name');
-           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val(),asktime:time.toLocaleString()},function(data) {
+           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1').val(),priority:$('#choice2').val(),about:$('#choice3').val(),advice:$('#advice').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear()},function(data) {
                                 if(!data){
                                      document.getElementById('success').innerHTML='工单提交成功！请等待管理人员处理！';
         $('#success').css('display','block');
@@ -416,16 +418,16 @@ $('#warning2').css('display','block');
 </div>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%;">
     <div  style="width: 100%;height:8%;background-color: #00c1de;">
-        <div style="margin-top:3%;margin-left: 65%;height: 100%;width: 25%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: inline-block"><a onclick="
+        <div style="margin-top:-4%;margin-left: 45%;height: 100%;width: 30%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"></a></div>
+        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium;display: none">注册</p></a></div>
+        <div id="show-m" style="margin-left: -65%;height: 100%;width: 15%;display: inline-block"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
         <span onclick="
            $('#canvas').css('display','block')
-" style="color: white;margin-left: 70%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+" style="color: white;margin-left: 65%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
     <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
@@ -678,7 +680,7 @@ $('#warning2').css('display','block');
                 <button id="click-m" onclick="
                 var time=new Date();
               var name=localStorage.getItem('name');
-           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1-m').val(),priority:$('#choice2-m').val(),about:$('#choice3-m').val(),advice:$('#advice-m').val(),asktime:time.toLocaleString()},function(data) {
+           $.get('../php/user.php',{customer:1,username:name,service:$('#choice1-m').val(),priority:$('#choice2-m').val(),about:$('#choice3-m').val(),advice:$('#advice-m').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear()},function(data) {
                                             if(!data){
                                      document.getElementById('success-m').innerHTML='工单提交成功！请等待管理人员处理！';
         $('#success-m').css('display','block');
@@ -826,8 +828,8 @@ $('#warning2-m').css('display','block');
     })
     $.get('../php/user.php',{asklog:1,username:name},function (data) {
         $('#loginip').val(data.split('=>')[0]);
-        $('#terminal').val("系统："+data.split('=>')[2]+"   "+"浏览器："+data.split('=>')[3]);
-        $('#logintime').val(data.split('=>')[1]);
+        $('#terminal').val("系统："+data.split('=>')[5]+"   "+"浏览器："+data.split('=>')[6]);
+        $('#logintime').val(data.split('=>')[1]+'/'+data.split('=>')[2]+'/'+data.split('=>')[3]+' '+data.split('=>')[4]);
     })
 function detail(data) {
         var go=localStorage.getItem('name');
@@ -835,7 +837,7 @@ function detail(data) {
     $('#number').val(data.split('/')[0]);
     $('#email').val(data.split('/')[1]);
     $('#major').val(data.split('/')[2]);
-    $('#retime').val(data.split('/')[3]+'/'+data.split('/')[4]+'/'+data.split('/')[5]);
+    $('#retime').val(data.split('/')[3]);
     $('#changemail').val(data.split('/')[2]);
     $('#changemajor').val(data.split('/')[6]);
     $('#job').val(data.split('/')[6]);
@@ -889,7 +891,7 @@ function detail(data) {
 function service(data) {
         for($one=1,$two=0;data.split('/')[$two];$one++){
             document.getElementById('name'+$one).innerHTML=data.split('/')[$two++];
-            document.getElementById('asktime'+$one).innerHTML=data.split('/')[$two++]+'/'+data.split('/')[$two++]+'/'+data.split('/')[$two++];
+            document.getElementById('asktime'+$one).innerHTML=data.split('/')[$two++];
             document.getElementById('status'+$one).innerHTML=data.split('/')[$two++];
             document.getElementById('os'+$one).innerHTML=data.split('/')[$two++];
             document.getElementById('config'+$one).innerHTML=data.split('/')[$two++];
@@ -940,7 +942,7 @@ function service(data) {
         if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
             window.location.href='../content/login.html';
         }
-        document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
+//        document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
         document.getElementById('link-m').href='../control/user.html';
         document.getElementById('de-m').onclick=function () {
             $('#detail-m').css('display','block');
@@ -979,9 +981,9 @@ function service(data) {
         })
         $.get('../php/user.php',{asklog:1,username:name},function (data) {
             $('#loginipm').val(data.split('=>')[0]);
-            $('#terminalm').val(data.split('=>')[2]);
-            $('#browserm').val(data.split('=>')[3]);
-            $('#logintimem').val(data.split('=>')[1]);
+            $('#terminalm').val(data.split('=>')[5]);
+            $('#browserm').val(data.split('=>')[6]);
+            $('#logintimem').val(data.split('=>')[1]+'/'+data.split('=>')[2]+'/'+data.split('=>')[3]+' '+data.split('=>')[4]);
         })
         function detailm(data) {
             var go=localStorage.getItem('name');
@@ -990,7 +992,7 @@ function service(data) {
             $('#email-m').val(data.split('/')[1]);
             $('#major-m').val(data.split('/')[2]);
             $('#changemail-m').val(data.split('/')[2]);
-            $('#retime-m').val(data.split('/')[3]+'/'+data.split('/')[4]+'/'+data.split('/')[5]);
+            $('#retime-m').val(data.split('/')[3]);
             $('#job-m').val(data.split('/')[6]);
             $('#changemajor-m').val(data.split('/')[6]);
             if(data.split('->')[0].split('/')[7].split(':')[0]=='虚拟主机'){
@@ -1051,7 +1053,7 @@ function service(data) {
         function servicem(data) {
             for($one=1,$two=0;data.split('/')[$two];$one++){
                 document.getElementById('name'+$one+'-m').innerHTML=data.split('/')[$two++];
-                document.getElementById('asktime'+$one+'-m').innerHTML=data.split('/')[$two++]+'/'+data.split('/')[$two++]+'/'+data.split('/')[$two++];
+                document.getElementById('asktime'+$one+'-m').innerHTML=data.split('/')[$two++];
                 document.getElementById('status'+$one+'-m').innerHTML=data.split('/')[$two++];
             }
         }
