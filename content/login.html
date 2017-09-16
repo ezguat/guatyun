@@ -55,11 +55,11 @@
         <input id="input" style="width: 70%;display: inline-block" placeholder="请输入验证码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
         <input style="border-radius: 5%;background-color: #f6f6f6" type = "button" id="code" onclick="createCode()"/>
     </div>
-    <div style="height: 300px;width: 400px;background-color: #00b38a">
-        <button  style="margin-top: 5%;display: inline-block;position:absolute;margin-left: 14%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
-            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+    <div style="height: 30px;width: 400px;margin-top: 10%">
+        <button onclick="window.location.href='../content/forgetpasswd.html'" style="margin-top: 0%;display: inline-block;position:absolute;margin-left: 5%;border-radius: 5%;height: 30px;width: 100px;border: 0px;background-color: #d9534f">
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">忘记密码？</p>
         </button>
-        <button id="click" style="border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+        <button id="click" style="margin-top: 0%;margin-left: 55%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
             <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
         </button>
     </div>
@@ -103,10 +103,14 @@
             <input id="input-m" style="width: 60%;display: inline-block" placeholder="请输入验证码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
             <input style="border-radius: 5%;background-color: #f6f6f6;border: 0px" type = "button" id="code-m" onclick="createCode()"/>
         </div>
-        <a href="../content/forgetpasswd.html" style="margin-left: 63%;margin-top: 3%;position: absolute;text-decoration: none"><p style="font-family: 'Microsoft YaHei UI';">忘了密码？</p></a>
-        <button id="click-m" style="margin-left: 80%;margin-top: 12%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
-            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
-        </button>
+        <div style="height: 30px;width: 400px;margin-top: 10%">
+            <button onclick="window.location.href='../content/forgetpasswd.html'" style="margin-top: 0%;display: inline-block;position:absolute;margin-left: 5%;border-radius: 5%;height: 30px;width: 120px;border: 0px;background-color: #d9534f">
+                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">忘记密码？</p>
+            </button>
+            <button id="click-m" style="margin-left: 50%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+            </button>
+        </div>
     </div>
 </div>
 </body>
@@ -159,6 +163,7 @@
         document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        $('#input').css('width','56%')
     }
     if(350<=width&&width<=414){
             $('#tips').css('display','none');
