@@ -248,6 +248,154 @@
         </tbody>
     </table>
     </center>
+    <h2 id="5-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 252%" >用户列表</h2>
+    <center><table id="table5-m"   class="table" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 2%">
+            <thead>
+        <tr>
+                <th>用户名</th>
+                <th>注册时间</th>
+                      <th>手机号码</th>
+         
+          
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="username0-list-m"></td>
+                <td id="usertime0-list-m"></td>
+                      <td id="userphone0-list-m"></td>
+           
+            </tr>
+        <tr>
+                   <td id="username1-list-m"></td>
+                <td id="usertime1-list-m"></td>
+                      <td id="userphone1-list-m"></td>
+           
+
+
+
+            </tr>
+    <tr>
+                       <td id="username2-list-m"></td>
+                <td id="usertime2-list-m"></td>
+                      <td id="userphone2-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username3-list-m"></td>
+                <td id="usertime3-list-m"></td>
+                      <td id="userphone3-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username4-list-m"></td>
+                <td id="usertime4-list-m"></td>
+                      <td id="userphone4-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username5-list-m"></td>
+                <td id="usertime5-list-m"></td>
+                      <td id="userphone5-list-m"></td>   
+            </tr>
+
+        </tbody>
+    </table>
+    </center>
+    <a id="p1-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1-m').css('display','none')
+        $('#n1-m').css('display','block');
+        $('#n2-m').css('display','none')
+"><p>上一页</p></a>
+    <a id="n1-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n1-m').css('display','none');
+        $('#n2-m').css('display','block');
+        $('#p1-m').css('display','block')
+"><p>下一页</p></a>
+    <a id="p2-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-m').css('display','none');
+        $('#p1-m').css('display','block')
+                $('#p2-m').css('display','none')
+        $('#n1-m').css('display','block')
+"><p>上一页</p></a>
+    <a id="n2-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[48+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[48+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[48+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+         })
+          $('#n2-m').css('display','none');
+        $('#n3-m').css('display','block');
+             $('#p1-m').css('display','none')
+        $('#p2-m').css('display','block')
+"><p>下一页</p></a>
 </div>
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de">
     <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
@@ -311,9 +459,6 @@
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
-
-
-
         </tr>
 <tr>
             <td id="name2"></td>
@@ -323,6 +468,34 @@
                  <td id="advice2"></td>
                   <td ><a onclick="
  $.get('../php/admin.php',{applyhost:1,ip:$('#content2').val(),username:$('#name2').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+        </tr>
+<tr>
+            <td id="name3"></td>
+            <td id="asktime3"></td>
+                  <td id="os3"></td>
+                  <td id="ip3"><input id="content3" style=""></td>
+                 <td id="advice3"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content3').val(),username:$('#name3').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+        </tr>
+<tr>
+            <td id="name4"></td>
+            <td id="asktime4"></td>
+                  <td id="os4"></td>
+                  <td id="ip4"><input id="content4" style=""></td>
+                 <td id="advice4"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content4').val(),username:$('#name4').text()},function (data) {
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
@@ -380,7 +553,35 @@
                   <td id="ip2-vps"><input id="content2-vps" style=""></td>
                  <td id="advice2-vps"></td>
                   <td ><a onclick="
- $.get('../php/admin.php',{applyvps:1,ip:$('#content1-vps').val(),username:$('#name1-vps').text()},function (data) {
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content2-vps').val(),username:$('#name2-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+        </tr>
+<tr>
+            <td id="name3-vps"></td>
+            <td id="asktime3-vps"></td>
+                  <td id="os3-vps"></td>
+                  <td id="ip3-vps"><input id="content3-vps" style=""></td>
+                 <td id="advice3-vps"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content3-vps').val(),username:$('#name3-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+        </tr>
+<tr>
+            <td id="name4-vps"></td>
+            <td id="asktime4-vps"></td>
+                  <td id="os4-vps"></td>
+                  <td id="ip4-vps"><input id="content4-vps" style=""></td>
+                 <td id="advice4-vps"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content4-vps').val(),username:$('#name4-vps').text()},function (data) {
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
@@ -443,6 +644,30 @@
     })
 " style="text-decoration: none" href="#">保存</a></td>
         </tr>
+<tr>
+            <td id="name3-sql"></td>
+            <td id="asktime3-sql"></td>
+                  <td id="os3-sql"></td>
+                  <td id="ip3-sql"><input id="content3-sql" style=""></td>
+                 <td id="advice3-sql"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content3-sql').val(),username:$('#name3-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+            <td id="name4-sql"></td>
+            <td id="asktime4-sql"></td>
+                  <td id="os4-sql"></td>
+                  <td id="ip4-sql"><input id="content4-sql" style=""></td>
+                 <td id="advice4-sql"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content4-sql').val(),username:$('#name4-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
     </tbody>
 </table>
 </center>
@@ -498,6 +723,30 @@
     })
 " style="text-decoration: none" href="#">保存</a></td>
         </tr>
+<tr>
+            <td id="name3-list"></td>
+            <td id="asktime3-list"></td>
+                  <td id="os3-list"></td>
+                  <td id="ip3-list"></td>
+                 <td id="advice3-list"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name3-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+            <td id="name4-list"></td>
+            <td id="asktime4-list"></td>
+                  <td id="os4-list"></td>
+                  <td id="ip4-list"></td>
+                 <td id="advice4-list"></td>
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name4-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
     </tbody>
 </table>
 </center>
@@ -543,16 +792,144 @@
                    <td id="username2-list"></td>
             <td id="usertime2-list"></td>
                   <td id="userphone2-list"></td>
-                  <td id="usermail2-ist"></td>  
+                  <td id="usermail2-list"></td>  
                   <td ><a onclick="
  $.get('../php/admin.php',{applylist:1,username:$('#name2-list').text()},function (data) {
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
         </tr>
+<tr>
+                   <td id="username3-list"></td>
+            <td id="usertime3-list"></td>
+                  <td id="userphone3-list"></td>
+                  <td id="usermail3-list"></td>  
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name3-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+                   <td id="username4-list"></td>
+            <td id="usertime4-list"></td>
+                  <td id="userphone4-list"></td>
+                  <td id="usermail4-list"></td>  
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name4-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+                   <td id="username5-list"></td>
+            <td id="usertime5-list"></td>
+                  <td id="userphone5-list"></td>
+                  <td id="usermail5-list"></td>  
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name5-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+
     </tbody>
 </table>
 </center>
+<a id="p1" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1').css('display','none')
+        $('#n1').css('display','block');
+        $('#n2').css('display','none')
+"><p>上一页</p></a>
+<a id="n1" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n1').css('display','none');
+        $('#n2').css('display','block');
+        $('#p1').css('display','block')
+"><p>下一页</p></a>
+<a id="p2" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2').css('display','none');
+        $('#p1').css('display','block')
+                $('#p2').css('display','none')
+        $('#n1').css('display','block')
+"><p>上一页</p></a>
+<a id="n2" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[48+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[48+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[48+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+         })
+          $('#n2').css('display','none');
+        $('#n3').css('display','block');
+             $('#p1').css('display','none')
+        $('#p2').css('display','block')
+"><p>下一页</p></a>
 </body>
 <script>
     var height;
@@ -675,12 +1052,28 @@
     })
     $.get('../php/admin.php',{askuser:1},function (data) {
         var long = data.split('|')[0];
-        for($number=0;$number<3;$number++){
+        if(long>4){
+            $('#n1').css('display','block');
+        }
+        for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
-                $('#username'+$number+'-list').text(data.split('|')[0+4*$number]);
-                $('#usertime'+$number+'-list').text(data.split('|')[1+4*$number]);
-                $('#userphone'+$number+'-list').text(data.split('|')[2+4*$number]);
-                $('#usermail'+$number+'-list').text(data.split('|')[3+4*$number]);
+                $('#username'+$number+'-list').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{askuser:1},function (data) {
+        var long = data.split('|')[0];
+        if(long>4){
+            $('#n1-m').css('display','block');
+        }
+        for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[3+4*$number]);
             }
         }
     })
@@ -746,6 +1139,7 @@
         $('#2').css('display','none');
         $('#3').css('display','none');
         $('#4').css('display','none');
+        $('#5').css('display','none');
         $('#done').css('display','none');
         $('#warning').css('display','none');
         $('#mobile').css('display','block');
@@ -754,6 +1148,7 @@
         $('#table2').css('display','none');
         $('#table3').css('display','none');
         $('#table4').css('display','none');
+        $('#table5').css('display','none');
         if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
             window.location.href='../content/loginadmin.html';
         }
