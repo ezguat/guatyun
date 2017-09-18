@@ -326,7 +326,10 @@
         $('#n2-m').css('display','none')
 "><p>上一页</p></a>
     <a id="n1-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
-                 for($number=0;$number<7;$number++){
+    $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>6){
+                      for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#username'+$number+'-list-m').text('');
                 $('#usertime'+$number+'-list-m').text('');
@@ -344,9 +347,12 @@
             }
         }
          })
-        $('#n1-m').css('display','none');
+      $('#n1-m').css('display','none');
         $('#n2-m').css('display','block');
         $('#p1-m').css('display','block')
+               }
+
+         })
 "><p>下一页</p></a>
     <a id="p2-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
                  for($number=0;$number<7;$number++){
@@ -373,7 +379,10 @@
         $('#n1-m').css('display','block')
 "><p>上一页</p></a>
     <a id="n2-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
-                 for($number=0;$number<7;$number++){
+                $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>12){
+                        for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#username'+$number+'-list-m').text('');
                 $('#usertime'+$number+'-list-m').text('');
@@ -391,10 +400,13 @@
             }
         }
          })
-          $('#n2-m').css('display','none');
+        $('#n2-m').css('display','none');
         $('#n3-m').css('display','block');
-             $('#p1-m').css('display','none')
+          $('#p1-m').css('display','none')
         $('#p2-m').css('display','block')
+         }
+
+         })
 "><p>下一页</p></a>
 </div>
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de">
@@ -860,7 +872,10 @@
         $('#n2').css('display','none')
 "><p>上一页</p></a>
 <a id="n1" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
-                 for($number=0;$number<7;$number++){
+$.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>6){
+                     for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#username'+$number+'-list').text('');
                 $('#usertime'+$number+'-list').text('');
@@ -881,6 +896,10 @@
         $('#n1').css('display','none');
         $('#n2').css('display','block');
         $('#p1').css('display','block')
+               }
+
+         })
+
 "><p>下一页</p></a>
 <a id="p2" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
                  for($number=0;$number<7;$number++){
@@ -907,7 +926,10 @@
         $('#n1').css('display','block')
 "><p>上一页</p></a>
 <a id="n2" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
-                 for($number=0;$number<7;$number++){
+         $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#username'+$number+'-list').text('');
                 $('#usertime'+$number+'-list').text('');
@@ -915,7 +937,6 @@
                 $('#usermail'+$number+'-list').text('');
             }
         }
-         $.get('../php/admin.php',{askuser:1},function (data) {
             for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#username'+$number+'-list').text(data.split('|')[48+1+4*$number]);
@@ -924,11 +945,13 @@
                 $('#usermail'+$number+'-list').text(data.split('|')[48+4+4*$number]);
             }
         }
-         })
           $('#n2').css('display','none');
         $('#n3').css('display','block');
              $('#p1').css('display','none')
         $('#p2').css('display','block')
+               }
+
+         })
 "><p>下一页</p></a>
 </body>
 <script>
