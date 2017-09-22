@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>管理员登录</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
+
+</head>
+<body id="all" style="border: 0px;background-color: #f6f6f6;">
+<div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
+    <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
+    <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p id="change2"  style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5"  style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p  id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+    <div style="margin-left: 25%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  id="change7"  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+</div>
+<div id="done" class="alert alert-success" style="display: none" role="alert">
+    <a href="#" class="alert-link">验证正确！登录中.....</a>
+</div>
+<div  style="display: none;margin: 0px" id="warning" class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong id="alert-content">请检查一下你的邮箱是否符合标准！</strong>
+</div>
+<center><p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">管理员登录</p></center>
+<div id="big" style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
+         <div class="input-group">
+        <span class="input-group-addon">用户</span>
+        <input id="name" placeholder="管理员登录" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="input-group" style="margin-top: 5%">
+            <span class="input-group-addon">密码</span>
+            <input id="password" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+    <a href="../content/forgetpasswd.html" style="margin-left: 17%;margin-top: 1%;position: absolute;text-decoration: none"><p style="font-family: 'Microsoft YaHei UI';">忘记密码？</p></a>
+        <button id="click" style="margin-left: 85%;margin-top: 12%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+        </button>
+    </div>
+<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
+    <div  style="width: 100%;height:8%;background-color: #00c1de;">
+        <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <span onclick="
+           $('#canvas').css('display','block')
+" style="color: white" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </div>
+    <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height:8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">帮助中心</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">留言反馈</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">加入我们</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
+        <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
+    </div>
+    <div id="done-m" class="alert alert-success" style="display: none" role="alert">
+        <a href="#" class="alert-link">验证正确！登录中.....</a>
+    </div>
+    <div  style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content-m">请检查一下你的邮箱是否符合标准！</strong>
+    </div>
+    <center><p id="p-m" style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 3%">管理员登录</p></center>
+    <div id="big-m" style="height: 50%;width: 80%;margin-left: 10%;margin-top: 2%">
+        <div class="input-group">
+            <span class="input-group-addon">用户</span>
+            <input id="name-m" placeholder="管理员登录" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="input-group" style="margin-top: 5%">
+            <span class="input-group-addon">密码</span>
+            <input id="password-m" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <a href="../content/forgetpasswd.html" style="margin-left: 63%;margin-top: 3%;position: absolute;text-decoration: none"><p style="font-family: 'Microsoft YaHei UI';">忘记密码？</p></a>
+        <button id="click-m" style="margin-left: 80%;margin-top: 12%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+        </button>
+    </div>
+</div>
+</body>
+<script>
+    var height;
+    var width;
+    height=document.documentElement.clientHeight;
+    width=document.documentElement.clientWidth;
+    var a=document.getElementById("all");
+    a.setAttribute('height',height);
+    var b=document.getElementById("all");
+    b.setAttribute('width',width);
+    if(width==1440){
+        $('.p1').css('margin-top','15%');
+        $('.p2').css('margin-top','20%');
+        $('.p3').css('margin-top','25%');
+        $('.p4').css('margin-top','30%');
+        $('.p5').css('margin-top','35%');
+        $('.p6').css('margin-top','40%');
+    }
+    if(width==1400){
+        $('.tip1').css('margin-top','11%');
+        $('.p1').css('margin-top','17%');
+        $('.p2').css('margin-top','22%');
+        $('.p3').css('margin-top','27%');
+        $('.p4').css('margin-top','32%');
+        $('.p5').css('margin-top','37%');
+        $('.p6').css('margin-top','42%');
+    }
+    if(1263<width<=1366){
+        $('#image').css('margin-top','30%');
+        $('.tip1').css('margin-top','11%');
+        $('.p1').css('margin-top','17%');
+        $('.p2').css('margin-top','22%');
+        $('.p3').css('margin-top','27%');
+        $('.p4').css('margin-top','32%');
+        $('.p5').css('margin-top','37%');
+        $('.p6').css('margin-top','42%');
+        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
+        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change7').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+    }
+    if(350<=width&&width<=414){
+            $('#tips').css('display','none');
+            $('#done').css('display','none');
+            $('#warning').css('display','none');
+            $('#big').css('display','none');
+            $('#p').css('display','none');
+        $('#mobile').css('display','block');
+        $('#click-m').click(function () {
+            if($('#name-m').val()&&$('#password-m').val())
+            {
+                $.get('../php/loginadmin.php',{name:$('#name-m').val(),password:$('#password-m').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
+                    if(statusTxt==1){
+                        $('#done-m').css('display','block');
+                        setTimeout(function() {
+                            localStorage.setItem('name',$('#name-m').val());
+                            localStorage.setItem('passwd',$('#password-m').val());
+                            window.location.href='../control/admin.html';
+                        },3000)
+                    }
+                    else {
+                        document.getElementById('alert-content-m').innerHTML='用户名和密码出错！';
+                        $('#warning-m').css('display','block');
+                        setTimeout(function() {
+                            $('#warning-m').css('display','none');
+                        },3000)
+                    }
+                })
+            }
+            else
+            {
+                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！';
+                $('#warning-m').css('display','block');
+                setTimeout(function() {
+                    $('#warning-m').css('display','none');
+                },3000)
+
+            }
+        });
+
+    }
+    var ipaddress=localStorage.getItem('ipaddress');
+    var browser=localStorage.getItem('browser');
+    var system=localStorage.getItem('system');
+    var time=new Date();
+    var name=localStorage.getItem('name');
+    var passwd=localStorage.getItem('passwd');
+    if(name&&passwd){
+            $.get('../php/loginadmin.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
+                if(statusTxt==1){
+                    $('#done').css('display','block');
+                    setTimeout(function() {
+                        localStorage.setItem('name',$('#name').val());
+                        localStorage.setItem('passwd',$('#password').val());
+                        window.location.href='../control/admin.html';
+                    },3000)
+                }
+                else {
+                    document.getElementById('alert-content').innerHTML='用户名和密码出错！';
+                    $('#warning').css('display','block');
+                    setTimeout(function() {
+                        $('#warning').css('display','none');
+                    },3000)
+                }
+            })
+             window.location.href='../control/admin.html'
+    }
+    $('#click').click(function () {
+        if($('#name').val()&&$('#password').val())
+        {
+            $.get('../php/loginadmin.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,logtime:time.toLocaleString()},function(statusTxt) {
+                if(statusTxt==1){
+                    $('#done').css('display','block');
+                    setTimeout(function() {
+                        localStorage.setItem('name',$('#name').val());
+                        localStorage.setItem('passwd',$('#password').val());
+                        window.location.href='../control/admin.html';
+                    },3000)
+                }
+                else {
+                    document.getElementById('alert-content').innerHTML='用户名和密码出错！';
+                    $('#warning').css('display','block');
+                    setTimeout(function() {
+                        $('#warning').css('display','none');
+                    },3000)
+                }
+            })
+       }
+        else
+        {
+            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！';
+            $('#warning').css('display','block');
+            setTimeout(function() {
+                $('#warning').css('display','none');
+            },3000)
+
+        }
+    });
+    iptracket();
+    detectOS();
+    detectionbrowser();
+    function detectOS() {
+        var sUserAgent = navigator.userAgent;
+        var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
+        var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel");
+        if (isMac) localStorage.setItem('system',"Mac") ;
+        var isUnix = (navigator.platform == "X11") && !isWin && !isMac;
+        if (isUnix)localStorage.setItem('system',"Unix") ;
+        var isLinux = (String(navigator.platform).indexOf("Linux") > -1);
+        if (isLinux) localStorage.setItem('system',"Linux") ;
+        if (isWin) {
+            var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1;
+            if (isWin2K) localStorage.setItem('system',"Win2000") ;
+            var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1;
+            if (isWinXP) localStorage.setItem('system',"WinXP") ;
+            var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1;
+            if (isWin2003) localStorage.setItem('system',"Win2003") ;
+            var isWinVista= sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1;
+            if (isWinVista) localStorage.setItem('system',"WinVista") ;
+            var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1;
+            if (isWin7) localStorage.setItem('system',"Win7") ;
+            var isWin81 = sUserAgent.indexOf("Windows NT 6.3") > -1 || sUserAgent.indexOf("Windows 8.1") > -1;
+            if (isWin81) localStorage.setItem('system',"Win8.1") ;
+            var isWin10 = sUserAgent.indexOf("Windows NT 6.4") > -1 || sUserAgent.indexOf("Windows 10") > -1;
+            if (isWin10) localStorage.setItem('system',"Win10") ;
+            var isWin10 = sUserAgent.indexOf("Windows NT 10") > -1 || sUserAgent.indexOf("Windows 10") > -1;
+            if (isWin10) localStorage.setItem('system',"Win10") ;
+        }
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) localStorage.setItem('system',"Android") ;
+        if (isiOS) localStorage.setItem('system',"iOS") ;
+        return "other";
+    }
+    function detectionbrowser() {
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+            (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                    (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+        /*以下进行测试*/
+        if (Sys.ie) localStorage.setItem('browser',('IE: ' + Sys.ie)) ;
+        if (Sys.firefox) localStorage.setItem('browser',('Firefox: ' + Sys.firefox)) ;
+        if (Sys.chrome) localStorage.setItem('browser',('Chrome: ' + Sys.chrome)) ;
+        if (Sys.opera) localStorage.setItem('browser',('Opera: ' + Sys.opera)) ;
+        if (Sys.safari) localStorage.setItem('browser',('Safari: ' + Sys.safari)) ;
+    }
+    function iptracket() {
+        $.getJSON('//ipapi.co/json/', function(data) {
+            localStorage.setItem('ipaddress', JSON.stringify(data, null, 2).split("}")[0].split(":")[1].split(',')[0]);
+        });
+    }
+
+</script>
+</html>
