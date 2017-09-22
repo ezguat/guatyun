@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
-    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
-    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
 </head>
 <body id="all" style="border: 0px;background-color: #f6f6f6">
@@ -56,20 +55,36 @@
     <tr>
             <td>3~4节</td>
             <td></td>
-                     <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+                     <td><center><a href="#" onclick="
+                            localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','3~4节|星期二');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
                     <td></td>
     <td></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#"  onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','3~4节|星期六');
+                     localStorage.setItem('detail','322');" data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
         </tr>
 <tr>
             <td>5~6节</td>
                <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','5~6节|星期二');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#"  onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','5~6节|星期五');
+                     localStorage.setItem('detail','322');" data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
 
@@ -79,21 +94,49 @@
            <td></td>
     <td></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期四');
+                     localStorage.setItem('detail','322');" data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期六');
+                     localStorage.setItem('detail','322');" data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
 
         </tr>
 <tr>
             <td>晚上</td>
-            <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+            <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期一');
+                     localStorage.setItem('detail','322');" data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期三');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal"  style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#"  onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期四');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期六');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期日');
+                     localStorage.setItem('detail','322');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
 
         </tr>
     </tbody>
@@ -136,23 +179,43 @@
 <tr>
             <td>5~6节</td>
           <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','5~6节|星期二');
+                     localStorage.setItem('detail','318');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','5~6节|星期六');
+                     localStorage.setItem('detail','318');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
 
         </tr>
 <tr>
             <td>7~8节</td>
-           <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+           <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期一');
+                     localStorage.setItem('detail','318');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期六');
+                     localStorage.setItem('detail','318');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期日');
+                     localStorage.setItem('detail','318');"  data-toggle="modal" data-target="#myModal"  style="text-decoration: none">预约</a></center></td>
 
         </tr>
 <tr>
@@ -187,7 +250,11 @@
             <td>1~2节</td>
             <td></td>
                   <td></td>
-                  <td></td>
+                  <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','1~2节|星期三');
+                     localStorage.setItem('detail','320');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
     <td></td>
@@ -208,7 +275,11 @@
           <td></td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','5~6节|星期四');
+                     localStorage.setItem('detail','320');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
     <td></td>
@@ -217,11 +288,19 @@
 <tr>
             <td>7~8节</td>
            <td></td>
-    <td><center><a href="#" style="text-decoration: none">预约</a></center></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期二');
+                     localStorage.setItem('detail','320');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','7~8节|星期六');
+                     localStorage.setItem('detail','320');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
 
         </tr>
@@ -231,7 +310,11 @@
     <td></td>
     <td></td>
     <td></td>
-    <td></td>
+    <td><center><a href="#" onclick="
+           localStorage.removeItem('date');
+                             localStorage.removeItem('detail');
+                     localStorage.setItem('date','晚上|星期五');
+                     localStorage.setItem('detail','320');"  data-toggle="modal" data-target="#myModal" style="text-decoration: none">预约</a></center></td>
     <td></td>
     <td></td>
 
@@ -512,6 +595,47 @@
                 </tbody>
             </table>
             </center>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div id="done" class="alert alert-success" style="display: none;z-index: 999" role="alert">
+            <a href="#" class="alert-link">验证正确！登录中.....</a>
+        </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">预约理由</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item">在实验室请一定注意安全！</li>
+                    <li class="list-group-item">请至少两人以上使用实验室！</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" onclick="
+                    var time=new Date();
+                     $.get('../php/user.php',{applylab:1,name:localStorage.getItem('name'),ip:localStorage.getItem('ipaddress'),askdate:localStorage.getItem('date'),classroom:localStorage.getItem('detail'),sys:localStorage.getItem('system'),year:time.getFullYear(),browser:localStorage.getItem('browser'),month:time.getMonth()+1,day:time.getDate(),logtime:time.toTimeString().split('GMT')[0]},function(data) {
+                    if(!data){
+
+                            setTimeout(function() {
+                                $('#myModal').css('display','none');
+                            },3000)
+                             $('#done').css('display','block');
+                            setTimeout(function() {
+                                $('#done').css('display','none');
+                            },2000)
+                             setTimeout(function() {
+                                window.location.reload();
+                            },2000)
+                    }
+                     })
+" class="btn btn-primary">预约</button>
+            </div>
         </div>
     </div>
 </div>
