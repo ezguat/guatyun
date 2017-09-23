@@ -27,7 +27,8 @@
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
 </div>
 <center><h2  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: black;margin-top: 2%">实验室开放</h2></center>
-<center><p  style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: black;margin-top: 2%">计算机网络实验室（322）</p></center>
+<center><p  style="font-family: 'Microsoft YaHei UI';font-size: 12px;color: darkred;margin-top: 1%">（只允许一周内预约实验室）</p></center>
+<center><p  style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: black;margin-top: 1%">计算机网络实验室（322）</p></center>
 <center><table  class="table table-bordered" style="height: 100%;width: 28%;border: 1px solid silver">
         <thead>
     <tr>
@@ -652,6 +653,11 @@
         document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
         $('#gone').css('display','none');
         $('#show').css('display','inline-block');
+    }
+    var name=localStorage.getItem('name');
+    var passwd=localStorage.getItem('passwd');
+    if(!name||!passwd){
+        window.location.href='../content/login.html'
     }
     if(1423<width<=1663){
         $('#show1').css('margin-top','22%')
