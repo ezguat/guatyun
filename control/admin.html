@@ -762,6 +762,99 @@
     </tbody>
 </table>
 </center>
+<h2 id="6" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >预约实验室</h2>
+<center><table id="table6"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+        <thead>
+    <tr>
+            <th>用户名</th>
+            <th>预约实验室</th>
+                  <th>预约时间</th>
+                  <th>申请时间</th>
+                  <th>状态</th>
+      
+    <th>保存</th>
+        </tr>
+    </thead>
+        <tbody>
+    <tr>
+            <td id="username0"></td>
+                 <td id="classroom0"></td>
+            <td id="asklab0"></td>
+                  <td id="fortime0"></td>
+                  <td id="retime0"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username0').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+    <tr>
+               <td id="username1"></td>
+                 <td id="classroom1"></td>
+            <td id="asklab1"></td>
+                  <td id="fortime1"></td>
+                  <td id="retime1"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username1').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+        </tr>
+<tr>
+                  <td id="username2"></td>
+                 <td id="classroom2"></td>
+            <td id="asklab2"></td>
+                  <td id="fortime2"></td>
+                  <td id="retime2"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username2').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+                 <td id="username3"></td>
+                 <td id="classroom3"></td>
+            <td id="asklab3"></td>
+                  <td id="fortime3"></td>
+                  <td id="retime3"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username3').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+                   <td id="username4"></td>
+                 <td id="classroom4"></td>
+            <td id="asklab4"></td>
+                  <td id="fortime4"></td>
+                  <td id="retime4"></td>    
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username4').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+<tr>
+                   <td id="username5"></td>
+                 <td id="classroom5"></td>
+            <td id="asklab5"></td>
+                  <td id="fortime5"></td>
+                  <td id="retime5"></td>   
+                  <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username5').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+        </tr>
+
+    </tbody>
+</table>
+</center>
 <h2 id="5" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户列表</h2>
 <center><table id="table5"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
         <thead>
@@ -1100,6 +1193,15 @@ $.get('../php/admin.php',{askuser:1},function (data) {
             }
         }
     })
+    $.get('../php/admin.php',{asklab:1,username:name},function (data) {
+        for($one=0,$two=0;data.split('=>')[$two];$one++){
+            document.getElementById('username'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('classroom'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('asklab'+$one).innerHTML=data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'  '+data.split('=>')[$two++];
+            document.getElementById('fortime'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('retime'+$one).innerHTML=data.split('=>')[$two++];
+        }
+    });
     function show(data) {
         if(data){
             $('#success').css('display','block');
@@ -1163,6 +1265,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
         $('#3').css('display','none');
         $('#4').css('display','none');
         $('#5').css('display','none');
+        $('#6').css('display','none');
         $('#done').css('display','none');
         $('#warning').css('display','none');
         $('#mobile').css('display','block');
@@ -1172,6 +1275,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
         $('#table3').css('display','none');
         $('#table4').css('display','none');
         $('#table5').css('display','none');
+        $('#table6').css('display','none');
         if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
             window.location.href='../content/loginadmin.html';
         }

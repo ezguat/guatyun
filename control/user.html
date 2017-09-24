@@ -9,7 +9,6 @@
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
-
 </head>
 <body  id="all" style="border: 0px;background-color: white;overflow-x: hidden;overflow-y: hidden">
 <div id="tips" style="width: 100%;height:6%;background-color: #00c1de">
@@ -38,6 +37,7 @@
         <button  id="de"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
         <button  id="se"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
         <button   id="up"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">资源下载</button>
+        <button id="re" onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/calendar_128.19541984733px_1208588_easyicon.net.png">预约实验室</button>
         <button id="cg" onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/cogwheel_1173px_1206681_easyicon.net.png">账号修改</button>
     </div>
     <div id="detail"  style="width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
@@ -296,7 +296,7 @@
             </ul>
         </div>
     </div>
-    <div id="upload"  style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
+    <div id="upload"  style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default" >
         <div class="panel-body">
             资源下载
         </div>
@@ -413,6 +413,48 @@ $('#warning2').css('display','block');
                 </div><!-- /.row -->
                 <div class="row" style="height: 10%;position: absolute;width: 40%;margin-top: 12%;display: inline-block"></div><!-- /.row -->
             </div>
+        </div>
+    </div>
+    <div id="request"  style="display: none;width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default">
+        <div class="panel-body">
+            预约实验室
+        </div>
+        <div style="height: 44%;background-color: white" class="panel-footer">
+            <center><table class="table table-bordered" style="height: 100%;width: 68%;border: 1px solid silver">
+                    <thead>
+                <tr>
+                        <th>预约实验室</th>
+                        <th>预约时间</th>
+                                <th>申请时间</th>
+                              <th>状态</th> 
+
+                    </tr>
+                </thead>
+                    <tbody>
+                <tr>
+                        <td id="classroom1"></td>
+                        <td id="retime1"></td>
+                                 <td id="chosetime1"></td>
+                              <td id="sta1"></td>   
+
+
+                    </tr>
+                <tr>
+                        <td id="classroom2"></td>
+                        <td id="retime2"></td>
+                 <td id="chosetime2"></td>
+                              <td id="sta2"></td>   
+
+                    </tr>
+            <tr>
+                        <td id="classroom3"></td>
+                        <td id="retime3"></td>
+                 <td id="chosetime3"></td>
+                              <td id="sta3"></td>   
+                    </tr>
+                </tbody>
+            </table>
+            </center>
         </div>
     </div>
 </div>
@@ -789,6 +831,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askdetail:1,username:name},function (data) {
             detail(data);
         })
@@ -802,6 +845,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('service').style='width: 90%;height: 90%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askservice:1,username:name},function (data) {
                     service(data);
     });
@@ -814,12 +858,31 @@ $('#warning2-m').css('display','block');
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+
     };
     document.getElementById('cg').onclick=function () {
         document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+
+    };
+    document.getElementById('re').onclick=function () {
+        document.getElementById('detail').style='display:none;width: 90%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='display:none;width: 100%;height: 90%;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('upload').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('changefile').style='display:none;width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='width: 90%;height: 100%;margin-left: 10%;position: absolute" class="panel panel-default'
+        $.get('../php/user.php',{asklab:1,username:name},function (data) {
+            for($one=1,$two=0;data.split('=>')[$two];$one++){
+                document.getElementById('classroom'+$one).innerHTML=data.split('=>')[$two++];
+                document.getElementById('retime'+$one).innerHTML=data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'  '+data.split('=>')[$two++];
+                document.getElementById('chosetime'+$one).innerHTML=data.split('=>')[$two++];
+                document.getElementById('sta'+$one).innerHTML=data.split('=>')[$two++];
+            }
+        });
     };
     var name=localStorage.getItem('name');
     var passwd=localStorage.getItem('passwd');
