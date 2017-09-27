@@ -2,96 +2,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>申请使用</title>
+    <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
-
 </head>
-<body id="all" style="border: 0px;background-color: #f6f6f6;overflow-x: hidden">
-<div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
-    <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
-    <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p id="change2"  style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div  style="margin-left: 25%;height: 100%;width: 10%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-    <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onclick="
+<style>
+    .container-fluid{
+        /*background-color: rebeccapurple;*/
+        width: 100%;
+        height: 100%;
+    }
+    @media (min-width: 350px) {
+        .col-md-1{
+            width: 750px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+        .col-md-2{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media (width: 1680px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 135px;
+            height: 30px;
+        }
+    }
+    @media (width: 1600px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 130px;
+            height: 30px;
+        }
+    }
+    @media screen and (min-width: 1400px  ) and (max-width: 1440px  ) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 110px;
+            height: 30px;
+        }
+    }
+    @media screen and (width: 1366px) {
+        .col-md-1{
+            margin-top: 6px;
+            width: 105px;
+            height: 24px;
+        }
+        .col-md-2{
+            font-size: small;
+        }
+
+    }
+    </style>
+<body  style="width: 100%;height: 100%;background-color: #f6f6f6;overflow-y: hidden" >
+<div class="container-fluid">
+    <div style="background-color: #00c1de;height: 5%" class="row">
+        <div style="margin-left: 10%" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-</div>
-<div style="display: none;margin: 0px" id="warning" class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong id="alert-content">申请失败！</strong>
-</div>
-<div id="success" style="display: none;"  class="alert alert-success" role="alert">申请成功！请等待管理员审核！</div>
-<center> <p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 2%">云数据库申请</p></center>
-<center><div id="big" style="width: 30%;height: 70%;margin-top: 0%">
+    </div>
+    <div id="success" style="height: 5%;position: absolute;width: 100%;display: none" class="row">
+        <div  class="alert alert-success" style="width: 100%;" role="alert">
+            <a href="#" class="alert-link">留言成功！</a>
+        </div>
+    </div>
+    <div id="warning"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
+        <div  style="margin: 0px" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong id="alert-content">请检查一下你的邮箱是否符合标准！</strong>
+        </div>
+    </div>
+    <center> <p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">云数据库申请</p></center>
+    <center><div id="big" style="width: 30%;height: 70%;margin-top: 0%">
         <!-- Single button -->
-    <div style="width: 1000px;height:  10%;margin-left: -10%;">
-        <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择</button>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="$('#choice2').val('Mysql'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'" href="#">Mysql</a></li>
-                            <li><a onclick="$('#choice2').val('Window Sql Server'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <input id="choice2" disabled="true" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择</button>
-                        <ul class="dropdown-menu">
-                            <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
-                            <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
-                            <li><a id="a3" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <input id="choice3" disabled="true" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
+        <div style="width: 1000px;height:  10%;margin-left: -10%;">
+            <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择</button>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="$('#choice2').val('Mysql'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'" href="#">Mysql</a></li>
+                                <li><a onclick="$('#choice2').val('Window Sql Server'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <input id="choice2" disabled="true" placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择</button>
+                            <ul class="dropdown-menu">
+                                <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
+                                <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
+                                <li><a id="a3" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <input id="choice3" disabled="true" placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div>
+        <div style="width: 1000px;height:  10%;margin-left: -10%;">
+            <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
+                        </div><!-- /btn-group -->
+                        <input id="user-os"  placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
+                        </div><!-- /btn-group -->
+                        <input id="passwd-os" type="password" placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div>
+        <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
-    <div style="width: 1000px;height:  10%;margin-left: -10%;">
-        <div class="row" style="width: 600px;margin-top: 5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
-                    </div><!-- /btn-group -->
-                    <input id="user-os"  placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <div class="row" style="width: 600px;margin-left: -300px;margin-top: 1.5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
-                    </div><!-- /btn-group -->
-                    <input id="passwd-os" type="password" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-    </div>
-    <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
-    </div>
-</center>
-<button id="click" onclick="var time=new Date();
+    </center>
+    <button id="click" onclick="var time=new Date();
     if($('#advice').val()&&$('#user-os').val()&&$('#passwd-os').val()&&$('#choice3').val()&&$('#choice2').val()){
         $.get('../php/user.php',{applysql:1,advice:$('#advice').val(),service:$('#choice2').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear(),username:localStorage.getItem('name'),user_os:$('#user-os').val(),passwd_os:$('#passwd-os').val(),standard:$('#choice3').val()},function(data) {
      if(data)
@@ -110,97 +174,97 @@
 })
     }
     else {
-          document.getElementById('warning').innerHTML='输入框不能为空！';
+          document.getElementById('alert-content').innerHTML='输入框不能为空！';
 $('#warning').css('display','block');
         setTimeout(function() {
           $('#warning').css('display','none');
         },3000)
     }
 " style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
-    <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
-</button>
-<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
-    <div  style="width: 100%;height:8%;background-color: #00c1de;">
-        <div style="margin-top:3%;margin-left: 65%;height: 100%;width: 25%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: inline-block"><a onclick="
+        <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
+    </button>
+    <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
+        <div  style="width: 100%;height:8%;background-color: #00c1de;">
+            <div style="margin-top:3%;margin-left: 65%;height: 100%;width: 25%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+            <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+            <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: inline-block"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-        <span onclick="
+            <span onclick="
            $('#canvas').css('display','block')
 " style="color: white;margin-left: 70%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-    </div>
-    <div style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong id="alert-content-m">申请失败！</strong>
-    </div>
-    <div id="success-m" style="display: none;"  class="alert alert-success" role="alert">申请成功！请等待管理员审核！</div>
-    <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height:8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">帮助中心</p></a></div>
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">留言反馈</p></a></div>
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">加入我们</p></a></div>
-        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
-        <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
-    </div>
-    <center> <p id="p-m"  style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 2%">云数据库申请</p></center>
-    <div id="big-m" style="width: 70%;height: 50%;margin-top: 0%;margin-left: 15%">
-        <!-- Single button -->
-        <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">镜像选择<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a onclick="$('#choice2-m').val('Mysql'),$('#choice3-m').val('请选择配置'),document.getElementById('a1-m').innerHTML='1核1GB',document.getElementById('a2-m').innerHTML='1核2GB',document.getElementById('a3-m').innerHTML='2核2GB'" href="#">Mysql</a></li>
-                            <li><a onclick="$('#choice2-m').val('Window Sql Server'),$('#choice3-m').val('请选择配置'),document.getElementById('a1-m').innerHTML='1核1GB',document.getElementById('a2-m').innerHTML='1核2GB',document.getElementById('a3-m').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <input id="choice2-m" disabled="true" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">版本选择<span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li><a id="a1-m" onclick="$('#choice3-m').val(this.innerHTML);" href="#"></a></li>
-                            <li><a id="a2-m" onclick="$('#choice3-m').val(this.innerHTML);"  href="#"></a></li>
-                            <li><a id="a3-m" onclick="$('#choice3-m').val(this.innerHTML);"  href="#"></a></li>
-                        </ul>
-                    </div><!-- /btn-group -->
-                    <input id="choice3-m" disabled="true" placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <div class="row" style="width: 300px;margin-top:5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
-                    </div><!-- /btn-group -->
-                    <input id="user-os-m"  placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
-                    </div><!-- /btn-group -->
-                    <input id="passwd-os-m" type="password"   placeholder=""  class="form-control">
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-        <textarea id="advice-m" style="resize: none;margin-left: 0%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
-    </div>
-    <button id="click-m" onclick="var time=new Date();
+        </div>
+        <div style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong id="alert-content-m">申请失败！</strong>
+        </div>
+        <div id="success-m" style="display: none;"  class="alert alert-success" role="alert">申请成功！请等待管理员审核！</div>
+        <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height:8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">帮助中心</p></a></div>
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">留言反馈</p></a></div>
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">加入我们</p></a></div>
+            <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
+            <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
+        </div>
+        <center> <p id="p-m"  style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 2%">云数据库申请</p></center>
+        <div id="big-m" style="width: 70%;height: 50%;margin-top: 0%;margin-left: 15%">
+            <!-- Single button -->
+            <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">镜像选择<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="$('#choice2-m').val('Mysql'),$('#choice3-m').val('请选择配置'),document.getElementById('a1-m').innerHTML='1核1GB',document.getElementById('a2-m').innerHTML='1核2GB',document.getElementById('a3-m').innerHTML='2核2GB'" href="#">Mysql</a></li>
+                                <li><a onclick="$('#choice2-m').val('Window Sql Server'),$('#choice3-m').val('请选择配置'),document.getElementById('a1-m').innerHTML='1核1GB',document.getElementById('a2-m').innerHTML='1核2GB',document.getElementById('a3-m').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <input id="choice2-m" disabled="true" placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">版本选择<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a id="a1-m" onclick="$('#choice3-m').val(this.innerHTML);" href="#"></a></li>
+                                <li><a id="a2-m" onclick="$('#choice3-m').val(this.innerHTML);"  href="#"></a></li>
+                                <li><a id="a3-m" onclick="$('#choice3-m').val(this.innerHTML);"  href="#"></a></li>
+                            </ul>
+                        </div><!-- /btn-group -->
+                        <input id="choice3-m" disabled="true" placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row" style="width: 300px;margin-top:5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库用户</button>
+                        </div><!-- /btn-group -->
+                        <input id="user-os-m"  placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <div class="row" style="width: 300px;margin-top: 5%;display: inline-table;">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库密码</button>
+                        </div><!-- /btn-group -->
+                        <input id="passwd-os-m" type="password"   placeholder=""  class="form-control">
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <textarea id="advice-m" style="resize: none;margin-left: 0%;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
+        </div>
+        <button id="click-m" onclick="var time=new Date();
          if($('#advice-m').val()&&$('#user-os-m').val()&&$('#passwd-os-m').val()&&$('#choice3-m').val()&&$('#choice2-m').val()){
            $.get('../php/user.php',{applysql:1,advice:$('#advice-m').val(),service:$('#choice2-m').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear(),username:localStorage.getItem('name'),osask:null,standard:$('#choice3-m').val(),user_os:$('#user-os-m').val(),passwd_os:$('#passwd-os-m').val()},function(data) {
            if(data)
@@ -226,20 +290,19 @@ $('#warning-m').css('display','block');
         },3000)
     }
 " style="margin-left: 68%;margin-top: 50%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
-        <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
-    </button>
-</div>
+            <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
+        </button>
+    </div>
 
+</div>
 </body>
 <script>
     var height;
     var width;
-    height=document.documentElement.clientHeight;
-    width=document.documentElement.clientWidth;
-    var a=document.getElementById("all");
-    a.setAttribute('height',height);
-    var b=document.getElementById("all");
-    b.setAttribute('width',width);
+    height=window.screen.height;
+    width=window.screen.width;
+    $('.container-fluid').css('height',height);
+    $('.container-fluid').css('width',width);
     if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
         window.location.href='../content/login.html';
     }
@@ -250,50 +313,8 @@ $('#warning-m').css('display','block');
         $('#gone-m').css('display','none');
         document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
         document.getElementById('link-m').href='../control/user.html';
-    }
-    if(width==1680){
-        $('#advice').css('width','570px')
-    }
-    if(width==1600){
-        $('#advice').css('width','570px')
-    }
-    if(width==1440){
-        $('#advice').css('width','570px')
-        $('.p1').css('margin-top','15%');
-        $('.p2').css('margin-top','20%');
-        $('.p3').css('margin-top','25%');
-        $('.p4').css('margin-top','30%');
-        $('.p5').css('margin-top','35%');
-        $('.p6').css('margin-top','40%');
-    }
-    if(width==1400){
-        $('#advice').css('width','570px')
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-    }
-    if(1263<width<=1366){
-        $('#advice').css('width','570px')
-        $('#image').css('margin-top','30%');
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: small"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+            $('#gone').css('display','none');
+            $('#show').css('display','block');
     }
     if(350<=width&&width<=414){
         $('#tips').css('display','none');

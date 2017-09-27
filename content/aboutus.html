@@ -2,37 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>关于我们</title>
+    <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
 </head>
-<body id="all" style="border: 0px;background-color: #f6f6f6">
-<div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
-    <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
-    <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p id="change2"  style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5"  style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p  id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 10%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  id="change"  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-    <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: none"><a onclick="
+<style>
+    .container-fluid{
+        /*background-color: rebeccapurple;*/
+        width: 100%;
+        height: 100%;
+    }
+    @media (min-width: 350px) {
+        .col-md-1{
+            width: 750px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+        .col-md-2{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media (width: 1680px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 135px;
+            height: 30px;
+        }
+    }
+    @media (width: 1600px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 130px;
+            height: 30px;
+        }
+    }
+    @media screen and (min-width: 1400px  ) and (max-width: 1440px  ) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 110px;
+            height: 30px;
+        }
+    }
+    @media screen and (width: 1366px) {
+        .col-md-1{
+            margin-top: 6px;
+            width: 105px;
+            height: 24px;
+        }
+        .col-md-2{
+            font-size: small;
+        }
+
+    }
+    </style>
+<body  style="width: 100%;height: 100%;background-color: #f6f6f6;overflow-y: hidden" >
+<div class="container-fluid">
+    <div style="background-color: #00c1de;height: 5%" class="row">
+        <div style="margin-left: 10%" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-</div>
-<div id="detail"  style="width: 60%;height: 50%;margin-top: 5%;margin-left: 20%;position: absolute" class="panel panel-default">
-    <div id="1" class="panel-body">
-        关于我们
     </div>
-    <div id="2" style="height: 94%;" class="panel-footer"px>
-        <h1 style="font-family: 'Microsoft YaHei UI';font-size: 20px">网站提供服务的目的人群是在校学生，提供给学生一个可以可靠、稳定的云服务。</h1>
-        <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">网站的初衷是希望有更多人能喜欢上CS这门学科，亦或是为对CS感兴趣的人提供一个学习的环境。提供的服务是无偿的，希望大家能够多多分享自己有趣、大胆的想法，在这里找到志同道合的伙伴。</h1>
-        <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">如果有对这方面感兴趣或者是贡献自己一臂之力，可以<a style="text-decoration: none;color: #00b38a"  href="../content/join.html">加入我们</a>。在这里，我们鼓励技术性的讨论，不赞同无意义的提问。</h1>
+    <div style=";height: 45%" class="row">
+        <div id="detail"  style="width: 60%;height: 50%;margin-top: 5%;margin-left: 20%;position: absolute" class="panel panel-default">
+            <div id="1" class="panel-body">
+                关于我们
+            </div>
+            <div id="2" style="height: 94%;" class="panel-footer"px>
+                <h1 style="font-family: 'Microsoft YaHei UI';font-size: 20px">网站提供服务的目的人群是在校学生，提供给学生一个可以可靠、稳定的云服务。</h1>
+                <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">网站的初衷是希望有更多人能喜欢上CS这门学科，亦或是为对CS感兴趣的人提供一个学习的环境。提供的服务是无偿的，希望大家能够多多分享自己有趣、大胆的想法，在这里找到志同道合的伙伴。</h1>
+                <h1 style="font-family: 'Microsoft YaHei UI';line-height: 35px;font-size: 20px">如果有对这方面感兴趣或者是贡献自己一臂之力，可以<a style="text-decoration: none;color: #00b38a"  href="../content/join.html">加入我们</a>。在这里，我们鼓励技术性的讨论，不赞同无意义的提问。</h1>
+            </div>
+        </div>
     </div>
 </div>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
@@ -68,69 +131,35 @@
         </div>
     </div>
 </div>
+</body>
 <script>
     var height;
     var width;
-    height=document.documentElement.clientHeight;
-    width=document.documentElement.clientWidth;
-    var a=document.getElementById("all");
-    a.setAttribute('height',height);
-    var b=document.getElementById("all");
-    b.setAttribute('width',width);
+    height=window.screen.height;
+    width=window.screen.width;
+    $('.container-fluid').css('height',height);
+    $('.container-fluid').css('width',width);
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop:false,
+        slidesPerView : 1,//'auto'
+        direction: 'horizontal',
+        autoplay : 5000,
+        speed:500,
+        autoplayDisableOnInteraction : false,
+        // 如果需要分页器
+    })
     if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
         document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
         $('#gone').css('display','none');
-        $('#show').css('display','inline-block');
-    }
-    if(width==1440){
-        $('.p1').css('margin-top','15%');
-        $('.p2').css('margin-top','20%');
-        $('.p3').css('margin-top','25%');
-        $('.p4').css('margin-top','30%');
-        $('.p5').css('margin-top','35%');
-        $('.p6').css('margin-top','40%');
-    }
-    if(width==1400){
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-    }
-    if(1263<width<=1366){
-        $('#image').css('margin-top','30%');
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        $('#show').css('display','block');
     }
     if(350<=width&&width<=414){
-        $('#detail').css('display','none');
-        $('#tips').css('display','none');
+        $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
         if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
             document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
             document.getElementById('link-m').href='../control/user.html';
-            $('#show-m').css('display','inline-block');
-            $('#gone-m').css('display','none');
-            $('#name-m').css('width','30%');
-            $('#go-m').css('margin-left','65%');
-            $('#show-m').css('margin-left','-75%');
         }
     }
 </script>
-</body>
 </html>

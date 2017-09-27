@@ -2,82 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title>加入我们</title>
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
-    <script src="../js/jquery-3.1.0.min.js"></script>
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
-<body id="all" style="border: 0px;background-color: #f6f6f6">
-<div id="tips" style="width: 100%;height:6%;background-color: #00c1de;">
-    <div style="margin-top: 1%;margin-left: 20%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
-    <div style="margin-left: -1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p id="change2"  style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4"  style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5"  style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
-    <div style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html" style="text-decoration: none;color: white"><p  id="change6"  style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-    <div style="margin-left: 25%;height: 100%;width: 10%;display: inline-block"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  id="change"  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-    <div id="gone" style="margin-left: 1%;height: 100%;width: 5%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-    <div id="show" style="margin-left: 1%;height: 100%;width: 5%;display: none"><a onclick="
+</head>
+<style>
+    .container-fluid{
+        /*background-color: rebeccapurple;*/
+        width: 100%;
+        height: 100%;
+    }
+    @media (min-width: 350px) {
+        .col-md-1{
+            width: 750px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+        .col-md-2{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media (width: 1680px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 135px;
+            height: 30px;
+        }
+    }
+    @media (width: 1600px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 130px;
+            height: 30px;
+        }
+    }
+    @media screen and (min-width: 1400px  ) and (max-width: 1440px  ) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 110px;
+            height: 30px;
+        }
+    }
+    @media screen and (width: 1366px) {
+        .col-md-1{
+            margin-top: 6px;
+            width: 105px;
+            height: 24px;
+        }
+        .col-md-2{
+            font-size: small;
+        }
+
+    }
+    </style>
+<body  style="width: 100%;height: 100%;background-color: #f6f6f6;overflow-x: hidden" >
+<div class="container-fluid">
+    <div style="background-color: #00c1de;height: 5%" class="row">
+        <div style="margin-left: 10%" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick="
     localStorage.removeItem('name');
       localStorage.removeItem('passwd');
       window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-</div>
-<div id="big"  style="margin-left: 10%;margin-top:2%;width: 80%;height: 90%;border: 1px solid #00b38a;position: absolute">
-    <div>
-        <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 30px;margin-top: 2%">加入我们</p></center>
-        <div style="margin-top: 2%;margin-left: 5%;height: 40%;width: 40%;position: absolute;display: inline-block">
-        <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
-            <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">前端页面开发</p>
-        </div>
-            <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-            <p class="p1" style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">开发过网页页面</p>
-            <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道jQuery，BootStrap</p>
-            <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够很好的解决浏览器兼容和跨平台兼容</p>
-            <p  class="p4"  style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">用过或了解过Github</p>
-            <strong class="p5" style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-            <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">和团队协作一起开发网站，提高网站的易用性</p>
-        </div>
-        <div style="margin-top: 2%;margin-left: 60%;height: 40%;width: 40%;position: absolute;display: inline-block">
-            <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
-                <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">服务器运维</p>
+    </div>
+    <div style=";height: 95%" class="row">
+        <div id="big"  style="margin-left: 10%;margin-top:2%;width: 80%;height: 90%;border: 1px solid #00b38a;position: absolute">
+            <div>
+                <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 30px;margin-top: 2%">加入我们</p></center>
+                <div style="margin-top: 2%;margin-left: 5%;height: 40%;width: 40%;position: absolute;display: inline-block">
+                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
+                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">前端页面开发</p>
+                    </div>
+                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
+                    <p class="p1" style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">开发过网页页面</p>
+                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道jQuery，BootStrap</p>
+                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够很好的解决浏览器兼容和跨平台兼容</p>
+                    <p  class="p4"  style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">用过或了解过Github</p>
+                    <strong class="p5" style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
+                    <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">和团队协作一起开发网站，提高网站的易用性</p>
+                </div>
+                <div style="margin-top: 2%;margin-left: 60%;height: 40%;width: 40%;position: absolute;display: inline-block">
+                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
+                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">服务器运维</p>
+                    </div>
+                    <strong class="tip1" style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
+                    <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能保证服务器24X7小时不间断工作</p>
+                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道KVM，并且了解TCP/IP</p>
+                    <p  class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉kickstart、saltstack、zabbix、elk等</p>
+                    <p  class="p4" style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对Ubuntu及CentOS有了解</p>
+                    <strong  class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
+                    <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">负责IDC机房服务器、网络设备协助运维管理工作</p>
+                </div>
+                <div style="margin-top: 25%;margin-left: 5%;height: 40%;width: 40%;position: absolute;display: inline-block">
+                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
+                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">市场推广</p>
+                    </div>
+                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
+                    <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对市场信息敏感，了解互联网推广模式</p>
+                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">良好的沟通能力和执行能力</p>
+                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够独树一帜担当Leader</p>
+                    <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
+                    <p  class="p6" style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">帮助更好的经营我们的服务</p>
+                </div>
+                <div style="margin-top: 25%;margin-left: 60%;height: 40%;width: 40%;position: absolute;display: inline-block">
+                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
+                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">UI设计师</p>
+                    </div>
+                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
+                    <p class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">为网站进行整体规划并完成设计方案</p>
+                    <p class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">有编码经验（HTML/CSS/JS）</p>
+                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉最近几年了的互联网流行趋势</p>
+                    <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
+                    <p class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">提高网站视觉层次</p>
+                </div>
             </div>
-            <strong class="tip1" style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-            <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能保证服务器24X7小时不间断工作</p>
-            <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道KVM，并且了解TCP/IP</p>
-            <p  class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉kickstart、saltstack、zabbix、elk等</p>
-            <p  class="p4" style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对Ubuntu及CentOS有了解</p>
-            <strong  class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-            <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">负责IDC机房服务器、网络设备协助运维管理工作</p>
-        </div>
-        <div style="margin-top: 25%;margin-left: 5%;height: 40%;width: 40%;position: absolute;display: inline-block">
-            <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
-                <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">市场推广</p>
-            </div>
-            <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-            <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对市场信息敏感，了解互联网推广模式</p>
-            <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">良好的沟通能力和执行能力</p>
-            <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够独树一帜担当Leader</p>
-            <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-            <p  class="p6" style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">帮助更好的经营我们的服务</p>
-        </div>
-        <div style="margin-top: 25%;margin-left: 60%;height: 40%;width: 40%;position: absolute;display: inline-block">
-            <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 15%;width: 80%;position: absolute">
-                <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">UI设计师</p>
-            </div>
-            <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-            <p class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">为网站进行整体规划并完成设计方案</p>
-            <p class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">有编码经验（HTML/CSS/JS）</p>
-            <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉最近几年了的互联网流行趋势</p>
-            <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-            <p class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">提高网站视觉层次</p>
         </div>
     </div>
 </div>
-<center><img id="image" style="margin-top: 38%;height: 150px;width: 150px" src="../image/forweb/QQsadasdasdas.png"></center>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
     <div style="width: 100%;height:8%;background-color: #00c1de;">
         <div id="name-m" style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
@@ -102,150 +163,34 @@
     </div>
     <center><img  style="margin-top: 120%;height: 150px;width: 150px" src="../image/forweb/QQsadasdasdas.png"></center>
 </div>
-<div id="swiper" style="margin-top:14%;width: 100%;height: 90%;position: absolute;">
-    <div style="height: 100%;width: 100%">
-        <center> <p style="font-family: 'Microsoft YaHei UI';font-size: 30px;margin-top: 2%">加入我们</p></center>
-        <div class="swiper-container" style="height: 65%;width: 80%;">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"  >
-                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 11%;width: 80%;position: absolute">
-                        <center><p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">前端页面开发</p></center>
-                    </div>
-                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-                    <p class="p1" style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute;">开发过网页页面</p>
-                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道jQuery，BootStrap</p>
-                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够很好的解决浏览器兼容和跨平台兼容</p>
-                    <p  class="p4"  style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">用过或了解过Github</p>
-                    <strong class="p5" style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-                    <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">和团队协作一起开发网站，提高网站的易用性</p>
-                </div>
-                <div class="swiper-slide"   >
-                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 11%;width: 80%;position: absolute">
-                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">服务器运维</p>
-                    </div>
-                    <strong class="tip1" style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-                    <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能保证服务器24X7小时不间断工作</p>
-                    <br><br>
-                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">知道KVM，并且了解TCP/IP</p>
-                    <p  class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉kickstart、saltstack、zabbix、elk等</p>
-                    <p  class="p4" style="margin-left: 10%;margin-top: 28%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对Ubuntu及CentOS有了解</p>
-                    <strong  class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-                    <p  class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">负责IDC机房服务器、网络设备协助运维管理工作</p>
-                </div>
-                <div class="swiper-slide"   >
-                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 11%;width: 80%;position: absolute">
-                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">市场推广</p>
-                    </div>
-                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-                    <p  class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">对市场信息敏感，了解互联网推广模式</p>                            <br><br>
-
-                    <p  class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">良好的沟通能力和执行能力</p>
-                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">能够独树一帜担当Leader</p>
-                    <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-                    <p  class="p6" style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">帮助更好的经营我们的服务</p>
-                </div>
-                <div class="swiper-slide"  >
-                    <div style="border-bottom: 1px solid #00b38a;margin-left: 10%;height: 11%;width: 80%;position: absolute">
-                        <p style="margin-top: 1%;font-family: 'Microsoft YaHei UI';font-size: 25px">UI设计师</p>
-                    </div>
-                    <strong  class="tip1"  style="margin-left: 10%;margin-top: 9%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位要求：</strong>
-                    <p class="p1"  style="margin-left: 10%;margin-top: 13%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">为网站进行整体规划并完成设计方案</p>
-                    <br><br>
-
-                    <p class="p2"  style="margin-left: 10%;margin-top: 18%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">有编码经验（HTML/CSS/JS）</p>
-
-                    <p class="p3"  style="margin-left: 10%;margin-top: 23%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">熟悉最近几年了的互联网流行趋势</p>
-                    <strong class="p5"  style="margin-left: 10%;margin-top: 33%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">职位职责：</strong>
-                    <p class="p6"  style="margin-left: 10%;margin-top: 38%;font-family: 'Microsoft YaHei UI';font-size: 20px;position: absolute">提高网站视觉层次</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 <script>
     var height;
     var width;
-    height=document.documentElement.clientHeight;
-    width=document.documentElement.clientWidth;
-    var a=document.getElementById("all");
-    a.setAttribute('height',height);
-    var b=document.getElementById("all");
-    b.setAttribute('width',width);
+    height=window.screen.height;
+    width=window.screen.width;
+    $('.container-fluid').css('height',height);
+    $('.container-fluid').css('width',width);
     var mySwiper = new Swiper ('.swiper-container', {
         loop:false,
         slidesPerView : 1,//'auto'
         direction: 'horizontal',
-        autoplay : 2000,
-        speed:1000,
+        autoplay : 5000,
+        speed:500,
         autoplayDisableOnInteraction : false,
-
         // 如果需要分页器
     })
     if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
         document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
         $('#gone').css('display','none');
-        $('#show').css('display','inline-block');
-    }
-    if(width>375){
-        $('#swiper').css('display','none');
-
-    }
-    if(width==1440){
-        $('.p1').css('margin-top','15%');
-        $('.p2').css('margin-top','20%');
-        $('.p3').css('margin-top','25%');
-        $('.p4').css('margin-top','30%');
-        $('.p5').css('margin-top','35%');
-        $('.p6').css('margin-top','40%');
-    }
-    if(width==1400){
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-    }
-    if(1263<width<=1366){
-        $('#image').css('margin-top','30%');
-        $('.tip1').css('margin-top','11%');
-        $('.p1').css('margin-top','17%');
-        $('.p2').css('margin-top','22%');
-        $('.p3').css('margin-top','27%');
-        $('.p4').css('margin-top','32%');
-        $('.p5').css('margin-top','37%');
-        $('.p6').css('margin-top','42%');
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
+        $('#show').css('display','block');
     }
     if(350<=width&&width<=414){
-        $('#tips').css('display','none');
-        $('#big').css('display','none');
-        $('#image').css('display','none');
+        $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
-        $('.p1').css('margin-top','22%');
-        $('.p2').css('margin-top','30%');
-        $('.p3').css('margin-top','39%');
-        $('.p4').css('margin-top','56%');
-        $('.p5').css('margin-top','67%');
-        $('.p6').css('margin-top','77%');
         if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
             document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
             document.getElementById('link-m').href='../control/user.html';
-            $('#show-m').css('display','inline-block');
-            $('#gone-m').css('display','none');
-            $('#name-m').css('width','30%');
-            $('#go-m').css('margin-left','65%');
-            $('#show-m').css('margin-left','-75%');
         }
     }
 </script>
