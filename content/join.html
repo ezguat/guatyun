@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
-    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
-    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
@@ -161,7 +159,6 @@
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
         <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
     </div>
-    <center><img  style="margin-top: 120%;height: 150px;width: 150px" src="../image/forweb/QQsadasdasdas.png"></center>
 </div>
 </body>
 <script>
@@ -171,15 +168,6 @@
     width=window.screen.width;
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    var mySwiper = new Swiper ('.swiper-container', {
-        loop:false,
-        slidesPerView : 1,//'auto'
-        direction: 'horizontal',
-        autoplay : 5000,
-        speed:500,
-        autoplayDisableOnInteraction : false,
-        // 如果需要分页器
-    })
     if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
         document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
         $('#gone').css('display','none');
@@ -188,6 +176,8 @@
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
+        $('#swiper').css('display','block');
+        $('#show').css('display','block');
         if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
             document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
             document.getElementById('link-m').href='../control/user.html';

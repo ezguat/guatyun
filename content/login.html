@@ -161,16 +161,11 @@
         </div>
     </div>
 </div>
-<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
-    <div style="width: 100%;height:8%;background-color: #00c1de;">
-        <div id="name-m" style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: none"><a onclick="
-    localStorage.removeItem('name');
-      localStorage.removeItem('passwd');
-      window.location.reload();
-" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-        <span id="go-m" onclick="
+<div id="mobile" style="overflow-x: hidden;display: none;border: 0px;position: absolute;height: 100%;width: 100%">
+    <div  style="width: 100%;height:8%;background-color: #00c1de;">
+        <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <span onclick="
            $('#canvas').css('display','block')
 " style="color: white" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
     </div>
@@ -183,266 +178,36 @@
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
         <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
     </div>
-    <div  style="height: 40%;width: 100%;background-color: #00b38a;position: absolute">
-        <center><h2 style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 5%">虚拟主机（网页托管）</h2></center>
-        <center><a href="host.html" style="text-decoration: none"><p href="../content/host.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%">LAMP环境</p></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">支持wordpress一键建站</p></center>
-        <center><p style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">校内展示/作品验收/上线测试</p></center>
+    <div id="done-m" class="alert alert-success" style="display: none" role="alert">
+        <a href="#" class="alert-link">验证正确！登录中.....</a>
     </div>
-    <div  style="height: 40%;width: 100%;position: absolute;margin-top: 22%">
-        <center>
-            <div class="swiper-container" style="height: 100%;width: 100%">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <div style=";height: 80%;width: 100%;margin-top: 50%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/PC_1001px_1188490_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">个人展示类网站</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">访问页面数：3000/天</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">访客数：1000/天</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">图片数量：2000张左右</p></center>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" >
-                        <div style=";height: 80%;width: 100%;margin-top: 50%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/wordpress_1916px_1202585_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">WordPress</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">五分钟急速建站</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">海量模板随你挑选</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">无需任何编程基础</p></center>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;margin-top: 50%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/apache_256px_540327_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">主流Http服务器</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">支持各种解析服务器</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">独享版虚拟主机</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">入门建站首选</p></center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </center>
+    <div  style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content-m">请检查一下你的邮箱是否符合标准！</strong>
     </div>
-    <div  style="width: 100%;height: 40%;margin-top:160%;position: absolute" class="panel panel-default">
-        <div class="panel-body">
-            应用支持
+    <center><p id="p-m" style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 3%">登录</p></center>
+    <div id="big-m" style="height: 50%;width: 80%;margin-left: 10%;margin-top: 2%">
+        <div class="input-group">
+            <span class="input-group-addon">用户</span>
+            <input id="name-m" placeholder="请使用用户名" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-        <div  style="height: 94%;margin-top:0%" class="panel-footer">
-            <center><table class="table table-bordered" style="height: 100%;width: 100%;">
-                    <thead>
-                <tr>
-                        <th>产品名称</th>
-                        <th>虚拟主机</th>
-                  
-                    </tr>
-                </thead>
-                    <tbody>
-                <tr>
-                        <td>博客</td>
-                        <td>WordPress&nbsp/&nbspZ-Blog</td>
-                   
-                    </tr>
-                <tr>
-                        <td>数据库类型</td>
-                        <td>MySQL 5.1(200MB)/SQLite v2.8.14</td>
-                    </tr>
-            <tr>
-                        <td>Web服务</td>
-                        <td>Apache2.2</td>
-
-                    </tr>
-            <tr>
-                        <td>支持语言</td>
-                        <td>PHP5.2-5.5、HTML、WAP</td>
-
-                    </tr>
-            <tr>
-                        <td>稳定</td>
-                        <td>多用户共享同一台服务器资源99.999%数据可靠性</td>
-
-                    </tr>
-                </tbody>
-            </table>
-            </center>
+        <div class="input-group" style="margin-top: 5%">
+            <span class="input-group-addon">密码</span>
+            <input id="password-m" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
-    </div>
-    <div style="height: 40%;width: 100%;background-color: #9164b3;position: absolute;margin-top: 290%">
-        <center><h2  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 5%">VPS</h2></center>
-        <center><a href="vps.html" style="text-decoration: none"><p href="../content/vps.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%">Ubuntu/CentOS</p></center>
-        <center><p style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">适用于Web前端服务器</p></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">提供安全可靠的弹性计算服务</p></center>
-    </div>
-    <div  style="height: 40%;width: 100%;position: absolute;margin-top: 340%">
-        <center>
-            <div class="swiper-container" style="height: 100%;width: 100%">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;display: inline-block;margin-top: 25%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/Ubuntu_flat_circle_512px_1113622_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">Ubuntu</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">16.04LTS</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">系统长期更新</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">前端服务器</p></center>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;display: inline-block;margin-top: 25%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/cloud_computing_606px_1208031_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">云服务</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">收集数据</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">构造私人云</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">IoT开发</p></center>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;display: inline-block;margin-top: 25%">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/scholar_512px_1113921_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">研究学习</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">数据分析与挖掘</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">高网络包收发场景</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">数据分析、批量计算</p></center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </center>
-    </div>
-    <div  style="width: 100%;height: 40%;margin-top: 450%;;position: absolute" class="panel panel-default">
-        <div class="panel-body">
-            应用支持
+        <div style="margin-top: 5%">
+            <p style="font-family: 'Microsoft YaHei UI';display: inline-block">验证码:</p>
+            <input id="input-m" style="width: 60%;display: inline-block" placeholder="请输入验证码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input style="border-radius: 5%;background-color: #f6f6f6;border: 0px" type = "button" id="code-m" onclick="createCode()"/>
         </div>
-        <div style="height: 94%" class="panel-footer">
-            <center><table class="table table-bordered" style="height: 100%;width: 100%;">
-                    <thead>
-                <tr>
-                        <th>产品名称</th>
-                        <th>VPS</th>
-                  
-                    </tr>
-                </thead>
-                    <tbody>
-                <tr>
-                        <td>CPU</td>
-                        <td>E3-1200 v3</td>
-                   
-                    </tr>
-                <tr>
-                        <td>内存</td>
-                        <td>2GB</td>
-                    </tr>
-            <tr>
-                        <td>最大内网带宽</td>
-                        <td>最大内网带宽1Gbps</td>
-
-                    </tr>
-            <tr>
-                        <td>应用场景</td>
-                        <td>开发与测试业务,测试运行环境</td>
-
-                    </tr>
-            <tr>
-                        <td>数据可靠性</td>
-                        <td>7X24小时数据备份</td>
-
-                    </tr>
-                </tbody>
-            </table>
-            </center>
+        <div style="height: 30px;width: 400px;margin-top: 10%">
+            <button onclick="window.location.href='../content/forgetpasswd.html'" style="margin-top: 0%;display: inline-block;position:absolute;margin-left: 5%;border-radius: 5%;height: 30px;width: 120px;border: 0px;background-color: #d9534f">
+                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">忘记密码？</p>
+            </button>
+            <button id="click-m" style="margin-left: 50%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+                <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">登录</p>
+            </button>
         </div>
-    </div>
-    <div style="height: 40%;width: 100%;background-color: #7a74f0;position: absolute;margin-top: 550%">
-        <center><h2  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 5%">云数据库</h2></center>
-        <center><a href="sql.html" style="text-decoration: none"><p  href="../content/sql.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-        <center><p    style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%">Mysql/Sql Server</p></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">更好处理数据</p></center>
-        <center><p    style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">支持各种主流数据库</p></center>
-    </div>
-    <div style="height: 40%;width: 100%;position: absolute;margin-top: 630%">
-        <center>
-            <div class="swiper-container" style="height: 100%;width: 100%">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/Database_Cloud_305px_1185111_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">云数据库</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">初创公司快速搭建</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">支持100单/天成单量</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">承受1~10K/天访问量 </p></center>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/security_128px_1182192_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">安全云</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">严格控制访问源</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">保持业务永续</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">记录所有访问日志</p></center>
-                        </div> </div>
-                    <div class="swiper-slide" >
-                        <div style="height: 80%;width: 100%;">
-                            <center><img style="height: 128px;width: 128px" src="../image/icon/play_install_128px_1182137_easyicon.net.png"></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 25px;color: black;margin-top: 10%">客户定制</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 5%">提供专向定制</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">横向扩展数据库读能力</p></center>
-                            <center><p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: slategray;margin-top: 1%">MySQL小版本自动在线热升级</p></center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </center>
-    </div>
-    <div style="width: 100%;height: 40%;margin-top: 720%;position: absolute" class="panel panel-default">
-        <div class="panel-body">
-            应用支持
-        </div>
-        <div style="height: 94%" class="panel-footer">
-            <center><table class="table table-bordered" style="height: 100%;width: 100%;">
-                    <thead>
-                <tr>
-                        <th>产品名称</th>
-                        <th>SQL/Sql Server</th>
-                  
-                    </tr>
-                </thead>
-                    <tbody>
-                <tr>
-                        <td>CPU</td>
-                        <td>E3-1200 v3</td>
-                   
-                    </tr>
-                <tr>
-                        <td>内存</td>
-                        <td>1GB</td>
-                    </tr>
-            <tr>
-                        <td>最大内网带宽</td>
-                        <td>最大内网带宽1Gbps</td>
-
-                    </tr>
-            <tr>
-                        <td>应用场景</td>
-                        <td>中型关系数据库</td>
-
-                    </tr>
-            <tr>
-                        <td>适用方向</td>
-                        <td>用于测试研究、测试、学习</td>
-
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </div>
-    </div>
-    <div style="height: 40%;width: 100%;background-color: #000033;position: absolute;margin-top: 820%">
-        <center><h2  style="font-family: 'Microsoft YaHei UI';font-size: 30px;color: white;margin-top: 5%">申请实验室</h2></center>
-        <center><a href="lab.html" style="text-decoration: none"><p  href="../content/lab.html" style="margin-top: 2%;text-decoration:none;font-family: 'Microsoft YaHei UI';color: white;font-size: 25px">申请使用</p></a></center>
-        <center><p    style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 2%">参与开放实验项目</p></center>
-        <center><p   style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">培养创新人才</p></center>
-        <center><p    style="font-family: 'Microsoft YaHei UI';font-size: 20px;color: white;margin-top: 0%">进行创新研究</p></center>
     </div>
 </div>
 </body>

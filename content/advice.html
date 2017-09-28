@@ -213,10 +213,7 @@
         document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
     }
     if(350<=width&&width<=414){
-        $("#tips").css('display','none');
-        $("#done").css('display','none');
-        $("#warning").css('display','none');
-        $("#2").css('display','none');
+        $(".container-fluid").css('display','none');
         $("#mobile").css('display','block');
         if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
             document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
