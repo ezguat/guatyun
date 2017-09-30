@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>用户登录</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/swiper-3.4.0.min.js"></script>
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
+</head>
+<style>
+    .container-fluid{
+        /*background-color: rebeccapurple;*/
+        width: 100%;
+        height: 100%;
+    }
+    @media (min-width: 350px) {
+        .col-md-1{
+            width: 750px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+        .col-md-2{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media (width: 1680px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media (width: 1600px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+        }
+    }
+    @media screen and (width: 1440px  ) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 135px;
+            height: 30px;
+        }
+    }
+    @media screen and (width: 1400px) {
+        .col-md-1{
+            margin-top: 10px;
+            width: 130px;
+            height: 24px;
+        }
+        .col-md-2{
+            font-size: small;
+        }
+
+    }
+    @media screen and (width: 1366px) {
+        .col-md-1{
+            margin-top: 6px;
+            width: 125px;
+            height: 24px;
+        }
+        .col-md-2{
+            font-size: small;
+        }
+
+    }
+</style>
+<body  style="width: 100%;height: 100%;background-color: white;overflow-x: hidden" >
+<div class="container-fluid">
+    <div style="background-color: #00c1de;height: 5%" class="row">
+        <div style="margin-left: 10%" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p id="change1" style="font-family: 'Microsoft YaHei UI';font-size: large">首页</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  id="change2" style="font-family: 'Microsoft YaHei UI';font-size: large">提供服务</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p id="change3"  style="font-family: 'Microsoft YaHei UI';font-size: large">帮助中心</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
+        <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick="
+    localStorage.removeItem('name');
+      localStorage.removeItem('passwd');
+      window.location.reload();
+" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+    </div>
+    <div id="warning2"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
+        <div  style="width: 100%;margin: 0px" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong id="alert-content2">请检查一下你的邮箱是否符合标准！</strong>
+        </div>
+    </div>
+    <div id="warning"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
+        <div  style="width: 100%;margin: 0px" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong id="alert-content">请检查一下你的邮箱是否符合标准！</strong>
+        </div>
+    </div>
+    <div id="success" style="height: 5%;position: absolute;width: 100%;display: none" class="row">
+        <div  style="width: 100%;margin: 0px" class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong >  你已经修改成功！</strong>
+        </div>
+
+    </div>
+    <div style="height: 100%;width: 100%;margin-top: 1%" class="row">
+        <h2 id="1" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >虚拟主机</h2>
+        <center><table id="table1" class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>申请人</th>
+                    <th>申请时间</th>
+                          <th>系统</th>
+                          <th>iP地址</th>
+                          <th>申请理由</th>
+                          <th>保存</th>
+
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="name0"></td>
+                    <td id="asktime0"></td>
+                          <td id="os0"></td>
+                          <td id="ip0"><input id="content0" style=""></td>
+                          <td id="advice0"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content0').val(),username:$('#name0').text()},function (data) {
+     show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                    <td id="name1"></td>
+                    <td id="asktime1"></td>
+                          <td id="os1"></td>
+                          <td id="ip1"><input id="content1" style=""></td>
+                         <td id="advice1"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content1').val(),username:$('#name1').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                    <td id="name2"></td>
+                    <td id="asktime2"></td>
+                          <td id="os2"></td>
+                          <td id="ip2"><input id="content2" style=""></td>
+                         <td id="advice2"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content2').val(),username:$('#name2').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+        <tr>
+                    <td id="name3"></td>
+                    <td id="asktime3"></td>
+                          <td id="os3"></td>
+                          <td id="ip3"><input id="content3" style=""></td>
+                         <td id="advice3"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content3').val(),username:$('#name3').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+        <tr>
+                    <td id="name4"></td>
+                    <td id="asktime4"></td>
+                          <td id="os4"></td>
+                          <td id="ip4"><input id="content4" style=""></td>
+                         <td id="advice4"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content4').val(),username:$('#name4').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <h2 id="2"  style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >VPS</h2>
+        <center><table id="table2" class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>申请人</th>
+                    <th>申请时间</th>
+                          <th>系统</th>
+                          <th>iP地址</th>
+                          <th>申请理由</th>
+                          <th>保存</th>
+
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="name0-vps"></td>
+                    <td id="asktime0-vps"></td>
+                          <td id="os0-vps"></td>
+                          <td id="ip0-vps"><input id="content0-vps" style=""></td>
+                          <td id="advice0-vps"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content0-vps').val(),username:$('#name0-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                    <td id="name1-vps"></td>
+                    <td id="asktime1-vps"></td>
+                          <td id="os1-vps"></td>
+                          <td id="ip1-vps"><input id="content1-vps" style=""></td>
+                         <td id="advice1-vps"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content1-vps').val(),username:$('#name1-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+                </tr>
+        <tr>
+                    <td id="name2-vps"></td>
+                    <td id="asktime2-vps"></td>
+                          <td id="os2-vps"></td>
+                          <td id="ip2-vps"><input id="content2-vps" style=""></td>
+                         <td id="advice2-vps"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content2-vps').val(),username:$('#name2-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+        <tr>
+                    <td id="name3-vps"></td>
+                    <td id="asktime3-vps"></td>
+                          <td id="os3-vps"></td>
+                          <td id="ip3-vps"><input id="content3-vps" style=""></td>
+                         <td id="advice3-vps"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content3-vps').val(),username:$('#name3-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+        <tr>
+                    <td id="name4-vps"></td>
+                    <td id="asktime4-vps"></td>
+                          <td id="os4-vps"></td>
+                          <td id="ip4-vps"><input id="content4-vps" style=""></td>
+                         <td id="advice4-vps"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content4-vps').val(),username:$('#name4-vps').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <h2 id="3" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >云数据库</h2>
+        <center><table id="table3"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>申请人</th>
+                    <th>申请时间</th>
+                          <th>系统</th>
+                          <th>iP地址</th>
+                          <th>申请理由</th>
+                          <th>保存</th>
+
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="name0-sql"></td>
+                    <td id="asktime0-sql"></td>
+                          <td id="os0-sql"></td>
+                          <td id="ip0-sql"><input id="content0-sql" style=""></td>
+                          <td id="advice0-sql"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content0-sql').val(),username:$('#name0-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                    <td id="name1-sql"></td>
+                    <td id="asktime1-sql"></td>
+                          <td id="os1-sql"></td>
+                          <td id="ip1-sql"><input id="content1-sql" style=""></td>
+                         <td id="advice1-sql"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content1-sql').val(),username:$('#name1-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+                </tr>
+        <tr>
+                    <td id="name2-sql"></td>
+                    <td id="asktime2-sql"></td>
+                          <td id="os2-sql"></td>
+                          <td id="ip2-sql"><input id="content2-sql" style=""></td>
+                         <td id="advice2-sql"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content2-sql').val(),username:$('#name2-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                    <td id="name3-sql"></td>
+                    <td id="asktime3-sql"></td>
+                          <td id="os3-sql"></td>
+                          <td id="ip3-sql"><input id="content3-sql" style=""></td>
+                         <td id="advice3-sql"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content3-sql').val(),username:$('#name3-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                    <td id="name4-sql"></td>
+                    <td id="asktime4-sql"></td>
+                          <td id="os4-sql"></td>
+                          <td id="ip4-sql"><input id="content4-sql" style=""></td>
+                         <td id="advice4-sql"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content4-sql').val(),username:$('#name4-sql').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <h2 id="4" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户工单</h2>
+        <center><table id="table4"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>申请人</th>
+                    <th>申请时间</th>
+                          <th>优先级</th>
+                          <th>实例相关</th>
+                          <th>客户反馈</th>
+            <th>保存</th>
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="name0-list"></td>
+                    <td id="asktime0-list"></td>
+                          <td id="os0-list"></td>
+                          <td id="ip0-list"></td>
+                          <td id="advice0-list"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name0-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                    <td id="name1-list"></td>
+                    <td id="asktime1-list"></td>
+                          <td id="os1-list"></td>
+                          <td id="ip1-list"></td>
+                         <td id="advice1-list"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name1-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+                </tr>
+        <tr>
+                    <td id="name2-list"></td>
+                    <td id="asktime2-list"></td>
+                          <td id="os2-list"></td>
+                          <td id="ip2-list"></td>
+                         <td id="advice2-list"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name2-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                    <td id="name3-list"></td>
+                    <td id="asktime3-list"></td>
+                          <td id="os3-list"></td>
+                          <td id="ip3-list"></td>
+                         <td id="advice3-list"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name3-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                    <td id="name4-list"></td>
+                    <td id="asktime4-list"></td>
+                          <td id="os4-list"></td>
+                          <td id="ip4-list"></td>
+                         <td id="advice4-list"></td>
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name4-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </center>
+        <h2 id="6" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >预约实验室</h2>
+        <center><table id="table6"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>用户名</th>
+                    <th>预约实验室</th>
+                          <th>预约时间</th>
+                          <th>申请时间</th>
+                          <th>状态</th>
+              
+            <th>保存</th>
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="username0"></td>
+                         <td id="classroom0"></td>
+                    <td id="asklab0"></td>
+                          <td id="fortime0"></td>
+                          <td id="retime0"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username0').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                       <td id="username1"></td>
+                         <td id="classroom1"></td>
+                    <td id="asklab1"></td>
+                          <td id="fortime1"></td>
+                          <td id="retime1"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username1').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+                </tr>
+        <tr>
+                          <td id="username2"></td>
+                         <td id="classroom2"></td>
+                    <td id="asklab2"></td>
+                          <td id="fortime2"></td>
+                          <td id="retime2"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username2').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                         <td id="username3"></td>
+                         <td id="classroom3"></td>
+                    <td id="asklab3"></td>
+                          <td id="fortime3"></td>
+                          <td id="retime3"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username3').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                           <td id="username4"></td>
+                         <td id="classroom4"></td>
+                    <td id="asklab4"></td>
+                          <td id="fortime4"></td>
+                          <td id="retime4"></td>    
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username4').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                           <td id="username5"></td>
+                         <td id="classroom5"></td>
+                    <td id="asklab5"></td>
+                          <td id="fortime5"></td>
+                          <td id="retime5"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylab:1,username:$('#username5').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+        </center>
+        <h2 id="5" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户列表</h2>
+        <center><table id="table5"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
+                <thead>
+            <tr>
+                    <th>用户名</th>
+                    <th>注册时间</th>
+                          <th>手机号码</th>
+                          <th>账号邮件</th>
+              
+            <th>保存</th>
+                </tr>
+            </thead>
+                <tbody>
+            <tr>
+                    <td id="username0-list"></td>
+                    <td id="usertime0-list"></td>
+                          <td id="userphone0-list"></td>
+                          <td id="usermail0-list"></td>   
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name0-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+            <tr>
+                       <td id="username1-list"></td>
+                    <td id="usertime1-list"></td>
+                          <td id="userphone1-list"></td>
+                          <td id="usermail1-list"></td>  
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name1-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+                </tr>
+        <tr>
+                           <td id="username2-list"></td>
+                    <td id="usertime2-list"></td>
+                          <td id="userphone2-list"></td>
+                          <td id="usermail2-list"></td>  
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name2-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                           <td id="username3-list"></td>
+                    <td id="usertime3-list"></td>
+                          <td id="userphone3-list"></td>
+                          <td id="usermail3-list"></td>  
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name3-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                           <td id="username4-list"></td>
+                    <td id="usertime4-list"></td>
+                          <td id="userphone4-list"></td>
+                          <td id="usermail4-list"></td>  
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name4-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+        <tr>
+                           <td id="username5-list"></td>
+                    <td id="usertime5-list"></td>
+                          <td id="userphone5-list"></td>
+                          <td id="usermail5-list"></td>  
+                          <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name5-list').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+        </center>
+        <a id="p1" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1').css('display','none')
+        $('#n1').css('display','block');
+        $('#n2').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+$.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>6){
+                     for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n1').css('display','none');
+        $('#n2').css('display','block');
+        $('#p1').css('display','block')
+               }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2').css('display','none');
+        $('#p1').css('display','block')
+                $('#p2').css('display','none')
+        $('#n1').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+         $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text('');
+                $('#usertime'+$number+'-list').text('');
+                $('#userphone'+$number+'-list').text('');
+                $('#usermail'+$number+'-list').text('');
+            }
+        }
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[48+1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[48+2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[48+3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+          $('#n2').css('display','none');
+        $('#n3').css('display','block');
+             $('#p1').css('display','none')
+        $('#p2').css('display','block')
+               }
+
+         })
+"><p>下一页</p></a>
+    </div>
+    </div>
+<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%;">
+    <div  style="width: 100%;height:8%;background-color: #00c1de;">
+        <div id="show-m" style="margin-top: 3%;position: absolute;margin-left: 15%;height: 100%;width: 15%;display: inline-block"><a onclick="
+    localStorage.removeItem('name');
+      localStorage.removeItem('passwd');
+      window.location.reload();
+" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+        <span onclick="
+           $('#canvas').css('display','block')
+" style="color: white;margin-left: 85%;position: absolute;margin-top: 3%;font-size: large" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </div>
+    <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height:8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/help.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">帮助中心</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">留言反馈</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p   style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">加入我们</p></a></div>
+        <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">关于我们</p></a></div>
+        <p onclick="     $('#canvas').css('display','none')" style="margin-left: 80%;font-family: 'Microsoft YaHei UI';font-size: 20px;color: whitesmoke;margin-top: 40%">收起</p>
+    </div>
+    <div style="display: none;margin: 0px" id="warning2-m" class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content2-m">修改失败！</strong>
+    </div>
+    <div id="success-m" style="display: none" class="alert alert-success" role="alert">修改成功！</div>
+    <div   style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="alert-content-m">请检查一下你的邮箱是否符合标准！</strong>
+    </div>
+    <h2 id="1-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%;font-size: large;position: absolute" >虚拟主机</h2>
+    <center><table id="table1-m" class="table table-bordered" style=";height: 30%;width: 100%;border: 1px solid silver;margin-top: 0%;position: absolute">
+            <thead>
+        <tr>
+                <th>申请人</th>
+        <!--        <th>申请时间</th>-->
+        <!--              <th>系统</th>-->
+                      <th>iP地址</th>
+                      <th>申请理由</th>
+                      <th>保存</th>
+
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="name0-m"></td>
+        <!--        <td id="asktime0-m"></td>-->
+        <!--              <td id="os0-m"></td>-->
+                      <td id="ip0-m"><input id="content0-m" style=""></td>
+                      <td id="advice0-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content0-m').val(),username:$('#name0-m').text()},function (data) {
+     show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        <tr>
+                <td id="name1-m"></td>
+        <!--        <td id="asktime1-m"></td>-->
+        <!--              <td id="os1-m"></td>-->
+                      <td id="ip1-m"><input id="content1-m" style=""></td>
+                     <td id="advice1-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content1-m').val(),username:$('#name1-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+            </tr>
+    <tr>
+                <td id="name2-m"></td>
+        <!--        <td id="asktime2-m"></td>-->
+        <!--              <td id="os2-m"></td>-->
+                      <td id="ip2-m"><input id="content2-m" style=""></td>
+                     <td id="advice2-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyhost:1,ip:$('#content2-m').val(),username:$('#name2-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    </center>
+    <h2 id="2-m"  style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 62%;font-size: large;position: absolute" >VPS</h2>
+    <center><table id="table2-m"  class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 60%;position: absolute">
+            <thead>
+        <tr>
+                <th>申请人</th>
+                      <th>iP地址</th>
+                      <th>申请理由</th>
+                      <th>保存</th>
+
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="name0-vps-m"></td>
+                      <td id="ip0-vps-m"><input id="content0-vps-m" style=""></td>
+                      <td id="advice0-vps-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content0-vps-m').val(),username:$('#name0-vps-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+    <tr>
+                <td id="name1-vps-m"></td>
+                      <td id="ip1-vps-m"><input id="content1-vps-m" style=""></td>
+                      <td id="advice1-vps-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content1-vps-m').val(),username:$('#name1-vps-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+    <tr>
+                <td id="name2-vps-m"></td>
+                      <td id="ip2-vps-m"><input id="content2-vps-m" style=""></td>
+                      <td id="advice2-vps-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applyvps:1,ip:$('#content2-vps-m').val(),username:$('#name2-vps-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </center>
+    <h2 id="3-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 122%;font-size: large;position: absolute" >云数据库</h2>
+    <center><table id="table3-m"   class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 120%;position: absolute">
+            <thead>
+        <tr>
+                <th>申请人</th>
+                      <th>iP地址</th>
+                      <th>申请理由</th>
+                      <th>保存</th>
+
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="name0-sql-m"></td>
+                      <td id="ip0-sql-m"><input id="content0-sql-m" style=""></td>
+                      <td id="advice0-sql-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content0-sql-m').val(),username:$('#name0-sql-m').text()},function (data) {
+      show(data);
+
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        <tr>
+                <td id="name1-sql-m"></td>
+                      <td id="ip1-sql-m"><input id="content1-sql-m" style=""></td>
+                     <td id="advice1-sql-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content1-sql-m').val(),username:$('#name1-sql-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+            </tr>
+    <tr>
+                <td id="name2-sql-m"></td>
+                      <td id="ip2-sql-m"><input id="content2-sql-m" style=""></td>
+                     <td id="advice2-sql-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applysql:1,ip:$('#content2-sql-m').val(),username:$('#name2-sql-m').text()},function (data) {
+      show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </center>
+    <h2 id="4-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 182%;font-size: large;position: absolute" >客户工单</h2>
+    <center><table id="table4-m"   class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 180%;position: absolute">
+            <thead>
+        <tr>
+                <th>申请人</th>
+                <th>申请时间</th>
+                      <th>优先级</th>
+                      <th>实例相关</th>
+                      <th>客户反馈</th>
+        <th>保存</th>
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="name0-list-m"></td>
+                <td id="asktime0-list-m"></td>
+                      <td id="os0-list-m"></td>
+                      <td id="ip0-list-m"></td>
+                      <td id="advice0-list-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name0-list-m').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        <tr>
+                <td id="name1-list-m"></td>
+                <td id="asktime1-list-m"></td>
+                      <td id="os1-list-m"></td>
+                      <td id="ip1-list-m"></td>
+                     <td id="advice1-list-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name1-list-m').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+
+
+
+            </tr>
+    <tr>
+                <td id="name2-list-m"></td>
+                <td id="asktime2-list-m"></td>
+                      <td id="os2-list-m"></td>
+                      <td id="ip2-list-m"></td>
+                     <td id="advice2-list-m"></td>
+                      <td ><a onclick="
+ $.get('../php/admin.php',{applylist:1,username:$('#name2-list-m').text()},function (data) {
+       show(data);
+    })
+" style="text-decoration: none" href="#">保存</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </center>
+    <h2 id="5-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 252%" >用户列表</h2>
+    <center><table id="table5-m"   class="table" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 2%">
+            <thead>
+        <tr>
+                <th>用户名</th>
+                <th>注册时间</th>
+                      <th>手机号码</th>
+         
+          
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="username0-list-m"></td>
+                <td id="usertime0-list-m"></td>
+                      <td id="userphone0-list-m"></td>
+           
+            </tr>
+        <tr>
+                   <td id="username1-list-m"></td>
+                <td id="usertime1-list-m"></td>
+                      <td id="userphone1-list-m"></td>
+           
+
+
+
+            </tr>
+    <tr>
+                       <td id="username2-list-m"></td>
+                <td id="usertime2-list-m"></td>
+                      <td id="userphone2-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username3-list-m"></td>
+                <td id="usertime3-list-m"></td>
+                      <td id="userphone3-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username4-list-m"></td>
+                <td id="usertime4-list-m"></td>
+                      <td id="userphone4-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username5-list-m"></td>
+                <td id="usertime5-list-m"></td>
+                      <td id="userphone5-list-m"></td>   
+            </tr>
+
+        </tbody>
+    </table>
+    </center>
+    <a id="p1-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1-m').css('display','none')
+        $('#n1-m').css('display','block');
+        $('#n2-m').css('display','none')
+"><p>上一页</p></a>
+    <a id="n1-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+    $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>6){
+                      for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+      $('#n1-m').css('display','none');
+        $('#n2-m').css('display','block');
+        $('#p1-m').css('display','block')
+               }
+
+         })
+"><p>下一页</p></a>
+    <a id="p2-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[24+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[24+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[24+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-m').css('display','none');
+        $('#p1-m').css('display','block')
+                $('#p2-m').css('display','none')
+        $('#n1-m').css('display','block')
+"><p>上一页</p></a>
+    <a id="n2-m" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+                $.get('../php/admin.php',{askuser:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>12){
+                        for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text('');
+                $('#usertime'+$number+'-list-m').text('');
+                $('#userphone'+$number+'-list-m').text('');
+                $('#usermail'+$number+'-list-m').text('');
+            }
+        }
+         $.get('../php/admin.php',{askuser:1},function (data) {
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[48+1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[48+2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[48+3+4*$number]);
+                $('#usermail'+$number+'-list-m').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-m').css('display','none');
+        $('#n3-m').css('display','block');
+          $('#p1-m').css('display','none')
+        $('#p2-m').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+</div>
+
+</body>
+<script>
+    var height;
+    var width;
+    height=window.screen.height;
+    width=window.screen.width;
+    $('.container-fluid').css('height',height);
+    $('.container-fluid').css('width',width);
+    if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
+        window.location.href='../content/loginadmin.html';
+    }
+    var name=localStorage.getItem('name');
+    var passwd=localStorage.getItem('passwd');
+    if(name&&passwd)
+    {
+        $.get('../php/loginadmin.php',{name:name,password:passwd},function(data) {
+            if(data){
+//                    window.location.href='../control/admin.html';
+            }
+            else {
+                window.location.href='../content/login.html';
+            }
+        })
+        $('#gone').css('display','none');
+        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
+        document.getElementById('link').href='../control/user.html';
+        $('#gone-m').css('display','none');
+//        document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
+//        document.getElementById('link-m').href='../control/user.html';
+        $('#gone').css('display','none');
+        $('#show').css('display','block');
+    }
+    else
+    {
+        window.location.href='../control/loginadmin.html';
+    }
+    $.get('../php/admin.php',{detail:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-m').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-m').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-m').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-m').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number).text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number).text(data.split('|')[2+4*$number]);
+                $('#os'+$number).text(data.split('|')[3+4*$number]);
+                $('#advice'+$number).text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_vps:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps'+'-m').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-vps'+'-m').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-vps'+'-m').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-vps'+'-m').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_vps:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-vps').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-vps').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-vps').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_sql:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql'+'-m').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-sql'+'-m').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-sql'+'-m').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-sql'+'-m').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_sql:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-sql').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-sql').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-sql').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_service:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[5+5*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{detail_service:1},function (data) {
+        var long = data.split('|')[0];
+        for($number=0;$number<long;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list'+'-m').text(data.split('|')[1+5*$number]);
+                $('#asktime'+$number+'-list'+'-m').text(data.split('|')[2+5*$number]);
+                $('#os'+$number+'-list'+'-m').text(data.split('|')[3+5*$number]);
+                $('#ip'+$number+'-list'+'-m').text(data.split('|')[4+5*$number]);
+                $('#advice'+$number+'-list'+'-m').text(data.split('|')[5+5*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{askuser:1},function (data) {
+        var long = data.split('|')[0];
+        if(long>4){
+            $('#n1').css('display','block');
+        }
+        for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list').text(data.split('|')[3+4*$number]);
+                $('#usermail'+$number+'-list').text(data.split('|')[4+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{askuser:1},function (data) {
+        var long = data.split('|')[0];
+        if(long>4){
+            $('#n1-m').css('display','block');
+        }
+        for($number=0;$number<7;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number+'-list-m').text(data.split('|')[1+4*$number]);
+                $('#usertime'+$number+'-list-m').text(data.split('|')[2+4*$number]);
+                $('#userphone'+$number+'-list-m').text(data.split('|')[3+4*$number]);
+            }
+        }
+    })
+    $.get('../php/admin.php',{asklab:1,username:name},function (data) {
+        for($one=0,$two=0;data.split('=>')[$two];$one++){
+            document.getElementById('username'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('classroom'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('asklab'+$one).innerHTML=data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'  '+data.split('=>')[$two++];
+            document.getElementById('fortime'+$one).innerHTML=data.split('=>')[$two++];
+            document.getElementById('retime'+$one).innerHTML=data.split('=>')[$two++];
+        }
+    });
+    function show(data) {
+        if(data){
+            $('#success').css('display','block');
+            setTimeout(function() {
+                $('#success').css('display','none');
+            },3000)
+        }
+        else {
+            $('#warning2').css('display','block');
+            setTimeout(function() {
+                $('#warning2').css('display','none');
+            },3000)
+        }
+    }
+    if(width==1440){
+        $('#change').css('font-size','small');
+        $('#change8').css('font-size','small');
+    }
+    if(width==1400){
+        $('#change').css('font-size','small');
+        $('#change8').css('font-size','small');
+        $('.test').css('height','18%')
+        $('.test').css('width','20%')
+    }
+    if(width==1366){
+        $('#change').css('font-size','small');
+        $('#change8').css('font-size','small');
+    }
+    if(350<=width&&width<=414){
+        $('.container-fluid').css('display','none');
+        $('#mobile').css('display','block');
+        if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
+            window.location.href='../content/loginadmin.html';
+        }
+        if(name&&passwd) {
+            $.get('../php/loginadmin.php', {name: name, password: passwd}, function (data) {
+                if (data) {
+                }
+                else {
+                    window.location.href = '../content/login.html';
+                }
+            })
+
+            $('#gone-m').css('display', 'none');
+        document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
+        document.getElementById('link-m').href='../control/user.html';
+        }
+        else
+        {
+            window.location.href='../content/loginadmin.html';
+        }
+        var name=localStorage.getItem('name');
+        var passwd=localStorage.getItem('passwd');
+        function show(data) {
+            if(data){
+                $('#success-m').css('display','block');
+                setTimeout(function() {
+                    $('#success-m').css('display','none');
+                },3000)
+            }
+            else {
+                $('#warning2-m').css('display','block');
+                setTimeout(function() {
+                    $('#warning2-m').css('display','none');
+                },3000)
+            }
+        }
+    }
+</script>
+</html>
