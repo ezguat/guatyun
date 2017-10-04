@@ -193,13 +193,116 @@
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
-
-
                 </tr>
             </tbody>
         </table>
         </center>
-        <h2 id="2"  style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >VPS</h2>
+        <a id="p1-host" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number).text('');
+                $('#asktime'+$number).text('');
+                $('#os'+$number).text('');
+                $('#advice'+$number).text('');
+            }
+        }
+          $.get('../php/admin.php',{detail:1},function (data) {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number).text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number).text(data.split('|')[2+4*$number]);
+                $('#os'+$number).text(data.split('|')[3+4*$number]);
+                $('#advice'+$number).text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1-host').css('display','none')
+        $('#n1-host').css('display','block');
+        $('#n2-host').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1-host" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+        $.get('../php/admin.php',{detail:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>5){
+                     for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number).text('');
+                $('#asktime'+$number).text('');
+                $('#os'+$number).text('');
+                $('#advice'+$number).text('');
+            }
+        }
+           $.get('../php/admin.php',{detail:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<5;$go++){
+                $('#name'+$number).text(data.split('|')[20+1+4*$number]);
+                $('#asktime'+$number).text(data.split('|')[20+2+4*$number]);
+                $('#os'+$number).text(data.split('|')[20+3+4*$number]);
+                $('#advice'+$number).text(data.split('|')[20+4+4*$number]);
+            }
+        }
+         })
+        $('#n1-host').css('display','none');
+        $('#n2-host').css('display','block');
+        $('#p1-host').css('display','block')
+           }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2-host" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number).text('');
+                $('#asktime'+$number).text('');
+                $('#os'+$number).text('');
+                $('#advice'+$number).text('');
+            }
+        }
+           $.get('../php/admin.php',{detail:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                 $('#name'+$number).text(data.split('|')[24+1+4*$number]);
+                $('#asktime'+$number).text(data.split('|')[24+2+4*$number]);
+                $('#os'+$number).text(data.split('|')[24+3+4*$number]);
+                $('#advice'+$number).text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-host').css('display','none');
+        $('#p1-host').css('display','block');
+        $('#p2-host').css('display','none');
+        $('#n1-host').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2-host" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+           $.get('../php/admin.php',{detail:1},function (data) {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number).text('');
+                $('#asktime'+$number).text('');
+                $('#os'+$number).text('');
+                $('#advice'+$number).text('');
+            }
+        }
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number).text(data.split('|')[48+1+4*$number]);
+                $('#asktime'+$number).text(data.split('|')[48+2+4*$number]);
+                $('#os'+$number).text(data.split('|')[48+3+4*$number]);
+                $('#advice'+$number).text(data.split('|')[48+4+4*$number]);
+            }
+        }
+        $('#n2-host').css('display','none');
+        $('#n3-host').css('display','block');
+        $('#p1-host').css('display','none')
+        $('#p2-host').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+        <h2 id="p3-host"  style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 5%" >VPS</h2>
         <center><table id="table2" class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
                 <thead>
             <tr>
@@ -236,9 +339,6 @@
        show(data);
     })
 " style="text-decoration: none" href="#">保存</a></td>
-
-
-
                 </tr>
         <tr>
                     <td id="name2-vps"></td>
@@ -285,7 +385,112 @@
             </tbody>
         </table>
         </center>
-        <h2 id="3" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >云数据库</h2>
+        <a id="p1-vps" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps').text('');
+                $('#asktime'+$number+'-vps').text('');
+                $('#os'+$number+'-vps').text('');
+                $('#advice'+$number+'-vps').text('');
+            }
+        }
+          $.get('../php/admin.php',{detail:1},function (data) {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-vps').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-vps').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-vps').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1-vps').css('display','none')
+        $('#n1-vps').css('display','block');
+        $('#n2-vps').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1-vps" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+     $.get('../php/admin.php',{detail_vps:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>5){
+                     for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-vps').text('');
+                $('#asktime'+$number+'-vps').text('');
+                $('#os'+$number+'-vps').text('');
+                $('#advice'+$number+'-vps').text('');
+            }
+        }
+          $.get('../php/admin.php',{detail_vps:1},function (data)   {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<5;$go++){
+                $('#name'+$number+'-vps').text(data.split('|')[20+1+4*$number]);
+                $('#asktime'+$number+'-vps').text(data.split('|')[20+2+4*$number]);
+                $('#os'+$number+'-vps').text(data.split('|')[20+3+4*$number]);
+                $('#advice'+$number+'-vps').text(data.split('|')[20+4+4*$number]);
+            }
+        }
+         })
+        $('#n1-vps').css('display','none');
+        $('#n2-vps').css('display','block');
+        $('#p1-vps').css('display','block')
+           }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2-vps" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-vps').text('');
+                $('#asktime'+$number+'-vps').text('');
+                $('#os'+$number+'-vps').text('');
+                $('#advice'+$number+'-vps').text('');
+            }
+        }
+           $.get('../php/admin.php',{detail_vps:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                 $('#name'+$number+'-vps').text(data.split('|')[24+1+4*$number]);
+                $('#asktime'+$number+'-vps').text(data.split('|')[24+2+4*$number]);
+                $('#os'+$number+'-vps').text(data.split('|')[24+3+4*$number]);
+                $('#advice'+$number+'-vps').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-vps').css('display','none');
+        $('#p1-vps').css('display','block');
+        $('#p2-vps').css('display','none');
+        $('#n1-vps').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2-vps" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+           $.get('../php/admin.php',{detail_vps:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps').text('');
+                $('#asktime'+$number+'-vps').text('');
+                $('#os'+$number+'-vps').text('');
+                $('#advice'+$number+'-vps').text('');
+            }
+        }
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-vps').text(data.split('|')[48+1+4*$number]);
+                $('#asktime'+$number+'-vps').text(data.split('|')[48+2+4*$number]);
+                $('#os'+$number+'-vps').text(data.split('|')[48+3+4*$number]);
+                $('#advice'+$number+'-vps').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+        $('#n2-vps').css('display','none');
+        $('#n3-vps').css('display','block');
+        $('#p1-vps').css('display','none')
+        $('#p2-vps').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+        <h2 id="3" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 5%" >云数据库</h2>
         <center><table id="table3"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
                 <thead>
             <tr>
@@ -365,7 +570,112 @@
             </tbody>
         </table>
         </center>
-        <h2 id="4" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户工单</h2>
+        <a id="p1-sql" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql').text('');
+                $('#asktime'+$number+'-sql').text('');
+                $('#os'+$number+'-sql').text('');
+                $('#advice'+$number+'-sql').text('');
+            }
+        }
+           $.get('../php/admin.php',{detail_sql:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql').text(data.split('|')[1+4*$number]);
+                $('#asktime'+$number+'-sql').text(data.split('|')[2+4*$number]);
+                $('#os'+$number+'-sql').text(data.split('|')[3+4*$number]);
+                $('#advice'+$number+'-sql').text(data.split('|')[4+4*$number]);
+            }
+        }
+         })
+       $('#p1-sql').css('display','none')
+        $('#n1-sql').css('display','block');
+        $('#n2-sql').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1-sql" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+     $.get('../php/admin.php',{detail_sql:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>5){
+                     for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-sql').text('');
+                $('#asktime'+$number+'-sql').text('');
+                $('#os'+$number+'-sql').text('');
+                $('#advice'+$number+'-sql').text('');
+            }
+        }
+       $.get('../php/admin.php',{detail_sql:1},function (data) {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<5;$go++){
+                $('#name'+$number+'-sql').text(data.split('|')[20+1+4*$number]);
+                $('#asktime'+$number+'-sql').text(data.split('|')[20+2+4*$number]);
+                $('#os'+$number+'-sql').text(data.split('|')[20+3+4*$number]);
+                $('#advice'+$number+'-sql').text(data.split('|')[20+4+4*$number]);
+            }
+        }
+         })
+        $('#n1-sql').css('display','none');
+        $('#n2-sql').css('display','block');
+        $('#p1-sql').css('display','block')
+           }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2-sql" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-sql').text('');
+                $('#asktime'+$number+'-sql').text('');
+                $('#os'+$number+'-sql').text('');
+                $('#advice'+$number+'-sql').text('');
+            }
+        }
+            $.get('../php/admin.php',{detail_sql:1},function (data)   {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                 $('#name'+$number+'-sql').text(data.split('|')[24+1+4*$number]);
+                $('#asktime'+$number+'-sql').text(data.split('|')[24+2+4*$number]);
+                $('#os'+$number+'-sql').text(data.split('|')[24+3+4*$number]);
+                $('#advice'+$number+'-sql').text(data.split('|')[24+4+4*$number]);
+            }
+        }
+         })
+        $('#n2-sql').css('display','none');
+        $('#p1-sql').css('display','block');
+        $('#p2-sql').css('display','none');
+        $('#n1-sql').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2-sql" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+           $.get('../php/admin.php',{detail_sql:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql').text('');
+                $('#asktime'+$number+'-sql').text('');
+                $('#os'+$number+'-sql').text('');
+                $('#advice'+$number+'-sql').text('');
+            }
+        }
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-sql').text(data.split('|')[48+1+4*$number]);
+                $('#asktime'+$number+'-sql').text(data.split('|')[48+2+4*$number]);
+                $('#os'+$number+'-sql').text(data.split('|')[48+3+4*$number]);
+                $('#advice'+$number+'-sql').text(data.split('|')[48+4+4*$number]);
+            }
+        }
+        $('#n2-sql').css('display','none');
+        $('#n3-sql').css('display','block');
+        $('#p1-sql').css('display','none')
+        $('#p2-sql').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+        <h2 id="4" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 5%" >用户工单</h2>
         <center><table id="table4"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
                 <thead>
             <tr>
@@ -444,7 +754,120 @@
             </tbody>
         </table>
         </center>
-        <h2 id="6" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >预约实验室</h2>
+        <a id="p1-list" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+          $.get('../php/admin.php',{detail_service:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#name'+$number+'-list').text(data.split('|')[1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[5+5*$number]);
+            }
+        }
+         })
+       $('#p1-list').css('display','none')
+        $('#n1-list').css('display','block');
+        $('#n2-list').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1-list" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+    $.get('../php/admin.php',{detail_service:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>5){
+                     for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+      $.get('../php/admin.php',{detail_service:1},function (data) {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<5;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[20+1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[20+2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[20+3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[20+4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[20+5+5*$number]);
+            }
+        }
+         })
+        $('#n1-list').css('display','none');
+        $('#n2-list').css('display','block');
+        $('#p1-list').css('display','block')
+           }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2-list" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+            $.get('../php/admin.php',{detail_service:1},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[20+1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[24+2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[20+3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[20+4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[20+5+5*$number]);
+            }
+        }
+         })
+        $('#n2-list').css('display','none');
+        $('#p1-list').css('display','block');
+        $('#p2-list').css('display','none');
+        $('#n1-list').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2-list" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+         $.get('../php/admin.php',{detail_service:1},function (data)  {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[40+1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[40+2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[40+3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[40+4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[40+5+5*$number]);
+            }
+        }
+        $('#n2-list').css('display','none');
+        $('#n3-list').css('display','block');
+        $('#p1-list').css('display','none')
+        $('#p2-list').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+        <h2 id="6" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 5%" >预约实验室</h2>
         <center><table id="table6"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
                 <thead>
             <tr>
@@ -468,7 +891,7 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username0').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
                 </tr>
             <tr>
                        <td id="username1"></td>
@@ -480,7 +903,7 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username1').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
 
 
 
@@ -495,7 +918,7 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username2').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
                 </tr>
         <tr>
                          <td id="username3"></td>
@@ -507,7 +930,7 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username3').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
                 </tr>
         <tr>
                            <td id="username4"></td>
@@ -519,7 +942,7 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username4').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
                 </tr>
         <tr>
                            <td id="username5"></td>
@@ -531,13 +954,126 @@
  $.get('../php/admin.php',{applylab:1,username:$('#username5').text()},function (data) {
        show(data);
     })
-" style="text-decoration: none" href="#">保存</a></td>
+" style="text-decoration: none" href="#">确定</a></td>
                 </tr>
 
             </tbody>
         </table>
         </center>
-        <h2 id="5" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 2%" >用户列表</h2>
+        <a id="p1-user" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#username'+$number).text('');
+                $('#classroom'+$number).text('');
+                $('#asklab'+$number).text('');
+                $('#fortime'+$number).text('');
+                $('#retime'+$number).text('');
+            }
+        }
+         $.get('../php/admin.php',{asklab:1,username:name},function (data)  {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+               $('#username'+$number).text(data.split('=>')[1+4*$number]);
+                $('#classroom'+$number).text(data.split('=>')[2+4*$number]);
+                $('#asklab'+$number).text(data.split('=>')[3+4*$number]+'/'+data.split('=>')[4+4*$number]+'/'+data.split('=>')[5+4*$number]+'/'+data.split('=>')[6+4*$number]);
+                $('#fortime'+$number).text(data.split('=>')[7+4*$number]);
+                $('#retime'+$number).text(data.split('=>')[8+4*$number]);
+            }
+        }
+         })
+       $('#p1-user').css('display','none')
+        $('#n1-user').css('display','block');
+        $('#n2-user').css('display','none')
+"><p>上一页</p></a>
+        <a id="n1-user" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+   $.get('../php/admin.php',{asklab:1,username:name},function (data)   {
+             var get=data.split('=>')[0].split('|')[0];
+               if(get>5){
+                     for($number=0;$number<6;$number++){
+            for($go=0;$go<4;$go++){
+                $('#username'+$number).text('');
+                $('#classroom'+$number).text('');
+                $('#asklab'+$number).text('');
+                $('#fortime'+$number).text('');
+                $('#retime'+$number).text('');
+            }
+        }
+      $.get('../php/admin.php',{asklab:1,username:name},function (data)   {
+            for($number=0;$number<6;$number++){
+            for($go=0;$go<5;$go++){
+                $('#username'+$number).text(data.split('=>')[48+1+8*$number]);
+                $('#classroom'+$number).text(data.split('=>')[48+2+8*$number]);
+                $('#asklab'+$number).text(data.split('=>')[48+3+8*$number]+'/'+data.split('=>')[48+4+8*$number]+'/'+data.split('=>')[48+5+8*$number]+'/'+data.split('=>')[48+6+8*$number]);
+                $('#fortime'+$number).text(data.split('=>')[48+7+8*$number]);
+                $('#retime'+$number).text(data.split('=>')[48+8+8*$number]);
+            }
+        }
+         })
+        $('#n1-user').css('display','none');
+        $('#n2-user').css('display','block');
+        $('#p1-user').css('display','block')
+           }
+
+         })
+
+"><p>下一页</p></a>
+        <a id="p2-user" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
+                 for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+           $.get('../php/admin.php',{asklab:1,username:name},function (data)    {
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[20+1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[24+2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[20+3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[20+4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[20+5+5*$number]);
+            }
+        }
+         })
+        $('#n2-user').css('display','none');
+        $('#p1-user').css('display','block');
+        $('#p2-user').css('display','none');
+        $('#n1-user').css('display','block')
+"><p>上一页</p></a>
+        <a id="n2-user" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+        $.get('../php/admin.php',{asklab:1,username:name},function (data)   {
+             var get=data.split('|')[0];
+               if(get>12){
+                   for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text('');
+                $('#asktime'+$number+'-list').text('');
+                $('#os'+$number+'-list').text('');
+                $('#ip'+$number+'-list').text('');
+                $('#advice'+$number+'-list').text('');
+            }
+        }
+            for($number=0;$number<5;$number++){
+            for($go=0;$go<4;$go++){
+                $('#name'+$number+'-list').text(data.split('|')[40+1+5*$number]);
+                $('#asktime'+$number+'-list').text(data.split('|')[40+2+5*$number]);
+                $('#os'+$number+'-list').text(data.split('|')[40+3+5*$number]);
+                $('#ip'+$number+'-list').text(data.split('|')[40+4+5*$number]);
+                $('#advice'+$number+'-list').text(data.split('|')[40+5+5*$number]);
+            }
+        }
+        $('#n2-user').css('display','none');
+        $('#n3-user').css('display','block');
+        $('#p1-user').css('display','none')
+        $('#p2-user').css('display','block')
+         }
+
+         })
+"><p>下一页</p></a>
+        <h2 id="5" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 5%" >用户列表</h2>
         <center><table id="table5"   class="table" style="height: 100%;width: 68%;border: 1px solid silver;margin-top: 2%">
                 <thead>
             <tr>
@@ -697,7 +1233,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
          })
         $('#n2').css('display','none');
         $('#p1').css('display','block')
-                $('#p2').css('display','none')
+        $('#p2').css('display','none')
         $('#n1').css('display','block')
 "><p>上一页</p></a>
         <a id="n2" content="1" style="display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
@@ -1127,7 +1663,6 @@ $.get('../php/admin.php',{askuser:1},function (data) {
          })
 "><p>下一页</p></a>
 </div>
-
 </body>
 <script>
     var height;
@@ -1177,6 +1712,9 @@ $.get('../php/admin.php',{askuser:1},function (data) {
     })
     $.get('../php/admin.php',{detail:1},function (data) {
         var long = data.split('|')[0];
+        if(long>5){
+            $('#n1-host').css('display','block');
+        }
         for($number=0;$number<long;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number).text(data.split('|')[1+4*$number]);
@@ -1199,6 +1737,9 @@ $.get('../php/admin.php',{askuser:1},function (data) {
     })
     $.get('../php/admin.php',{detail_vps:1},function (data) {
         var long = data.split('|')[0];
+        if(long>5){
+            $('#n1-vps').css('display','block');
+        }
         for($number=0;$number<long;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number+'-vps').text(data.split('|')[1+4*$number]);
@@ -1221,6 +1762,9 @@ $.get('../php/admin.php',{askuser:1},function (data) {
     })
     $.get('../php/admin.php',{detail_sql:1},function (data) {
         var long = data.split('|')[0];
+        if(long>5){
+            $('#n1-sql').css('display','block');
+        }
         for($number=0;$number<long;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number+'-sql').text(data.split('|')[1+4*$number]);
@@ -1232,6 +1776,9 @@ $.get('../php/admin.php',{askuser:1},function (data) {
     })
     $.get('../php/admin.php',{detail_service:1},function (data) {
         var long = data.split('|')[0];
+        if(long>5){
+            $('#n1-list').css('display','block');
+        }
         for($number=0;$number<long;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number+'-list').text(data.split('|')[1+5*$number]);
@@ -1256,7 +1803,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
     })
     $.get('../php/admin.php',{askuser:1},function (data) {
         var long = data.split('|')[0];
-        if(long>4){
+        if(long>5){
             $('#n1').css('display','block');
         }
         for($number=0;$number<7;$number++){
@@ -1281,13 +1828,20 @@ $.get('../php/admin.php',{askuser:1},function (data) {
             }
         }
     })
-    $.get('../php/admin.php',{asklab:1,username:name},function (data) {
-        for($one=0,$two=0;data.split('=>')[$two];$one++){
-            document.getElementById('username'+$one).innerHTML=data.split('=>')[$two++];
-            document.getElementById('classroom'+$one).innerHTML=data.split('=>')[$two++];
-            document.getElementById('asklab'+$one).innerHTML=data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'/'+data.split('=>')[$two++]+'  '+data.split('=>')[$two++];
-            document.getElementById('fortime'+$one).innerHTML=data.split('=>')[$two++];
-            document.getElementById('retime'+$one).innerHTML=data.split('=>')[$two++];
+    $.get('../php/admin.php',{asklab:1},function (data) {
+//        alert(data.split('=>')[0]);
+        var long = data.split('=>')[0].split('|')[0];
+        if(long>6){
+            $('#n1-user').css('display','block');
+        }
+        for($number=0;$number<7;$number++){
+            for($go=0;$go<5;$go++){
+                $('#username'+$number).text(data.split('=>')[1+8*$number]);
+                $('#classroom'+$number).text(data.split('=>')[2+8*$number]);
+                $('#asklab'+$number).text(data.split('=>')[3+8*$number]+'/'+data.split('=>')[4+8*$number]+'/'+data.split('=>')[5+8*$number]+'/'+data.split('=>')[6+8*$number]);
+                $('#fortime'+$number).text(data.split('=>')[7+8*$number]);
+                $('#retime'+$number).text(data.split('=>')[8+8*$number]);
+            }
         }
     });
     function show(data) {
