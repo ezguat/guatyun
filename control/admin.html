@@ -961,8 +961,8 @@
         </table>
         </center>
         <a id="p1-user" content="1" style="display: none;text-decoration: none;margin-left: 70%;position: absolute" onclick="
-                 for($number=0;$number<5;$number++){
-            for($go=0;$go<4;$go++){
+                 for($number=0;$number<7;$number++){
+            for($go=0;$go<5;$go++){
                $('#username'+$number).text('');
                 $('#classroom'+$number).text('');
                 $('#asklab'+$number).text('');
@@ -971,8 +971,8 @@
             }
         }
          $.get('../php/admin.php',{asklab:1,username:name},function (data)  {
-            for($number=0;$number<5;$number++){
-            for($go=0;$go<4;$go++){
+            for($number=0;$number<7;$number++){
+            for($go=0;$go<5;$go++){
                $('#username'+$number).text(data.split('=>')[1+4*$number]);
                 $('#classroom'+$number).text(data.split('=>')[2+4*$number]);
                 $('#asklab'+$number).text(data.split('=>')[3+4*$number]+'/'+data.split('=>')[4+4*$number]+'/'+data.split('=>')[5+4*$number]+'/'+data.split('=>')[6+4*$number]);
