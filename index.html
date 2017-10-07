@@ -139,11 +139,11 @@
     <div style="margin-top: 2%;height: 30%" class="row">
         <center><p style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 1%;">推荐服务</p></center>
         <center>
-        <ul style="margin-top: 1%;background-color: #e0e0e0;width: 80%" class="nav nav-tabs">
-        <li role="presentation" ><a style="color: black;" onclick="$('#vps').css('display','none'),$('#host').css('display','block'),$('#mysql').css('display','none')" >虚拟主机</a></li>
-        <li role="presentation" ><a style="color: black;" onclick="$('#vps').css('display','block'),$('#host').css('display','none'),$('#mysql').css('display','none')" >VPS</a></li>
-        <li role="presentation"><a style="color: black;" onclick=" $('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','block')" >云数据库</a></li>
-        </ul>
+            <ul style="margin-top: 1%;background-color: #e0e0e0;width: 80%" class="nav nav-tabs" role="tablist">
+                <li onclick="$('#vps').css('display','none'),$('#host').css('display','block'),$('#mysql').css('display','none')" role="presentation" class="active"><a style="color: black"  href="#home" aria-controls="home" role="tab" data-toggle="tab">虚拟主机</a></li>
+                <li onclick="$('#vps').css('display','block'),$('#host').css('display','none'),$('#mysql').css('display','none')" role="presentation"><a style="color: black"  href="#profile" aria-controls="profile" role="tab" data-toggle="tab">VPS</a></li>
+                <li onclick=" $('#vps').css('display','none'),$('#host').css('display','none'),$('#mysql').css('display','block')" role="presentation"><a style="color: black"  href="#messages" aria-controls="messages" role="tab" data-toggle="tab">云数据库</a></li>
+            </ul>
         </center>
         <div id="host" style="height: 240%;width: 80%;margin-left: 10%">
         <div   style="width: 100%;height: 18%;margin-top: 0%;" class="panel panel-default">
@@ -403,10 +403,10 @@
     <div  style=";margin-top:5%;height: 100%;width: 100%;">
         <center><p style="font-family: 'Microsoft YaHei UI';font-size: 30px;margin-top: 3%;">推荐服务</p></center>
         <center>
-            <ul style="margin-top: 15%;background-color: #e0e0e0;width: 100%" class="nav nav-tabs">
-                <li role="presentation" ><a style="color: black;" onclick="$('#vps-m').css('display','none'),$('#host-m').css('display','block'),$('#mysql-m').css('display','none')" >虚拟主机</a></li>
-                <li role="presentation" ><a style="color: black;" onclick="$('#vps-m').css('display','block'),$('#host-m').css('display','none'),$('#mysql-m').css('display','none')" >VPS</a></li>
-                <li role="presentation"><a style="color: black;" onclick=" $('#vps-m').css('display','none'),$('#host-m').css('display','none'),$('#mysql-m').css('display','block')" >云数据库</a></li>
+            <ul style="margin-top: 1%;background-color: #e0e0e0;width: 100%" class="nav nav-tabs" role="tablist">
+                <li onclick="$('#vps-m').css('display','none'),$('#host-m').css('display','block'),$('#mysql-m').css('display','none')" role="presentation" class="active"><a  href="#home" aria-controls="home" role="tab" data-toggle="tab">虚拟主机</a></li>
+                <li onclick="$('#vps-m').css('display','block'),$('#host-m').css('display','none'),$('#mysql-m').css('display','none')" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">VPS</a></li>
+                <li onclick=" $('#vps-m').css('display','none'),$('#host-m').css('display','none'),$('#mysql-m').css('display','block')" role="presentation"><a  href="#messages" aria-controls="messages" role="tab" data-toggle="tab">云数据库</a></li>
             </ul>
         </center>
         <div id="host-m" style="height: 160%;width: 100%;">
@@ -419,7 +419,7 @@
                 </div>
             </div>
             <div   style="width: 100%;height: 26%;margin-top: 0%;" class="panel panel-default">
-                <div class="panel-body" style="height: 40%;background-color: #cff0f0">
+                <div class="panel-body" style="height: 30%;background-color: #cff0f0">
                     <p style="font-family: 'Microsoft YaHei UI';font-size: large">支持各类建站系统</p>
                 </div>
                 <div style="height: 9%;background-color: white" class="panel-footer">
@@ -458,7 +458,7 @@
         </div>
         <div id="mysql-m" style="display: none;height: 160%;width: 100%;">
             <div   style="width: 100%;height: 26%;margin-top: 0%;" class="panel panel-default">
-                <div class="panel-body" style="height: 40%;background-color: #cff0f0">
+                <div class="panel-body" style="height: 30%;background-color: #cff0f0">
                     <p style="font-family: 'Microsoft YaHei UI';font-size: large">轻松管理海量数据库</p>
                 </div>
                 <div style="height: 9%;background-color: white" class="panel-footer">
@@ -466,7 +466,7 @@
                 </div>
             </div>
             <div   style="width: 100%;height: 26%;margin-top: 0%;" class="panel panel-default">
-                <div class="panel-body" style="height: 40%;background-color: #cff0f0">
+                <div class="panel-body" style="height: 30%;background-color: #cff0f0">
                     <p style="font-family: 'Microsoft YaHei UI';font-size: large">参数模版</p>
                 </div>
                 <div style="height: 9%;background-color: white" class="panel-footer">
