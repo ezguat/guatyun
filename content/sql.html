@@ -5,7 +5,6 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
@@ -115,7 +114,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据库选择<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a onclick="$('#choice2').val('Mysql'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'" href="#">Mysql</a></li>
                                 <li><a onclick="$('#choice2').val('Window Sql Server'),$('#choice3').val('请选择配置'),document.getElementById('a1').innerHTML='1核1GB',document.getElementById('a2').innerHTML='1核2GB',document.getElementById('a3').innerHTML='2核2GB'"  href="#">Window Sql Server</a></li>
@@ -129,7 +128,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">配置选择<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
                                 <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>

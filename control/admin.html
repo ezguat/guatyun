@@ -1713,9 +1713,9 @@ $.get('../php/admin.php',{askuser:1},function (data) {
 
          })
 "><p>下一页</p></a>
-    <h2 id="5-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 230%;font-size: large;position: absolute" >预约实验室</h2>
+    <h2 id="5-m-lab" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 230%;font-size: large;position: absolute" >预约实验室</h2>
     <!--<h2 id="4-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 230%;font-size: large;position: absolute" >客户工单</h2>-->
-    <center><table id="table5-m"   class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 230%;position: absolute">
+    <center><table id="table5-m-lab"   class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 230%;position: absolute">
         <thead>
         <tr>
             <th>申请人</th>
@@ -1765,7 +1765,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
         </tbody>
     </table>
     </center>
-    <a id="p1-m-lab" content="1" style=";display: none;margin-top: 310%;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+    <a id="p1-m-lab" content="1" style=";display: none;margin-top: 320%;text-decoration: none;margin-left: 60%;position: absolute" onclick="
                  for($number=0;$number<3;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number+'-lab-m').text('');
@@ -1788,7 +1788,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
         $('#n1-m-lab').css('display','block');
         $('#n2-m-lab').css('display','none')
 "><p>上一页</p></a>
-    <a id="n1-m-lab" content="1" style="margin-top: 310%;display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+    <a id="n1-m-lab" content="1" style="margin-top: 320%;display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
  $.get('../php/admin.php',{asklab:1},function (data) {
         var long = data.split('=>')[0].split('|')[0];
                if(long>3){
@@ -1817,7 +1817,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
 
          })
 "><p>下一页</p></a>
-    <a id="p2-m-lab" content="1" style="margin-top: 310%;display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
+    <a id="p2-m-lab" content="1" style="margin-top: 320%;display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
                  for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){
                 $('#name'+$number+'-lab-m').text('');
@@ -1841,7 +1841,7 @@ $.get('../php/admin.php',{askuser:1},function (data) {
         $('#p2-m-lab').css('display','none')
         $('#n1-m-lab').css('display','block')
 "><p>上一页</p></a>
-    <a id="n2-m-lab" content="1" style="margin-top:310%;display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
+    <a id="n2-m-lab" content="1" style="margin-top:320%;display: none;text-decoration: none;margin-left: 75%;position: absolute" onclick="
           $.get('../php/admin.php',{asklab:1},function (data) {
         var long = data.split('=>')[0].split('|')[0];
                if(long>6){
@@ -1871,115 +1871,60 @@ $.get('../php/admin.php',{askuser:1},function (data) {
 
          })
 "><p>下一页</p></a>
-    <!--<h2 id="4-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 190%;font-size: large;position: absolute" >客户工单</h2>-->
-    <!--<center><table id="table4-m"   class="table table-bordered" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 190%;position: absolute">-->
-        <!--    <thead>-->
-    <!--    <tr>-->
-        <!--        <th>申请人</th>-->
-        <!--        <th>申请时间</th>-->
-        <!--              <th>优先级</th>-->
-        <!--              <th>实例相关</th>-->
-        <!--              <th>客户反馈</th>-->
-        <!--<th>保存</th>-->
-        <!--    </tr>-->
-    <!--    </thead>-->
-        <!--    <tbody>-->
-    <!--    <tr>-->
-        <!--        <td id="name0-list-m"></td>-->
-        <!--        <td id="asktime0-list-m"></td>-->
-        <!--              <td id="os0-list-m"></td>-->
-        <!--              <td id="ip0-list-m"></td>-->
-        <!--              <td id="advice0-list-m"></td>-->
-        <!--              <td ><a onclick="-->
- <!--$.get('../php/admin.php',{applylist:1,username:$('#name0-list-m').text()},function (data) {-->
-       <!--show(data);-->
-    <!--})-->
-<!--" style="text-decoration: none" href="#">保存</a></td>-->
-        <!--    </tr>-->
-    <!--    <tr>-->
-        <!--        <td id="name1-list-m"></td>-->
-        <!--        <td id="asktime1-list-m"></td>-->
-        <!--              <td id="os1-list-m"></td>-->
-        <!--              <td id="ip1-list-m"></td>-->
-        <!--             <td id="advice1-list-m"></td>-->
-        <!--              <td ><a onclick="-->
- <!--$.get('../php/admin.php',{applylist:1,username:$('#name1-list-m').text()},function (data) {-->
-       <!--show(data);-->
-    <!--})-->
-<!--" style="text-decoration: none" href="#">保存</a></td>-->
+    <h2 id="5-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 340%" >用户列表</h2>
+    <center><table id="table5-m"   class="table" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 2%">
+            <thead>
+        <tr>
+                <th>用户名</th>
+                <th>注册时间</th>
+                      <th>手机号码</th>
+         
+          
+            </tr>
+        </thead>
+            <tbody>
+        <tr>
+                <td id="username0-list-m"></td>
+                <td id="usertime0-list-m"></td>
+                      <td id="userphone0-list-m"></td>
+           
+            </tr>
+        <tr>
+                   <td id="username1-list-m"></td>
+                <td id="usertime1-list-m"></td>
+                      <td id="userphone1-list-m"></td>
+           
 
 
 
-        <!--    </tr>-->
-    <!--<tr>-->
-        <!--        <td id="name2-list-m"></td>-->
-        <!--        <td id="asktime2-list-m"></td>-->
-        <!--              <td id="os2-list-m"></td>-->
-        <!--              <td id="ip2-list-m"></td>-->
-        <!--             <td id="advice2-list-m"></td>-->
-        <!--              <td ><a onclick="-->
- <!--$.get('../php/admin.php',{applylist:1,username:$('#name2-list-m').text()},function (data) {-->
-       <!--show(data);-->
-    <!--})-->
-<!--" style="text-decoration: none" href="#">保存</a></td>-->
-        <!--    </tr>-->
-    <!--    </tbody>-->
-    <!--</table>-->
-    <!--</center>-->
-    <!--<h2 id="5-m" style="font-family: 'Microsoft YaHei UI';margin-left: 15%;margin-top: 252%" >用户列表</h2>-->
-    <!--<center><table id="table5-m"   class="table" style="height: 30%;width: 100%;border: 1px solid silver;margin-top: 2%">-->
-        <!--    <thead>-->
-    <!--    <tr>-->
-        <!--        <th>用户名</th>-->
-        <!--        <th>注册时间</th>-->
-        <!--              <th>手机号码</th>-->
-        <!-- -->
-        <!--  -->
-        <!--    </tr>-->
-    <!--    </thead>-->
-        <!--    <tbody>-->
-    <!--    <tr>-->
-        <!--        <td id="username0-list-m"></td>-->
-        <!--        <td id="usertime0-list-m"></td>-->
-        <!--              <td id="userphone0-list-m"></td>-->
-        <!--   -->
-        <!--    </tr>-->
-    <!--    <tr>-->
-        <!--           <td id="username1-list-m"></td>-->
-        <!--        <td id="usertime1-list-m"></td>-->
-        <!--              <td id="userphone1-list-m"></td>-->
-        <!--   -->
+            </tr>
+    <tr>
+                       <td id="username2-list-m"></td>
+                <td id="usertime2-list-m"></td>
+                      <td id="userphone2-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username3-list-m"></td>
+                <td id="usertime3-list-m"></td>
+                      <td id="userphone3-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username4-list-m"></td>
+                <td id="usertime4-list-m"></td>
+                      <td id="userphone4-list-m"></td>
+           
+            </tr>
+    <tr>
+                       <td id="username5-list-m"></td>
+                <td id="usertime5-list-m"></td>
+                      <td id="userphone5-list-m"></td>   
+            </tr>
 
-
-
-        <!--    </tr>-->
-    <!--<tr>-->
-        <!--               <td id="username2-list-m"></td>-->
-        <!--        <td id="usertime2-list-m"></td>-->
-        <!--              <td id="userphone2-list-m"></td>-->
-        <!--   -->
-        <!--    </tr>-->
-    <!--<tr>-->
-        <!--               <td id="username3-list-m"></td>-->
-        <!--        <td id="usertime3-list-m"></td>-->
-        <!--              <td id="userphone3-list-m"></td>-->
-        <!--   -->
-        <!--    </tr>-->
-    <!--<tr>-->
-        <!--               <td id="username4-list-m"></td>-->
-        <!--        <td id="usertime4-list-m"></td>-->
-        <!--              <td id="userphone4-list-m"></td>-->
-        <!--   -->
-        <!--    </tr>-->
-    <!--<tr>-->
-        <!--               <td id="username5-list-m"></td>-->
-        <!--        <td id="usertime5-list-m"></td>-->
-        <!--              <td id="userphone5-list-m"></td>   -->
-        <!--    </tr>-->
-
-    <!--    </tbody>-->
-    <!--</table>-->
-    <!--</center>-->
+        </tbody>
+    </table>
+    </center>
     <a id="p1-m" content="1" style="display: none;text-decoration: none;margin-left: 60%;position: absolute" onclick="
                  for($number=0;$number<7;$number++){
             for($go=0;$go<4;$go++){

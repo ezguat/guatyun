@@ -133,7 +133,6 @@
                 <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">反馈</p>
             </button>
         </div>
-
     </div>
 </div>
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
@@ -208,47 +207,36 @@
             localStorage.setItem('ipaddress', JSON.stringify(data, null, 2).split("}")[0].split(":")[1].split(',')[0]);
         });
     }
-    if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
-        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
-        $('#gone').css('display','none');
-        $('#show').css('display','inline-block');
-    }
-    if(1263<width&&width<=1349){
-        document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%"
-        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-        document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"
-    }
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(350<=width&&width<=414){
-        $(".container-fluid").css('display','none');
-        $("#mobile").css('display','block');
-        if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
-            document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
-            document.getElementById('link-m').href='../control/user.html';
-            $('#show-m').css('display','inline-block');
-            $('#gone-m').css('display','none');
-            $('#name-m').css('width','30%');
-            $('#go-m').css('margin-left','65%');
-            $('#show-m').css('margin-left','-75%');
-        }
-    }
+    localStorage.getItem('name')&&localStorage.getItem('passwd')?(document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name'), $('#gone').css('display','none'),
+    $('#show').css('display','inline-block')):false;
+    1263<width&&width<=1349?( document.getElementById('change1').style="font-family: 'Microsoft YaHei UI';font-size: medium;margin-top:-2%",
+        document.getElementById('change2').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change3').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change4').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change5').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change6').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change').style="font-family: 'Microsoft YaHei UI';font-size: medium",
+    document.getElementById('change8').style="font-family: 'Microsoft YaHei UI';font-size: medium"):false;
+    width==1440?( $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
+    width==1400?(  $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small'),
+    $('.test').css('height','18%'),
+    $('.test').css('width','20%')):false
+    width==1366?( $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
+    350<=width&&width<=414?(
+        $(".container-fluid").css('display','none'),
+    $("#mobile").css('display','block'),
+            localStorage.getItem('name')&&localStorage.getItem('passwd')?(
+                document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name'),
+    document.getElementById('link-m').href='../control/user.html',
+    $('#show-m').css('display','inline-block'),
+    $('#gone-m').css('display','none'),
+    $('#name-m').css('width','30%'),
+    $('#go-m').css('margin-left','65%'),
+    $('#show-m').css('margin-left','-75%')
+            ):false
+    ):false
 </script>
 </html>

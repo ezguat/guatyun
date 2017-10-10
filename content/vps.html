@@ -5,7 +5,6 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
@@ -115,7 +114,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">镜像选择</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">镜像选择<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a onclick="$('#choice2').val('Ubuntu'),$('#choice3').val('请选择版本'),document.getElementById('a1').innerHTML=' 16.04 LTS',document.getElementById('a2').innerHTML=' 14.04 LTS',document.getElementById('a3').innerHTML=' 12.04 LTS'" href="#">Ubuntu</a></li>
                                 <li><a onclick="$('#choice2').val('CentOS'),$('#choice3').val('请选择版本'),document.getElementById('a1').innerHTML=' 7.3 64位',document.getElementById('a2').innerHTML=' 7.2 64位',document.getElementById('a3').innerHTML=' 6.8 64位'"  href="#">CentOS</a></li>
@@ -131,7 +130,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">版本选择</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">版本选择<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a id="a1" onclick="$('#choice3').val(this.innerHTML);" href="#"></a></li>
                                 <li><a id="a2" onclick="$('#choice3').val(this.innerHTML);"  href="#"></a></li>
@@ -148,7 +147,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">内存选择</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">内存选择<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a onclick="$('#choice4').val('1GB'),$('#choice5').val('请选择服务器空间大小')" href="#">1GB</a></li>
                                 <li><a onclick="$('#choice4').val('2GB'),$('#choice5').val('请选择服务器空间大小')"  href="#">2GB</a></li>
@@ -163,7 +162,7 @@
                 <div class="col-lg-6">
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">空间容量</button>
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">空间容量<span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a  onclick="$('#choice5').val(this.innerHTML);" href="#">5GB</a></li>
                                 <li><a onclick="$('#choice5').val(this.innerHTML);"  href="#">10GB</a></li>

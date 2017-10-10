@@ -217,44 +217,29 @@
     width=window.screen.width;
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
-        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
-        $('#gone').css('display','none');
-        $('#show').css('display','block');
-    }
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
+    localStorage.getItem('name')&&localStorage.getItem('passwd')?(document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name'),
+    $('#gone').css('display','none'),
+    $('#show').css('display','block')):false
+    width==1440?(   $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
+    width==1440?( $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small'),
+    $('.test').css('height','18%'),
+    $('.test').css('width','20%')):false
+    width==1366?(  $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
         $('#swiper').css('display','block');
         $('#show').css('display','block');
-        if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
-            document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
-            document.getElementById('link-m').href='../control/user.html';
-            $('#show-m').css('display','inline-block');
-            $('#gone-m').css('display','none');
-            $('#name-m').css('width','30%')
-            $('#go-m').css('margin-left','65%');
-            $('#show-m').css('margin-left','-75%');
-
-        }
-        else {
-            $("#name-m").css('width','15%')
-
-        }
+        localStorage.getItem('name')&&localStorage.getItem('passwd')?(document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name'),
+        document.getElementById('link-m').href='../control/user.html',
+        $('#show-m').css('display','inline-block'),
+        $('#gone-m').css('display','none'),
+        $('#name-m').css('width','30%'),
+        $('#go-m').css('margin-left','65%'),
+        $('#show-m').css('margin-left','-75%')):$("#name-m").css('width','15%')
     }
 </script>
 </html>
