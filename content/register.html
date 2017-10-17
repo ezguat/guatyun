@@ -292,15 +292,16 @@ else {
 
               }
               else {
-                        if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
+
+                        if(inputCode!=code ) {
                         document.getElementById('alert-content2-m').innerHTML='验证码输入错误！';
                         $('#warning2-m').css('display','block');
                         setTimeout(function() {
                             $('#warning2-m').css('display','none');
                         },3000)
-                        createCode();//刷新验证码
-                        document.getElementById('input-m').value ='';//清空文本框
-        }
+                        createCode();
+                        document.getElementById('input-m').value ='';
+                        }
         else {
 $.get('../php/register.php',{name:$('#name-m').val(),password:$('#password-m').val(),email:$('#email-m').val(),number:$('#number-m').val(),retime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear()},function (data) {
 })
@@ -324,8 +325,6 @@ else {
             </button>
         </div>
     </div>
-
-
 </div>
 </body>
 <script>
@@ -335,29 +334,16 @@ else {
     width=window.screen.width;
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    if(width==1680){
-        $('#input').css('width','65%')
-    }
-    if(width==1600){
-        $('#input').css('width','63%')
-    }
-    if(width==1440){
-        $('#input').css('width','60%')
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#input').css('width','58%')
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#input').css('width','55%')
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
+    width==1680?($('#input').css('width','65%')):false
+    width==1440?($('#input').css('width','63%')):false
+    width==1400?($('#input').css('width','58%'),
+        $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small'),
+    $('.test').css('height','18%'),
+    $('.test').css('width','20%')):false
+    width==1366?(  $('#input').css('width','55%'),
+        $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
@@ -370,46 +356,35 @@ else {
         $('#click-m').click(function () {
             var time=new Date();
             var inputCode = document.getElementById("input-m").value.toUpperCase(); //取得输入的验证码并转化为大写
-            if($('#name-m').val()&&$('#password-m').val())
-            {
+            $('#name-m').val()&&$('#password-m').val()?(
                 $.get('../php/login.php',{name:$('#name-m').val(),password:$('#password-m').val(),ip:ipaddress,browser:browser,sys:system,year:time.getFullYear(),month:time.getMonth()+1,day:time.getDate(),logtime:time.toTimeString().split('GMT')[0]},function(data) {
-                    if(data==1){
-                        if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
-                            document.getElementById('alert-content-m').innerHTML='验证码输入错误！';
-                            $('#warning-m').css('display','block');
-                            setTimeout(function() {
-                                $('#warning-m').css('display','none');
-                            },3000)
-                            createCode();//刷新验证码
-                            document.getElementById("input-m").value = "";//清空文本框
-                        }
-                        else {
-                            $('#done-m').css('display','block');
+                    data==1?( inputCode!=code ?( document.getElementById('alert-content-m').innerHTML='验证码输入错误！',
+                        $('#warning-m').css('display','block'),
+                        setTimeout(function() {
+                            $('#warning-m').css('display','none');
+                        },3000),
+                        createCode(),//刷新验证码
+                        document.getElementById("input-m").value = ""):(
+                        $('#done-m').css('display','block'),
                             setTimeout(function() {
                                 localStorage.setItem('name',$('#name-m').val());
                                 localStorage.setItem('passwd',$('#password-m').val());
                                 window.location.href='../control/user.html';
                             },3000)
-                        }
-                    }
-                    else {
-                        document.getElementById('alert-content-m').innerHTML='用户名和密码出错！';
-                        $('#warning-m').css('display','block');
-                        setTimeout(function() {
-                            $('#warning-m').css('display','none');
-                        },3000)
-                    }
-                })
-            }
-            else
-            {
-                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！';
-                $('#warning-m').css('display','block');
-                setTimeout(function() {
-                    $('#warning-m').css('display','none');
-                },3000)
-
-            }
+                    )):(
+                        document.getElementById('alert-content-m').innerHTML='用户名和密码出错！',
+                            $('#warning-m').css('display','block'),
+                            setTimeout(function() {
+                                $('#warning-m').css('display','none');
+                            },3000)
+                    )
+                })):(
+                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！',
+            $('#warning-m').css('display','block'),
+            setTimeout(function() {
+                $('#warning-m').css('display','none');
+            },3000)
+            )
         });
 
     }
@@ -443,47 +418,34 @@ else {
     $('#click').click(function () {
         var time=new Date();
         var inputCode = document.getElementById("input").value.toUpperCase(); //取得输入的验证码并转化为大写
-        if($('#name').val()&&$('#password').val())
-        {
-            $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,year:time.getFullYear(),month:time.getMonth()+1,day:time.getDate(),logtime:time.toTimeString().split('GMT')[0]},function(data) {
-                if(data==1){
-                    if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
-                        document.getElementById('alert-content').innerHTML='验证码输入错误！';
-                        $('#warning').css('display','block');
-                        setTimeout(function() {
-                            $('#warning').css('display','none');
-                        },3000)
-                        createCode();//刷新验证码
-                        document.getElementById("input").value = "";//清空文本框
-                    }
-                    else {
-                        $('#done').css('display','block');
-                        setTimeout(function() {
-                            localStorage.setItem('name',$('#name').val());
-                            localStorage.setItem('passwd',$('#password').val());
-                            window.location.href='../control/user.html';
-                        },3000)
-                    }
-
-                }
-                else {
-                    document.getElementById('alert-content').innerHTML='用户或者密码错误！';
-                    $('#warning').css('display','block');
+        $('#name').val()&&$('#password').val()?( $.get('../php/login.php',{name:$('#name').val(),password:$('#password').val(),ip:ipaddress,browser:browser,sys:system,year:time.getFullYear(),month:time.getMonth()+1,day:time.getDate(),logtime:time.toTimeString().split('GMT')[0]},function(data) {
+            data==1?(inputCode!=code ?( document.getElementById('alert-content').innerHTML='验证码输入错误！',
+                $('#warning').css('display','block'),
+                setTimeout(function() {
+                    $('#warning').css('display','none');
+                },3000),
+                createCode(),
+                document.getElementById("input").value = ""):(
+                $('#done').css('display','block'),
+                    setTimeout(function() {
+                        localStorage.setItem('name',$('#name').val());
+                        localStorage.setItem('passwd',$('#password').val());
+                        window.location.href='../control/user.html';
+                    },3000)
+            )):(
+                document.getElementById('alert-content').innerHTML='用户或者密码错误！',
+                    $('#warning').css('display','block'),
                     setTimeout(function() {
                         $('#warning').css('display','none');
                     },3000)
-                }
-            })
-        }
-        else
-        {
-            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！';
-            $('#warning').css('display','block');
-            setTimeout(function() {
-                $('#warning').css('display','none');
-            },3000)
-
-        }
+            )
+        })):(
+            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！',
+        $('#warning').css('display','block'),
+        setTimeout(function() {
+            $('#warning').css('display','none');
+        },3000)
+        )
     });
     iptracket();
     detectOS();

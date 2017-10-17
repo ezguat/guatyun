@@ -98,7 +98,7 @@
     </div>
     <div id="done" style="height: 5%;position: absolute;width: 100%;display: none" class="row">
         <div  class="alert alert-success" style="width: 100%;" role="alert">
-            <a href="#" class="alert-link">留言成功！</a>
+            <a href="#" class="alert-link">修改成功！</a>
         </div>
     </div>
     <div id="warning"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
@@ -188,20 +188,14 @@
     width=window.screen.width;
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
+    width==1440?(  $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
+    width==1400?($('#change').css('font-size','small'),
+    $('#change8').css('font-size','small'),
+    $('.test').css('height','18%'),
+    $('.test').css('width','20%')):false
+    width==1366?( $('#change').css('font-size','small'),
+    $('#change8').css('font-size','small')):false
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
@@ -211,42 +205,28 @@
         $('#big').css('display','none');
         $('#p').css('display','none');
         $('#click-m').click(function () {
-            if($('#name-m').val()&&$('#passwordnew-m').val()&&$('#check-m').val()&&$('#useremail-m').val())
-            {
-                if($('#check-m').val()==$("#passwordnew-m").val()){
-                    $.get('../php/changepass.php',{name:$('#name-m').val(),newpassword:$('#passwordnew-m').val(),useremail:$('#useremail-m').val()},function(data) {
-                        if(data==1){
-                            $('#done-m').css('display','block');
-                            setTimeout(function() {
-                                window.location.href='../control/user.html';
-                            },3000)
-                        }
-                        else {
-                            document.getElementById('alert-content-m').innerHTML=data;
-                            $('#warning-m').css('display','block');
-                            setTimeout(function() {
-                                $('#warning-m').css('display','none');
-                            },3000)
-                        }
-                    })
-                }
-                else {
-                    document.getElementById('alert-content-m').innerHTML='新密码不一致！';
-                    $('#warning-m').css('display','block');
+            $('#name-m').val()&&$('#passwordnew-m').val()&&$('#check-m').val()&&$('#useremail-m').val()?(  $('#check-m').val()==$("#passwordnew-m").val()?( $.get('../php/changepass.php',{name:$('#name-m').val(),newpassword:$('#passwordnew-m').val(),useremail:$('#useremail-m').val()},function(data) {
+                data==1?($('#done-m').css('display','block'),
+                    setTimeout(function() {
+                        window.location.href='../control/user.html';
+                    },3000)):( document.getElementById('alert-content-m').innerHTML=data,
+                    $('#warning-m').css('display','block'),
+                    setTimeout(function() {
+                        $('#warning-m').css('display','none');
+                    },3000))
+            })):(
+                document.getElementById('alert-content-m').innerHTML='新密码不一致！',
+                    $('#warning-m').css('display','block'),
                     setTimeout(function() {
                         $('#warning-m').css('display','none');
                     },3000)
-                }
-            }
-            else
-            {
-                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！';
-                $('#warning-m').css('display','block');
-                setTimeout(function() {
-                    $('#warning-m').css('display','none');
-                },3000)
-
-            }
+            )):(
+                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！',
+            $('#warning-m').css('display','block'),
+            setTimeout(function() {
+                $('#warning-m').css('display','none');
+            },3000)
+            )
         });
     }
     var ipaddress=localStorage.getItem('ipaddress');
@@ -254,42 +234,28 @@
     var system=localStorage.getItem('system');
     var time=new Date();
     $('#click').click(function () {
-        if($('#name').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val())
-        {
-            if($('#check').val()==$("#passwordnew").val()){
-                $.get('../php/changepass.php',{name:$('#name').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
-                    if(data==1){
-                        $('#done').css('display','block');
-                        setTimeout(function() {
-                            window.location.href='../control/user.html';
-                        },3000)
-                    }
-                    else {
-                        document.getElementById('alert-content').innerHTML="用户或者邮箱错误！";
-                        $('#warning').css('display','block');
-                        setTimeout(function() {
-                            $('#warning').css('display','none');
-                        },3000)
-                    }
-                })
-            }
-            else {
-                document.getElementById('alert-content').innerHTML='新密码不一致！';
-                $('#warning').css('display','block');
+        $('#name').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val()?($('#check').val()==$("#passwordnew").val()?( $.get('../php/changepass.php',{name:$('#name').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
+            data==1?($('#done').css('display','block'),
+                setTimeout(function() {
+                        window.location.href='../control/user.html';
+                },3000)):( document.getElementById('alert-content').innerHTML="用户或者邮箱错误！",
+                $('#warning').css('display','block'),
+                setTimeout(function() {
+                    $('#warning').css('display','none');
+                },3000))
+        })):(
+            document.getElementById('alert-content').innerHTML='新密码不一致！',
+                $('#warning').css('display','block'),
                 setTimeout(function() {
                     $('#warning').css('display','none');
                 },3000)
-            }
-        }
-        else
-        {
-            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！';
-            $('#warning').css('display','block');
-            setTimeout(function() {
-                $('#warning').css('display','none');
-            },3000)
-
-        }
+        )):(
+            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！',
+        $('#warning').css('display','block'),
+        setTimeout(function() {
+            $('#warning').css('display','none');
+        },3000)
+        )
     });
     iptracket();
     detectOS();
@@ -304,8 +270,6 @@
         var isLinux = (String(navigator.platform).indexOf("Linux") > -1);
         if (isLinux) localStorage.setItem('system',"Linux") ;
         if (isWin) {
-            var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1;
-            if (isWin2K) localStorage.setItem('system',"Win2000") ;
             var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1;
             if (isWinXP) localStorage.setItem('system',"WinXP") ;
             var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1;
