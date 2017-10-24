@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title>用户登录</title>
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
@@ -131,6 +132,7 @@
                 <button  id="se"   onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
                 <button   id="up"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">资源下载</button>
                 <button id="re" onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/calendar_128.19541984733px_1208588_easyicon.net.png">预约实验室</button>
+                <button   id="cp"  onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/Control_Panel_128px_1179987_easyicon.net.png">服务控制</button>
                 <button id="cg" onmouseout="this.style='background-color: white;height: 10%;width: 100%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 10%;width: 100%;border: 0px;'" style="background-color: white;height: 10%;width: 100%;border: 0px"><img style="height: 16px;width: 16px" src="../image/icon/cogwheel_1173px_1206681_easyicon.net.png">账号修改</button>
             </div>
             <div id="detail"  style="margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default" class="panel panel-default">
@@ -550,6 +552,43 @@ $('#warning2').css('display','block');
                     </center>
                 </div>
             </div>
+            <div id="ospanel"  style="display: none;width: 90%;height: 80%;margin-left: 9%;position: absolute;margin-top: -900px" class="panel panel-default">
+                <div class="panel-body">
+                    服务控制
+                </div>
+                <div style="height: 44%;background-color: white" class="panel-footer">
+                    <center><table id="go1-d" class="table table-striped" style="height: 100%;width: 48%;border: 1px solid silver">
+                            <thead>
+                        <tr>
+                                <th >产品名称</th>
+                                <th>服务器控制</th>
+                                      <th>iP地址</th>
+                                      <th>服务器状态</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                        <tr>
+                                <td ><p id="os-name">VPS</p></td>
+                                <td><a href="#" onclick="var name=localStorage.getItem('name');$.get('../php/user.php',{os_name:name,start_os:1},function(data) {
+});" style="text-decoration: none;color: black">开机</a><a  href="#" onclick="
+var name=localStorage.getItem('name');
+$.get('../php/user.php',{os_name:name,shut_os:1},function(data) {
+    });" style="text-decoration:none;color: black">/关机</a></td>
+                                <td><a id="ipaddress" style="text-decoration: none;color: black;">iP地址：</a></td>
+                                <td><a style="text-decoration: none;display: none;color: #62b900" id="running">运行中</a><a style="text-decoration: none;display: none;color:
+#990033 " id="shutdown">关机</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </center>
+                    <a onclick="
+                    var name=localStorage.getItem('name');
+                    $.get('../php/user.php',{askos:1,username:name},function(data) {
+            data.split('-')[0]=='1'?($('#shutdown').css('display','block'),$('#running').css('display','none')):($('#running').css('display','block'),$('#shutdown').css('display','none'));
+    });
+" style="margin-left: 70%;text-decoration: none" href="#"><span class="glyphicon glyphicon-refresh"></span>刷新</a>
+                </div>
+            </div>
         </div>
     </div>
     </div>
@@ -921,9 +960,14 @@ $('#warning2-m').css('display','block');
         $('#gone').css('display','none');
         $('#show').css('display','block');
     }
+    var name=localStorage.getItem('name');
+    $.get('../php/user.php',{askos:1,username:name},function(data) {
+        data=='1'?$('#shutdown').css('display','block'):$('#running').css('display','block');
+    });
     document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
     document.getElementById('link').href='../control/user.html';
     document.getElementById('de').onclick=function () {
+        document.getElementById('ospanel').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('detail').style='margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default';
         document.getElementById('service').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
@@ -943,6 +987,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('upload').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('request').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('ospanel').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{askservice:1,username:name},function (data) {
             service(data);
         });
@@ -955,6 +1000,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('service').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('ospanel').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('request').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
 
     };
@@ -963,6 +1009,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('service').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
         document.getElementById('upload').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('ospanel').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('request').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
 
     };
@@ -972,6 +1019,7 @@ $('#warning2-m').css('display','block');
         document.getElementById('upload').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('changefile').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         document.getElementById('request').style='margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('ospanel').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
         $.get('../php/user.php',{asklab:1,username:name},function (data) {
             for($one=1,$two=0;data.split('=>')[$two];$one++){
                 document.getElementById('classroom'+$one).innerHTML=data.split('=>')[$two++];
@@ -980,6 +1028,20 @@ $('#warning2-m').css('display','block');
                 document.getElementById('sta'+$one).innerHTML=data.split('=>')[$two++];
             }
         });
+    };
+    document.getElementById('cp').onclick=function () {
+        document.getElementById('detail').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('service').style='margin-top: -900px;display:none;width: 100%;height: 800px;margin-top: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('upload').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('changefile').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('request').style='margin-top: -900px;display:none;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        document.getElementById('ospanel').style='margin-top: -900px;width: 90%;height: 800px;margin-left: 10%;position: absolute" class="panel panel-default'
+        $.get('../php/user.php',{askos:1,username:name},function (data) {
+            data.split('-')[0]=='1'?($('#shutdown').css('display','block'),$('#running').css('display','none')):($('#running').css('display','block'),$('#shutdown').css('display','none'));
+            document.getElementById('ipaddress').innerHTML="iP地址："+data.split('-')[1].split('ether')[0];
+
+       
+});
     };
     var name=localStorage.getItem('name');
     var passwd=localStorage.getItem('passwd');
