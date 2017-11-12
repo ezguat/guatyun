@@ -624,7 +624,7 @@ $.get('../php/user.php',{os_name:name,shut_os:1},function(data) {
         <div style="height: 4%;width: 100%;position: absolute;">
             <center><button  id="de-m"   onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/user_982px_1206721_easyicon.net.png">个人资料</button>
                 <button  id="se-m"   onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/shopping_cart_1173px_1206714_easyicon.net.png">产品服务</button>
-                <button   id="cf-m"  onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">修改资料</button>
+                <button   id="cf-m"  onmouseout="this.style='background-color: white;height: 20%;width: 30%;border: 0px'"  onmouseenter="this.style='background-color: #56daf0;height: 20%;width: 30%;border: 0px;'" style="background-color: white;height: 20%;width: 30%;border: 0px;display: inline-block"><img style="height: 16px;width: 16px" src="../image/icon/file_833px_1206688_easyicon.net.png">服务相关</button>
             </center>
         </div>
         <div id="detail-m"  style="width: 100%;height: 150%;position: absolute;margin-top: 10%;" class="panel panel-default">
@@ -885,7 +885,39 @@ $.get('../php/user.php',{os_name:name,shut_os:1},function(data) {
             <div class="panel-body">
                 账号修改
             </div>
-            <div style="height: 44%;background-color: white" class="panel-footer">
+            <div style="width:100% ;height: 44%;background-color: white" class="panel-footer">
+                <div style="width:100%;height:100%;background-color: white" >
+                    <center><table id="go1-d-m" class="table table-striped" style="height: 100%;width: 100%;border: 1px solid silver">
+                            <thead>
+                        <tr>
+                                <th style="font-size: 12px">产品名称</th>
+                                <th style="font-size: 12px">服务器控制</th>
+                                <th style="font-size: 12px">iP地址</th>
+                                <th style="font-size: 12px">服务器状态</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                        <tr>
+                                <td style="font-size: 12px" ><p id="os-name-m">VPS</p></td>
+                                <td style="font-size: 12px"><a href="#" onclick="var name=localStorage.getItem('name');$.get('../php/user.php',{os_name:name,start_os:1},function(data) {
+});" style="text-decoration: none;color: black">开机</a><a  href="#" onclick="
+var name=localStorage.getItem('name');
+$.get('../php/user.php',{os_name:name,shut_os:1},function(data) {
+    });" style="text-decoration:none;color: black">/关机</a></td>
+                                <td style="font-size: 12px"><a id="ipaddress-m" style="text-decoration: none;color: black;">iP地址：</a></td>
+                                <td style="font-size: 12px"><a style="text-decoration: none;display: none;color: #62b900" id="running-m">运行中</a><a style="text-decoration: none;display: none;color:
+#990033 " id="shutdown-m">关机</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </center>
+                    <a onclick="
+                    var name=localStorage.getItem('name');
+                    $.get('../php/user.php',{askos:1,username:name},function(data) {
+            data.split('-')[0]=='1'?($('#shutdown').css('display','block'),$('#running').css('display','none')):($('#running').css('display','block'),$('#shutdown').css('display','none'));
+    });
+" style="margin-left: 70%;text-decoration: none" href="#"><span class="glyphicon glyphicon-refresh"></span>刷新</a>
+                </div>
                 <div style="width: 100%;height: 10%;">
                     <div class="row" style="position: absolute;width: 80%;margin-top: 2%;display: inline-block">
                         <div class="col-lg-6">
@@ -961,7 +993,7 @@ $('#warning2-m').css('display','block');
         $('#show').css('display','block');
     }
     var name=localStorage.getItem('name');
-    $.get('../php/user.php',{askos:1,username:name},function(data) {
+    $.get('../php/user.php',{askosone:1,username:name},function(data) {
         data=='1'?$('#shutdown').css('display','block'):$('#running').css('display','block');
     });
     document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
@@ -1039,9 +1071,7 @@ $('#warning2-m').css('display','block');
         $.get('../php/user.php',{askos:1,username:name},function (data) {
             data.split('-')[0]=='1'?($('#shutdown').css('display','block'),$('#running').css('display','none')):($('#running').css('display','block'),$('#shutdown').css('display','none'));
             document.getElementById('ipaddress').innerHTML="iP地址："+data.split('-')[1].split('ether')[0];
-
-       
-});
+        });
     };
     var name=localStorage.getItem('name');
     var passwd=localStorage.getItem('passwd');
@@ -1142,6 +1172,9 @@ $('#warning2-m').css('display','block');
         if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
             window.location.href='../content/login.html';
         }
+        $.get('../php/user.php',{askosone:1,username:name},function(data) {
+            data=='1'?$('#shutdown-m').css('display','block'):$('#running-m').css('display','block');
+        });
         document.getElementById('link-m').href='../control/user.html';
         document.getElementById('de-m').onclick=function () {
             $('#detail-m').css('display','block');
@@ -1172,6 +1205,10 @@ $('#warning2-m').css('display','block');
             $('#changefile-m').css('display','block');
             $('#service-m').css('display','none');
             $('#detail-m').css('display','none');
+            $.get('../php/user.php',{askos:1,username:name},function (data) {
+                data.split('-')[0]=='1'?($('#shutdown-m').css('display','block'),$('#running-m').css('display','none')):($('#running-m').css('display','block'),$('#shutdown-m').css('display','none'));
+                document.getElementById('ipaddress-m').innerHTML=data.split('-')[1].split('ether')[0];
+            });
         };
         var name=localStorage.getItem('name');
         var passwd=localStorage.getItem('passwd');
