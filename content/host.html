@@ -8,6 +8,8 @@
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="../js/essential.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
 </head>
@@ -89,11 +91,8 @@
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
         <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
         <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show" style="display: none" class="col-md-1"><a onclick="
-    localStorage.removeItem('name');
-      localStorage.removeItem('passwd');
-      window.location.reload();
-" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick=" $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
+        });$.removeCookie('token');window.location.href='../content/login.html'" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
     </div>
     <div id="success" style="height: 5%;position: absolute;width: 100%;display: none" class="row">
         <div  class="alert alert-success" style="width: 100%;" role="alert">
@@ -150,32 +149,7 @@
         <textarea  id="advice" style="resize: none;width: 100%;height: 200px;margin-top: 50px;" placeholder="请填写使用用途" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"></textarea>
     </div>
     </center>
-    <button id="click" onclick="var time=new Date();
-  if($('#advice').val()&&$('#choice3').val()&&$('#choice2').val()){
-         $.get('../php/user.php',{applyhost:1,advice:$('#advice').val(),asktime:time.toTimeString().split('GMT')[0]+time.toUTCString().split('2017')[0]+time.getFullYear(),username:localStorage.getItem('name'),osask:$('#choice2').val()+'：'+$('#choice4').val(),standard:$('#choice3').val()},function(data) {
-    if(data)
-            {
-              $('#success').css('display','block');
-        setTimeout(function() {
-          $('#success').css('display','none');
-        },3000)
-           }
-             else {
-               $('#warning').css('display','block');
-        setTimeout(function() {
-          $('#warning').css('display','none');
-        },3000)
-           }
-    })
-  }
-    else {
-          document.getElementById('alert-content').innerHTML='输入框不能为空！';
-$('#warning').css('display','block');
-        setTimeout(function() {
-          $('#warning').css('display','none');
-        },3000)
-    }
-" style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
+    <button id="click"  style="margin-left: 62%;margin-top: 5%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
         <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">申请</p>
     </button>
 </div>
@@ -285,25 +259,22 @@ $('#warning-m').css('display','block');
     var width;
     height=window.screen.height;
     width=window.screen.width;
+    if($.cookie("name")){
+        document.getElementById('change').innerHTML="你好！"+$.cookie("name");
+        $('#show').css('display','block')
+    }
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    if(!localStorage.getItem('name')&&!localStorage.getItem('passwd')){
-        window.location.href='../content/login.html';
-    }
-    else {
-        $('#gone').css('display','none');
-        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
-        document.getElementById('link').href='../control/user.html';
-        $('#gone-m').css('display','none');
-        document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name');
-        document.getElementById('link-m').href='../control/user.html';
-        $('#gone').css('display','none');
-        $('#show').css('display','block');
-    }
     if(width==1440){
         $('#change').css('font-size','small');
         $('#change8').css('font-size','small');
     }
+    iptracket()
+    $('#click').click(function () {
+        $.get("../php/update.php",{user_token:$.cookie("token"),user_name:$.cookie("name"),request_vps:1,ipaddress:ip,browser:detectionbrowser(),sys:detectOS(),request_os:$("#choice2").val(),user_code:$("#choice3").val(),user_cms:$("#choice4").val(),user_request:$("#advice").val()},function (data) {
+
+        })
+    })
     if(width==1400){
         $('#change').css('font-size','small');
         $('#change8').css('font-size','small');

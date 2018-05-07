@@ -102,13 +102,10 @@
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="advice.html" style="text-decoration: none;color: white"><p id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="join.html" style="text-decoration: none;color: white"><p id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="aboutus.html   " style="text-decoration: none;color: white"><p id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./user.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
         <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="register.html" style="text-decoration: none;color: white"><p id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show" style="display: none" class="col-md-1"><a onclick="
-    localStorage.removeItem('name');
-      localStorage.removeItem('passwd');
-      window.location.reload();
-" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a onclick=" $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
+        });$.removeCookie('token');window.location.href='../content/login.html'" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
     </div>
     <div id="warning2"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
         <div  style="width: 100%;margin: 0px" class="alert alert-warning alert-dismissible" role="alert">
@@ -414,7 +411,7 @@
                             <div class="col-lg-6">
                                 <div class="input-group" >
                             <span class="input-group-addon">
-                               专业名称
+                               电子邮件
                             </span>
                                     <input id="changemail" type="text" class="form-control" aria-label="...">
                                 </div><!-- /input-group -->
@@ -429,32 +426,9 @@
                                     <input id="changemajor" type="text" class="form-control" aria-label="...">
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
-                            <button onclick="
-                    if($('#changemail').val()&&$('#changemajor').val()){
-                         var name=localStorage.getItem('name');
-                    $.get('../php/user.php',{changefile:1,major:$('#changemail').val(),job:$('#changemajor').val(),username:name},function(data) {
-                        if(data){
-                         $('#success').css('display','block');
-        setTimeout(function() {
-          $('#success').css('display','none');
-        },3000)
-                                            }
-                                            else {
-                            $('#warning2').css('display','block');
-        setTimeout(function() {
-          $('#warning2').css('display','none');
-        },3000)
-                                            }
-                    })
-                    }
-                    else {
-                        document.getElementById('warning2').innerHTML='内存不能为空！';
-$('#warning2').css('display','block');
-        setTimeout(function() {
-          $('#warning2').css('display','none');
-        },3000)
-                    }
-                    " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
+                            <button onclick="$.get('../php/update.php',{change_user:1,user_token:$.cookie('token'),email:$('#changemail').val(),major:$('#changemajor').val()},function(data) {
+
+                            })" style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
                                 <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
                             </button>
                         </div><!-- /.row -->
@@ -477,33 +451,15 @@ $('#warning2').css('display','block');
                                     <input id="newpasswd" type="password" class="form-control" aria-label="...">
                                 </div><!-- /input-group -->
                             </div><!-- /.col-lg-6 -->
-                            <button onclick="
-                    if($('#oldpasswd').val()&&$('#newpasswd').val()){
-                         var name=localStorage.getItem('name');
-                    $.get('../php/user.php',{changepasswd:1,op:$('#oldpasswd').val(),np:$('#newpasswd').val(),username:name},function(data) {
-                        if(data==1){
-                         $('#success').css('display','block');
-        setTimeout(function() {
-          $('#success').css('display','none');
-        },3000)
-                                            }
-                                            else {
-                              document.getElementById('warning2').innerHTML='旧密码错误！';
-                            $('#warning2').css('display','block');
-        setTimeout(function() {
-          $('#warning2').css('display','none');
-        },3000)
-                                            }
-                    })
-                    }
-                    else {
-                        document.getElementById('warning2').innerHTML='内容不能为空！';
-$('#warning2').css('display','block');
-        setTimeout(function() {
-          $('#warning2').css('display','none');
-        },3000)
-                    }
-                    " style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
+                            <button onclick="$.get('../php/update.php',{change_passwd:1,user_token:$.cookie('token'),oldpasswd:$('#oldpasswd').val(),newpasswd:$('#newpasswd').val()},function(data) {
+                                if(!data){
+                                $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
+
+                                });
+                                $.removeCookie('token');
+                                // window.location.href='../content/login.html'
+                                }
+                            })" style="border-radius: 10%;border: 0px;background-color: #00b38a;height: 35px;width: 8%;" type="text"  >
                                 <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: whitesmoke;margin-top: 15%">保存</p>
                             </button>
                         </div><!-- /.row -->
@@ -598,9 +554,6 @@ $.get('../php/user.php',{os_name:name,shut_os:1},function(data) {
         <div id="name-m2" style="margin-top:-4%;margin-left: 45%;height: 100%;width: 30%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="login.html" style="text-decoration: none;color: white"></a></div>
         <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="register.html" style="text-decoration: none;color: white"><p id="change8-m" style="font-family: 'Microsoft YaHei UI';font-size: medium;display: none">注册</p></a></div>
         <div id="show-m" style="margin-left: -65%;height: 100%;width: 15%;display: inline-block"><a onclick="
-    localStorage.removeItem('name');
-      localStorage.removeItem('passwd');
-      window.location.reload();
 " onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
         <span onclick="
            $('#canvas').css('display','block')
@@ -983,21 +936,32 @@ $('#warning2-m').css('display','block');
     var width;
     height=window.screen.height;
     width=window.screen.width;
+    $('.container-fluid').css('height',height);
+    $('.container-fluid').css('width',width);
     if($.cookie("token")){
         $.get('../php/query.php',{query_user:1,user_token:$.cookie('token')},function (data) {
             var parsedJson = jQuery.parseJSON(data);
+            document.cookie="name="+parsedJson.user_name;
+            $('#show').css('display','block')
             document.getElementById('change').innerHTML="你好！"+parsedJson.user_name;
             $('#name').val(parsedJson.user_name);
             $('#email').val(parsedJson.email);
+            $('#changemail').val(parsedJson.email);
+            $('#changemajor').val(parsedJson.major);
             $('#number').val(parsedJson.phone);
+            $('#retime').val(parsedJson.user_date);
             $('#loginip').val(parsedJson.user_ip);
             $('#terminal').val(parsedJson.user_browser);
             $('#logintime').val(parsedJson.login_date);
+            if(parsedJson.job){
+                $('#job').val(parsedJson.job);
+            }
+            if(parsedJson.major){
+                $('#major').val(parsedJson.major);
+            }
 
         });
     }
-    $('.container-fluid').css('height',height);
-    $('.container-fluid').css('width',width);
     $('#big').css('display','block');
     document.getElementById('link').href='../control/user.html';
     document.getElementById('de').onclick=function () {
