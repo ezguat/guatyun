@@ -1,0 +1,54 @@
+@media (width: 1920px) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left: 15%;
+    }
+}
+@media (width: 1680px) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left: 9%;
+    }
+}
+@media (width: 1600px) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left: 5%;
+    }
+}
+@media screen and (width: 1440px  ) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left: 8%;
+    }
+}
+@media screen and (width: 1400px) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left: 11%;
+    }
+}
+@media screen and (width: 1366px) {
+    #change9,#change,#change8{
+        font-family: 'Microsoft YaHei UI';
+        font-size: medium;
+    }
+    #move{
+        margin-left:7%;
+    }
+}

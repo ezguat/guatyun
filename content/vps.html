@@ -36,11 +36,29 @@
             height: 30px;
         }
     }
+    @media (width :1920px){
+        #change{
+            font-family: 'Microsoft YaHei UI';
+            font-size: medium
+        }
+        #change8{
+            font-family: 'Microsoft YaHei UI';
+            font-size: medium
+        }
+    }
     @media (width: 1680px) {
         .col-md-1{
             margin-top: 10px;
             width: 150px;
             height: 30px;
+        }
+        #change{
+            font-family: 'Microsoft YaHei UI';
+            font-size: medium
+        }
+        #change8{
+            font-family: 'Microsoft YaHei UI';
+            font-size: medium
         }
     }
     @media (width: 1600px) {
@@ -56,6 +74,14 @@
             width: 135px;
             height: 30px;
         }
+        #change{
+            font-family: 'Microsoft YaHei UI';
+            font-size: small;
+        }
+        #change8{
+            font-family: 'Microsoft YaHei UI';
+            font-size: small;
+        }
     }
     @media screen and (width: 1400px) {
         .col-md-1{
@@ -64,6 +90,14 @@
             height: 24px;
         }
         .col-md-2{
+            font-size: small;
+        }
+        #change{
+            font-family: 'Microsoft YaHei UI';
+            font-size: small;
+        }
+        #change8{
+            font-family: 'Microsoft YaHei UI';
             font-size: small;
         }
 
@@ -75,6 +109,14 @@
             height: 24px;
         }
         .col-md-2{
+            font-size: small;
+        }
+        #change{
+            font-family: 'Microsoft YaHei UI';
+            font-size: small;
+        }
+        #change8{
+            font-family: 'Microsoft YaHei UI';
             font-size: small;
         }
 
@@ -89,8 +131,8 @@
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/advice.html" style="text-decoration: none;color: white"><p  id="change4" style="font-family: 'Microsoft YaHei UI';font-size: large">留言反馈</p></a></div>
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/join.html" style="text-decoration: none;color: white"><p  id="change5" style="font-family: 'Microsoft YaHei UI';font-size: large">加入我们</p></a></div>
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
-        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
+        <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change" >登录</p></a></div>
+        <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p  id="change8">注册</p></a></div>
         <div id="show" style="display: none" class="col-md-1"><a onclick=" $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
         });$.removeCookie('token');window.location.href='../content/login.html'" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
     </div>
@@ -364,20 +406,6 @@ $('#warning-m').css('display','block');
 
         })
     })
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
