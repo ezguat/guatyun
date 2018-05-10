@@ -28,11 +28,12 @@
 @media screen and (width: 1440px  ) {
     #change9,#change,#change8{
         font-family: 'Microsoft YaHei UI';
-        font-size: medium;
+        font-size: small;
     }
     #move{
-        margin-left: 8%;
+        margin-left: 5%;
     }
+
 }
 @media screen and (width: 1400px) {
     #change9,#change,#change8{
@@ -40,7 +41,7 @@
         font-size: medium;
     }
     #move{
-        margin-left: 11%;
+        margin-left: 5%;
     }
 }
 @media screen and (width: 1366px) {
