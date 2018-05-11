@@ -8,6 +8,7 @@
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <link href="../css/header.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
+    <script src="../js/essential.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../js/jquery.cookie.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
@@ -279,35 +280,10 @@
                                   <th>系统</th>
                                   <th>配置</th>
 
-                        </tr>
+                       </tr>
                     </thead>
-                        <tbody>
-                    <tr>
-                            <td id="name1"></td>
-                            <td id="asktime1"></td>
-                                  <td id="status1"></td>
-                                  <td id="os1"></td>
-                                  <td id="config1"></td>
-
-
-                        </tr>
-                    <tr>
-                            <td id="name2"></td>
-                            <td id="asktime2"></td>
-                                  <td id="status2"></td>
-                                  <td id="os2"></td>
-                                 <td id="config2"></td>
-
-
-                        </tr>
-                <tr>
-                            <td id="name3"></td>
-                            <td id="asktime3"></td>
-                                  <td id="status3"></td>
-                                  <td id="os3"></td>
-                                 <td id="config3"></td>
-
-                        </tr>
+                      <tbody id="node">
+                  
                     </tbody>
                 </table>
                 </center>
@@ -960,10 +936,17 @@ $('#warning2-m').css('display','block');
             if(parsedJson.major){
                 $('#major').val(parsedJson.major);
             }
-            $('#name1').val(parsedJson.request_sql);
-            $('#asktime1').val(parsedJson.request_config);
         });
     }
+    else {
+        window.location.href="../content/login.html"
+    }
+    iptracket()
+    $("#click").click(function () {
+        $.get('../php/query.php',{issue:1,user_name:$.cookie("name"),user_token:$.cookie("token"),issue_server:$("#choice1").val(),issue_priority:$("#choice2").val(),issue_about:$("#choice3").val(),issue_advice:$("#advice").val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {
+
+        })
+    })
     $("#de").click(function () {
         $("div#brother").siblings().css("display","none");
         $('#detail').css('display','block')
@@ -972,6 +955,27 @@ $('#warning2-m').css('display','block');
     $("#se").click(function () {
         $("div#brother").siblings().css("display","none");
         $('#service').css('display','block')
+        $.get('../php/query.php',{query_service:1,user_token:$.cookie('token')},function (data) {
+            var parsedJson = jQuery.parseJSON(data);
+            $number=parseInt(parsedJson.num)
+            for($go=1;$go<=$number;$go++){
+                var div1=document.createElement("tr");
+                div1.setAttribute("id","node_child"+$go);
+                $("#node").append(div1);// 追加新元素
+                var a1=document.createElement("td");
+                a1.setAttribute("id","name"+$go);
+                $("#node_child"+$go).append(a1);// 追加新元素
+                var a2=document.createElement("td");
+                a2.setAttribute("id","config"+$go);
+                $("#node_child"+$go).append(a2);// 追加新元素
+                var a3=document.createElement("td");
+                a3.setAttribute("id","date"+$go);
+                $("#node_child"+$go).append(a3);// 追加新元素
+                var a4=document.createElement("td");
+                a4.setAttribute("id","status"+$go);
+                $("#node_child"+$go).append(a4);// 追加新元素
+            }
+        })
     })
     $("#up").click(function () {
         $("div#brother").siblings().css("display","none");
