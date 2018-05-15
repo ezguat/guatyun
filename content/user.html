@@ -276,14 +276,31 @@
                     <tr>
                             <th>产品名称</th>
                             <th>申请时间</th>
-                                  <th>状态</th>
-                                  <th>系统</th>
                                   <th>配置</th>
-
+                                  <th>状态</th>
                        </tr>
                     </thead>
                       <tbody id="node">
-                  
+                   <tr>
+                            <td id="name1"></td>
+                            <td id="asktime1"></td>
+                                     <td id="config1"></td>
+                                  <td id="status1"></td>
+                        </tr>
+                    <tr>
+                            <td id="name2"></td>
+                            <td id="asktime2"></td>
+                                    <td id="config2"></td>
+                                  <td id="status2"></td>
+                        </tr>
+                          <tr>
+                            <td id="name3"></td>
+                                 <td id="asktime3"></td>
+                                    <td id="config3"></td>
+                                  <td id="status3"></td>
+                     
+
+                        </tr>
                     </tbody>
                 </table>
                 </center>
@@ -957,23 +974,22 @@ $('#warning2-m').css('display','block');
         $('#service').css('display','block')
         $.get('../php/query.php',{query_service:1,user_token:$.cookie('token')},function (data) {
             var parsedJson = jQuery.parseJSON(data);
-            $number=parseInt(parsedJson.num)
-            for($go=1;$go<=$number;$go++){
-                var div1=document.createElement("tr");
-                div1.setAttribute("id","node_child"+$go);
-                $("#node").append(div1);// 追加新元素
-                var a1=document.createElement("td");
-                a1.setAttribute("id","name"+$go);
-                $("#node_child"+$go).append(a1);// 追加新元素
-                var a2=document.createElement("td");
-                a2.setAttribute("id","config"+$go);
-                $("#node_child"+$go).append(a2);// 追加新元素
-                var a3=document.createElement("td");
-                a3.setAttribute("id","date"+$go);
-                $("#node_child"+$go).append(a3);// 追加新元素
-                var a4=document.createElement("td");
-                a4.setAttribute("id","status"+$go);
-                $("#node_child"+$go).append(a4);// 追加新元素
+            document.getElementById('name1').innerHTML="虚拟主机:"+parsedJson.request_host_os;
+            document.getElementById('config1').innerHTML=parsedJson.request_host_config;
+            document.getElementById('status1').innerHTML=parsedJson.request_host_status;
+            document.getElementById('asktime1').innerHTML=parsedJson.request_host_date;
+            document.getElementById('name2').innerHTML="虚拟主机:"+parsedJson.request_host_os;
+            document.getElementById('config2').innerHTML=parsedJson.request_host_config;
+            document.getElementById('status2').innerHTML=parsedJson.request_host_status;
+            document.getElementById('asktime2').innerHTML=parsedJson.request_host_date;
+          if(!parsedJson.host_num){
+                $("#name1,#config1,#status1,#asktime1").css('display','none')
+            }
+            if(!parsedJson.vps_num){
+                $("#name2,#config2,#status2,#asktime2").css('display','none')
+            }
+            if(!parsedJson.sql_num){
+                $("#name3,#config3,#status3,#asktime3").css('display','none')
             }
         })
     })
