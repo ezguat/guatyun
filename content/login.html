@@ -185,7 +185,6 @@
     var width;
     height=window.screen.height;
     width=window.screen.width;
-    iptracket();
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
     width==1680?(  $('#input').css('width','65%'),
@@ -208,48 +207,7 @@
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
         $('#click-m').click(function () {
-            var time=new Date();
-            var inputCode = document.getElementById("input-m").value.toUpperCase(); //取得输入的验证码并转化为大写
-            if($('#name-m').val()&&$('#password-m').val())
-            {
-                $.get('../php/login.php',{name:$('#name-m').val(),password:$('#password-m').val(),ip:ipaddress,browser:browser,sys:system,year:time.getFullYear(),month:time.getMonth()+1,day:time.getDate(),logtime:time.toTimeString().split('GMT')[0]},function(data) {
-                    if(data==1){
-                        if(inputCode!=code ) { //若输入的验证码与产生的验证码不一致时
-                            document.getElementById('alert-content-m').innerHTML='验证码输入错误！';
-                            $('#warning-m').css('display','block');
-                            setTimeout(function() {
-                                $('#warning-m').css('display','none');
-                            },3000)
-                            createCode();//刷新验证码
-                            document.getElementById("input-m").value = "";//清空文本框
-                        }
-                        else {
-                            $('#done-m').css('display','block');
-                            setTimeout(function() {
-                                window.location.href='user.html';
-                            },3000)
-                        }
-                    }
-                    else {
-                        document.getElementById('alert-content-m').innerHTML='用户名和密码出错！';
-                        $('#warning-m').css('display','block');
-                        setTimeout(function() {
-                            $('#warning-m').css('display','none');
-                        },3000)
-                    }
-                })
-            }
-            else
-            {
-                document.getElementById('alert-content-m').innerHTML='用户名和密码不能为空！';
-                $('#warning-m').css('display','block');
-                setTimeout(function() {
-                    $('#warning-m').css('display','none');
-                },3000)
-
-            }
         });
-
     }
     $('#click').click(function () {
             $.get('../php/query.php',{log:1,name:$('#name').val(),password:$('#password').val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {

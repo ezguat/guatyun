@@ -931,6 +931,7 @@ $('#warning2-m').css('display','block');
             $('#loginip').val(parsedJson.user_ip);
             $('#terminal').val(parsedJson.user_browser);
             $('#logintime').val(parsedJson.login_date);
+            $('#personaljob').val(parsedJson.job);
             if(parsedJson.job){
                 $('#job').val(parsedJson.job);
             }
@@ -942,9 +943,8 @@ $('#warning2-m').css('display','block');
     else {
         window.location.href="../content/login.html"
     }
-    iptracket()
     $("#click").click(function () {
-        $.get('../php/query.php',{issue:1,user_name:$.cookie("name"),user_token:$.cookie("token"),issue_server:$("#choice1").val(),issue_priority:$("#choice2").val(),issue_about:$("#choice3").val(),issue_advice:$("#advice").val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {
+        $.get('../php/query.php',{issue:1,user_name:$.cookie("name"),user_token:$.cookie("token"),issue_server:$("#choice1").val(),issue_priority:$("#choice2").val(),issue_about:$("#choice3").val(),issue_advice:$("#advice").val(),ipaddress:iptracket(),browser:detectionbrowser(),sys:detectOS()},function(data) {
 
         })
     })
@@ -976,9 +976,9 @@ $('#warning2-m').css('display','block');
             parsedJson.request_host_status=='0'?document.getElementById('status1').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
             parsedJson.request_vps_status=='0'?document.getElementById('status2').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
             parsedJson.request_sql_status=='0'?document.getElementById('status3').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
-            !parsedJson.host_num? $("#name1,#config1,#status1,#asktime1").css('display','none'):false
-            !parsedJson.vps_num? $("#name2,#config2,#status2,#asktime2").css('display','none'):false
-            !parsedJson.sql_num? $("#name3,#config3,#status3,#asktime3").css('display','none'):false
+            !parsedJson.host_num? $("#name1,#config1,#status1,#asktime1,#username1,#passwd1").css('display','none'):false
+            !parsedJson.vps_num? $("#name2,#config2,#status2,#asktime2,#username2,#passwd2").css('display','none'):false
+            !parsedJson.sql_num? $("#name3,#config3,#status3,#asktime3,#username3,#passwd3").css('display','none'):false
         })
     })
     $("#up").click(function () {

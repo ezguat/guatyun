@@ -289,7 +289,7 @@ else {
     }
     $('#input-m').css('width','55%')
     $('#myButton').click(function () {
-        $.get('../php/query.php', {reg:1,name: $('#name').val(), password: $('#password').val(), ipaddress: ip, browser: detectionbrowser(), sys: detectOS(),phone:$("#number").val(),email:$('#email').val()}, function (data) {
+        $.get('../php/query.php', {reg:1,name: $('#name').val(), password: $('#password').val(), ipaddress:ip, browser: detectionbrowser(), sys: detectOS(),phone:$("#number").val(),email:$('#email').val()}, function (data) {
         if(data="1"){
            setTimeout(function () {
                $("#success").css('display','block');

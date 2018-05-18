@@ -5,10 +5,10 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/essential.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
 </head>
@@ -229,10 +229,6 @@
             )
         });
     }
-    var ipaddress=localStorage.getItem('ipaddress');
-    var browser=localStorage.getItem('browser');
-    var system=localStorage.getItem('system');
-    var time=new Date();
     $('#click').click(function () {
         $('#name').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val()?($('#check').val()==$("#passwordnew").val()?( $.get('../php/changepass.php',{name:$('#name').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
             data==1?($('#done').css('display','block'),

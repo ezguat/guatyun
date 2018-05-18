@@ -1,3 +1,5 @@
+iptracket();
+var ip;
 function detectOS() {
     var sUserAgent = navigator.userAgent;
     var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
@@ -50,6 +52,6 @@ function detectionbrowser() {
 }
 function iptracket() {
     $.getJSON('https://ipapi.co/json/', function(data) {
-        ip=JSON.stringify(data, null, 2).split(':')[1].split(",")[0];
+       ip=data.ip;
     });
 }
