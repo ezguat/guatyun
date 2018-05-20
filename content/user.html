@@ -385,7 +385,7 @@
                 </div>
                 <div style="height: 60%;width: 88%;margin-left: 15%;margin-top: -1%">
                     <ul class="nav nav-pills" role="tablist">
-                        <li role="presentation" class="active"><a href="#">你申请的<span id="num" class="badge">X</span>个工单正在处理中！等待管理员处理！</a></li>
+                        <li role="presentation" class="active"><a id="num" href="#"></a></li>
                     </ul>
                 </div>
             </div>
@@ -931,7 +931,7 @@ $('#warning2-m').css('display','block');
             $('#loginip').val(parsedJson.user_ip);
             $('#terminal').val(parsedJson.user_browser);
             $('#logintime').val(parsedJson.login_date);
-            $('#personaljob').val(parsedJson.job);
+            $('#personaljob').val(parsedJson.user_job);
             if(parsedJson.job){
                 $('#job').val(parsedJson.job);
             }
@@ -944,7 +944,7 @@ $('#warning2-m').css('display','block');
         window.location.href="../content/login.html"
     }
     $("#click").click(function () {
-        $.get('../php/query.php',{issue:1,user_name:$.cookie("name"),user_token:$.cookie("token"),issue_server:$("#choice1").val(),issue_priority:$("#choice2").val(),issue_about:$("#choice3").val(),issue_advice:$("#advice").val(),ipaddress:iptracket(),browser:detectionbrowser(),sys:detectOS()},function(data) {
+        $.get('../php/query.php',{issue:1,user_name:$.cookie("name"),user_token:$.cookie("token"),issue_server:$("#choice1").val(),issue_priority:$("#choice2").val(),issue_about:$("#choice3").val(),issue_advice:$("#advice").val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {
 
         })
     })
@@ -973,12 +973,13 @@ $('#warning2-m').css('display','block');
             document.getElementById('asktime3').innerHTML=parsedJson.request_sql_date;
             document.getElementById('username3').innerHTML=parsedJson.request_sql_name;
             document.getElementById('passwd3').innerHTML=parsedJson.request_sql_passwd;
-            parsedJson.request_host_status=='0'?document.getElementById('status1').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
-            parsedJson.request_vps_status=='0'?document.getElementById('status2').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
-            parsedJson.request_sql_status=='0'?document.getElementById('status3').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
+            !parsedJson.request_host_status?document.getElementById('status1').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
+            !parsedJson.request_vps_status?document.getElementById('status2').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
+            !parsedJson.request_sql_status?document.getElementById('status3').innerHTML="申请中！":document.getElementById('status1').innerHTML="申请成功！"
             !parsedJson.host_num? $("#name1,#config1,#status1,#asktime1,#username1,#passwd1").css('display','none'):false
             !parsedJson.vps_num? $("#name2,#config2,#status2,#asktime2,#username2,#passwd2").css('display','none'):false
             !parsedJson.sql_num? $("#name3,#config3,#status3,#asktime3,#username3,#passwd3").css('display','none'):false
+            document.getElementById('num').innerHTML="你申请了"+parsedJson.service_num+"个工单！";
         })
     })
     $("#up").click(function () {
