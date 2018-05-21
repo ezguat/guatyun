@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
+    <link href="../css/header.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
     <script src="../js/essential.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
@@ -111,20 +113,24 @@
         <center><p id="p" style="font-family: 'Microsoft YaHei UI';font-size: 40px;margin-top: 3%">修改密码</p></center>
         <div id="big" style="height: 50%;width: 20%;margin-left: 40%;margin-top: 2%">
             <div class="input-group">
-                <span class="input-group-addon">&nbsp&nbsp用户&nbsp&nbsp</span>
+                <span class="input-group-addon">&nbsp&nbsp&nbsp用户&nbsp&nbsp&nbsp</span>
                 <input id="name" placeholder="要修改的用户名" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
             <div class="input-group" style="margin-top: 5%">
-                <span class="input-group-addon">&nbsp&nbsp邮箱&nbsp&nbsp</span>
+                <span class="input-group-addon">&nbsp&nbsp&nbsp邮箱&nbsp&nbsp&nbsp</span>
                 <input id="useremail" placeholder="请输入密码" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
             <div class="input-group" style="margin-top: 5%">
-                <span class="input-group-addon">新密码</span>
-                <input id="passwordnew" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-addon">&nbsp&nbsp旧密码&nbsp</span>
+                <input id="passwordold" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
             <div class="input-group" style="margin-top: 5%">
-                <span class="input-group-addon">&nbsp&nbsp确认&nbsp&nbsp</span>
-                <input id="check" placeholder="确认你设置的新密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-addon">&nbsp&nbsp新密码&nbsp</span>
+                <input  id="passwordnew" placeholder="确认你设置的新密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group" style="margin-top: 5%">
+                <span class="input-group-addon">确认密码</span>
+                <input id="check" placeholder="请输入密码" type="password" class="form-control" aria-label="Amount (to the nearest dollar)">
             </div>
             <button id="click" style="margin-left: 85%;margin-top: 12%;border-radius: 10%;height: 30px;width: 60px;border: 0px;background-color: #62b900">
                 <p style="font-family: 'Microsoft YaHei UI';font-size: 15px;color: white;margin-top: 5%">提交</p>
@@ -132,7 +138,6 @@
         </div>
     </div>
 </div>
-
 <div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
     <div  style="width: 100%;height:8%;background-color: #00c1de;">
         <div style="margin-top:3%;margin-left: 55%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
@@ -155,7 +160,7 @@
     </div>
     <div  style="display: none;margin: 0px" id="warning-m" class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong id="alert-content-m">请检查一下你的用户和密码！</strong>
+        <strong id="alert-content-m">请检查一下你的用户和邮箱！</strong>
     </div>
     <center><p id="p-m" style="font-family: 'Microsoft YaHei UI';font-size: 20px;margin-top: 3%">修改密码</p></center>
     <div id="big-m" style="height: 50%;width: 60%;margin-left: 20%;margin-top: 2%">
@@ -188,14 +193,11 @@
     width=window.screen.width;
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    width==1440?(  $('#change').css('font-size','small'),
-    $('#change8').css('font-size','small')):false
-    width==1400?($('#change').css('font-size','small'),
-    $('#change8').css('font-size','small'),
-    $('.test').css('height','18%'),
-    $('.test').css('width','20%')):false
-    width==1366?( $('#change').css('font-size','small'),
-    $('#change8').css('font-size','small')):false
+    $('#click').click(function () {
+        $.get('../php/update.php',{change_passwd:1,user_mail:$("#useremail").val(),user_name:$("#name").val(),oldpasswd:$('#passwordold').val(),newpasswd:$('#passwordnew').val(),check:$('#check').val()},function(data) {
+
+        })
+    });
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
@@ -227,86 +229,6 @@
                 $('#warning-m').css('display','none');
             },3000)
             )
-        });
-    }
-    $('#click').click(function () {
-        $('#name').val()&&$('#passwordnew').val()&&$('#check').val()&&$('#useremail').val()?($('#check').val()==$("#passwordnew").val()?( $.get('../php/changepass.php',{name:$('#name').val(),newpassword:$('#passwordnew').val(),useremail:$('#useremail').val()},function(data) {
-            data==1?($('#done').css('display','block'),
-                setTimeout(function() {
-                        window.location.href='user.html';
-                },3000)):( document.getElementById('alert-content').innerHTML="用户或者邮箱错误！",
-                $('#warning').css('display','block'),
-                setTimeout(function() {
-                    $('#warning').css('display','none');
-                },3000))
-        })):(
-            document.getElementById('alert-content').innerHTML='新密码不一致！',
-                $('#warning').css('display','block'),
-                setTimeout(function() {
-                    $('#warning').css('display','none');
-                },3000)
-        )):(
-            document.getElementById('alert-content').innerHTML='用户名和密码不能为空！',
-        $('#warning').css('display','block'),
-        setTimeout(function() {
-            $('#warning').css('display','none');
-        },3000)
-        )
-    });
-    iptracket();
-    detectOS();
-    detectionbrowser();
-    function detectOS() {
-        var sUserAgent = navigator.userAgent;
-        var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
-        var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel");
-        if (isMac) localStorage.setItem('system',"Mac") ;
-        var isUnix = (navigator.platform == "X11") && !isWin && !isMac;
-        if (isUnix)localStorage.setItem('system',"Unix") ;
-        var isLinux = (String(navigator.platform).indexOf("Linux") > -1);
-        if (isLinux) localStorage.setItem('system',"Linux") ;
-        if (isWin) {
-            var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1;
-            if (isWinXP) localStorage.setItem('system',"WinXP") ;
-            var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1;
-            if (isWin2003) localStorage.setItem('system',"Win2003") ;
-            var isWinVista= sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1;
-            if (isWinVista) localStorage.setItem('system',"WinVista") ;
-            var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1;
-            if (isWin7) localStorage.setItem('system',"Win7") ;
-            var isWin81 = sUserAgent.indexOf("Windows NT 6.3") > -1 || sUserAgent.indexOf("Windows 8.1") > -1;
-            if (isWin81) localStorage.setItem('system',"Win8.1") ;
-            var isWin10 = sUserAgent.indexOf("Windows NT 6.4") > -1 || sUserAgent.indexOf("Windows 10") > -1;
-            if (isWin10) localStorage.setItem('system',"Win10") ;
-            var isWin10 = sUserAgent.indexOf("Windows NT 10") > -1 || sUserAgent.indexOf("Windows 10") > -1;
-            if (isWin10) localStorage.setItem('system',"Win10") ;
-        }
-        var u = navigator.userAgent;
-        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-        if (isAndroid) localStorage.setItem('system',"Android") ;
-        if (isiOS) localStorage.setItem('system',"iOS") ;
-        return "other";
-    }
-    function detectionbrowser() {
-        var Sys = {};
-        var ua = navigator.userAgent.toLowerCase();
-        var s;
-        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
-            (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
-                (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
-                    (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
-                        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
-        /*以下进行测试*/
-        if (Sys.ie) localStorage.setItem('browser',('IE: ' + Sys.ie)) ;
-        if (Sys.firefox) localStorage.setItem('browser',('Firefox: ' + Sys.firefox)) ;
-        if (Sys.chrome) localStorage.setItem('browser',('Chrome: ' + Sys.chrome)) ;
-        if (Sys.opera) localStorage.setItem('browser',('Opera: ' + Sys.opera)) ;
-        if (Sys.safari) localStorage.setItem('browser',('Safari: ' + Sys.safari)) ;
-    }
-    function iptracket() {
-        $.getJSON('//ipapi.co/json/', function(data) {
-            localStorage.setItem('ipaddress', JSON.stringify(data, null, 2).split("}")[0].split(":")[1].split(',')[0]);
         });
     }
 </script>
