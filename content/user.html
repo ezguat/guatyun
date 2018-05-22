@@ -8,7 +8,6 @@
     <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <link href="../css/header.css" type="text/css" rel="stylesheet">
     <script src="../js/swiper-3.4.0.min.js"></script>
-    <script src="../js/essential.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../js/jquery.cookie.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
@@ -106,8 +105,7 @@
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="aboutus.html   " style="text-decoration: none;color: white"><p id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
         <div style="margin-left: 15%" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./user.html" style="text-decoration: none;color: white"><p id="change" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
         <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="register.html" style="text-decoration: none;color: white"><p id="change8" style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show" style="display: none" class="col-md-1"><a onclick=" $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
-        });$.removeCookie('token');window.location.href='../content/login.html'" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a id="delete" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
     </div>
     <div id="warning2"  style="position: absolute;height: 5%;display: none;width: 100%" class="row">
         <div  style="width: 100%;margin: 0px" class="alert alert-warning alert-dismissible" role="alert">
@@ -909,6 +907,7 @@ $('#warning2-m').css('display','block');
     </div>
 </div>
 </body>
+<script src="../js/essential.js"></script>
 <script>
     var height;
     var width;
@@ -919,7 +918,7 @@ $('#warning2-m').css('display','block');
     if($.cookie("token")){
         $.get('../php/query.php',{query_user:1,user_token:$.cookie('token')},function (data) {
             var parsedJson = jQuery.parseJSON(data);
-            document.cookie="name="+parsedJson.user_name+"; path=/";
+            document.cookie="username="+parsedJson.user_name+"; path=/";
             $('#show').css('display','block')
             document.getElementById('change').innerHTML="你好！"+parsedJson.user_name;
             $('#name').val(parsedJson.user_name);

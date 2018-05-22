@@ -212,7 +212,7 @@
     $('#click').click(function () {
             $.get('../php/query.php',{log:1,name:$('#name').val(),password:$('#password').val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {
                 if(data){
-                    document.cookie="token="+data;
+                    document.cookie="token="+data+"; path=/";
                     setTimeout(function () {
                         $('#done').css('display','block')
                     },1500)

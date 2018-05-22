@@ -1,3 +1,4 @@
+document.write("<script type=\"text/javascript\" src=\"../js/jquery.cookie.js\"></script>");
 iptracket();
 var ip;
 function detectOS() {
@@ -54,4 +55,15 @@ function iptracket() {
     $.getJSON('https://ipapi.co/json/', function(data) {
        ip=data.ip;
     });
+}
+$("#delete").click(function () {
+    $.get('../php/update.php',{delete:$.cookie('token')},function (data) {});
+    $.removeCookie('token', { path: '/' });
+    $.removeCookie('username', { path: '/' });
+    window.location.href='../content/login.html'
+})
+if($.cookie("username")){
+   document.getElementById('change').innerHTML="你好！"+$.cookie("username");
+    $('#show').css('display','block')
+    $('#change8').css('display','none')
 }

@@ -91,8 +91,7 @@
         <div class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/aboutus.html   " style="text-decoration: none;color: white"><p  id="change6" style="font-family: 'Microsoft YaHei UI';font-size: large">关于我们</p></a></div>
         <div id ="move" class="col-md-1"><a id="link" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/login.html" style="text-decoration: none;color: white"><p id="change" >登录</p></a></div>
         <div id="gone" class="col-md-1"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="./content/register.html" style="text-decoration: none;color: white"><p  id="change8" >注册</p></a></div>
-        <div id="show" style="display: none" class="col-md-1"><a onclick=" $.get('../php/update.php',{delete:$.cookie('token')},function (data) {
-        });$.removeCookie('token');window.location.href='../content/login.html'" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9" >注销</p></a></div>
+        <div id="show" style="display: none" class="col-md-1"><a id="delete" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9" >注销</p></a></div>
     </div>
     <div style=";height: 95%" class="row">
         <div class="swiper-container" style="height: 100%;width: 100%">
@@ -709,6 +708,7 @@
     </div>
 </div>
 </body>
+<script src="./js/essential.js"></script>
 <script>
     var height;
     var width;
