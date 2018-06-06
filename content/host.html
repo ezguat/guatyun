@@ -264,26 +264,6 @@ $('#warning-m').css('display','block');
     }
     $('.container-fluid').css('height',height);
     $('.container-fluid').css('width',width);
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    iptracket()
-    $('#click').click(function () {
-        $.get("../php/update.php",{user_token:$.cookie("token"),user_name:$.cookie("name"),request_vps:1,ipaddress:ip,browser:detectionbrowser(),sys:detectOS(),request_os:$("#choice2").val(),user_code:$("#choice3").val(),user_cms:$("#choice4").val(),user_request:$("#advice").val()},function (data) {
-
-        })
-    })
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');

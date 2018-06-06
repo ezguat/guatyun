@@ -5,8 +5,7 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
-    <script src="../js/swiper-3.4.0.min.js"></script>
+    <link href="../css/header.css" type="text/css" rel="stylesheet">
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../js/jquery.cookie.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
@@ -752,6 +751,7 @@
     </div>
 </div>
 </body>
+<script src="../js/essential.js"></script>
 <script>
     var height;
     var width;
@@ -762,27 +762,6 @@
     if($.cookie("name")){
         document.getElementById('change').innerHTML="你好！"+$.cookie("name");
         $('#show').css('display','block')
-    }
-    if(localStorage.getItem('name')&&localStorage.getItem('passwd')){
-        document.getElementById('change').innerHTML="你好！"+localStorage.getItem('name');
-        $('#gone').css('display','none');
-        $('#show').css('display','inline-block');
-    }
-    var name=localStorage.getItem('name');
-    var passwd=localStorage.getItem('passwd');
-    if(width==1440){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-    }
-    if(width==1400){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
-        $('.test').css('height','18%')
-        $('.test').css('width','20%')
-    }
-    if(width==1366){
-        $('#change').css('font-size','small');
-        $('#change8').css('font-size','small');
     }
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');

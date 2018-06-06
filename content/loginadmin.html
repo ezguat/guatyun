@@ -5,11 +5,10 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href="../css/swiper-3.4.0.min.css" type="text/css" rel="stylesheet">
     <link href="../css/header.css" type="text/css" rel="stylesheet">
-    <script src="../js/swiper-3.4.0.min.js"></script>
     <script src="../js/jquery-3.1.0.min.js"></script>
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
     <link rel="shortcut icon" href="../browser_internet_18.468085106383px_1138845_easyicon.net.png">
 </head>
 <style>
@@ -160,6 +159,7 @@
     </div>
 </div>
 </body>
+<script src="../js/essential.js"></script>
 <script>
     var height;
     var width;
@@ -204,7 +204,20 @@
 
     }
     $('#click').click(function () {
-
+        $.get('../php/query.php',{adminlog:1,name:$('#name').val(),password:$('#password').val(),ipaddress:ip,browser:detectionbrowser(),sys:detectOS()},function(data) {
+            if(data){
+                document.cookie="token="+data+"; path=/";
+                setTimeout(function () {
+                    $('#done').css('display','block')
+                },1500)
+            }
+            else
+            {
+                setTimeout(function () {
+                    $('#warning').css('display','block')
+                },1500)
+            }
+        })
     });
 </script>
 </html>

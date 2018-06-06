@@ -729,5 +729,17 @@
         autoplayDisableOnInteraction : false,
         // 如果需要分页器
     })
+    if(350<=width&&width<=414){
+       var mySwiper = new Swiper ('.swiper-container', {
+               slidesPerView : 1,//'auto'
+               direction: 'horizontal',
+               autoplay : 2000,
+               speed:1000,
+               // 如果需要分页器
+            })
+       $('.container-fluid').css('display','none');
+       $('#mobile').css('display','block');
+       $("#name-m").css('width','15%')
+    }
 </script>
 </html>
