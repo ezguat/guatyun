@@ -67,3 +67,25 @@ if($.cookie("username")){
     $('#show').css('display','block')
     $('#change8').css('display','none')
 }
+function design_mobile_header() {
+    var div=document.createElement("div");
+    div.setAttribute("id","header");
+    div.setAttribute("style","width: 100%;height:8%;background-color: #00c1de;");
+    $("#mobile").append(div);// 追加新元素
+    var div1=document.createElement("div");
+    div1.setAttribute("id","name-m");
+    div1.setAttribute("style","margin-top:3%;margin-left: 55%;height: 100%;width: 35%;display: inline-block");
+    $("#header").append(div1);// 追加新元素
+    var a=document.createElement("a");
+    a.setAttribute("id","link-m");
+    a.setAttribute("style","text-decoration: none;color: white");
+    a.setAttribute("onmouseenter","this.style='text-decoration: none;color:black'");
+    a.setAttribute("onmouseleave","this.style='text-decoration: none;color:white'");
+    a.setAttribute("href","./content/login.html");
+    $("#name-m").append(a);// 追加新元素
+    var p=document.createElement("p");
+    p.setAttribute("id","change-m");
+    p.setAttribute("style","font-family: 'Microsoft YaHei UI';font-size: medium");
+    p.setAttribute("text","登录");
+    $("#name-m").append(p);// 追加新元素
+}
