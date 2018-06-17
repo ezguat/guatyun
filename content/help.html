@@ -287,19 +287,6 @@
     </div>
 </div>
 </div>
-<div id="mobile" style="display: none;border: 0px;position: absolute;height: 100%;width: 100%">
-    <div style="width: 100%;height:8%;background-color: #00c1de;">
-        <div id="name-m" style="margin-top:3%;margin-left: 55%;height: 100%;width: 35%;display: inline-block"><a id="link-m" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/login.html" style="text-decoration: none;color: white"><p id="change-m" style="font-family: 'Microsoft YaHei UI';font-size: medium">登录</p></a></div>
-        <div id="gone-m" style="margin-left: 0%;height: 100%;width: 15%;display: inline-block"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/register.html" style="text-decoration: none;color: white"><p style="font-family: 'Microsoft YaHei UI';font-size: medium">注册</p></a></div>
-        <div id="show-m" style="margin-left: -85%;height: 100%;width: 15%;display: none"><a onclick="
-    localStorage.removeItem('name');
-      localStorage.removeItem('passwd');
-      window.location.reload();
-" onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="#" style="text-decoration: none;color: white"><p id="change9-m"  style="font-family: 'Microsoft YaHei UI';font-size: medium">注销</p></a></div>
-        <span id="go-m" onclick="
-           $('#canvas').css('display','block')
-" style="color: white" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-    </div>
     <div id="canvas" style="position: absolute;height: 94%;margin-top: 0%;width: 100%;background-color: black;opacity: 0.9;z-index: 999;display: none">
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../index.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">首页</p></a></div>
         <div style=";border-bottom: 1px silver solid;margin-top: 1%;height: 8%;width: 100%;"><a onmouseenter="this.style='text-decoration: none;color:black'" onmouseleave="this.style='text-decoration: none;color:white'" href="../content/production.html" style="text-decoration: none;color: white"><p  style="font-family: 'Microsoft YaHei UI';font-size: large;margin-left: 5%">提供服务</p></a></div>
@@ -465,14 +452,6 @@
     if(350<=width&&width<=414){
         $('.container-fluid').css('display','none');
         $('#mobile').css('display','block');
-        localStorage.getItem('name')&&localStorage.getItem('passwd')?( document.getElementById('change-m').innerHTML="你好！"+localStorage.getItem('name'),
-        document.getElementById('link-m').href='../control/user.html',
-        $('#show-m').css('display','inline-block'),
-        $('#gone-m').css('display','none'),
-        $('#name-m').css('width','30%'),
-        $('#go-m').css('margin-left','65%'),
-        $('#show-m').css('margin-left','-75%')):$("#name-m").css('width','15%')
-
     }
 </script>
 </html>
